@@ -19,6 +19,13 @@
 		3A3884B61E37543200689D73 /* SOXShapedTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3884B51E37543200689D73 /* SOXShapedTapView.swift */; };
 		3A5C20D61E379D6300DF05E7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C20D51E379D6300DF05E7 /* SWRevealViewController.m */; };
 		3AA5B1141E37FD3A002E755E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1131E37FD3A002E755E /* Constants.swift */; };
+		3AA5B1161E38213F002E755E /* BabyRadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1151E38213F002E755E /* BabyRadioViewController.swift */; };
+		3AA5B1181E38215A002E755E /* SoundTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1171E38215A002E755E /* SoundTimerViewController.swift */; };
+		3AA5B11B1E3821FA002E755E /* BabyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B11A1E3821FA002E755E /* BabyModeViewController.swift */; };
+		3AA5B11E1E382222002E755E /* EventLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B11D1E382222002E755E /* EventLogViewController.swift */; };
+		3AA5B1211E382251002E755E /* BabyTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1201E382251002E755E /* BabyTipsViewController.swift */; };
+		3AA5B1241E382274002E755E /* SkyRattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1231E382274002E755E /* SkyRattleViewController.swift */; };
+		3AA5B1271E38228F002E755E /* AnimalNoisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1261E38228F002E755E /* AnimalNoisesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		3A5C20D41E379D6300DF05E7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3A5C20D51E379D6300DF05E7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3AA5B1131E37FD3A002E755E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3AA5B1151E38213F002E755E /* BabyRadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyRadioViewController.swift; sourceTree = "<group>"; };
+		3AA5B1171E38215A002E755E /* SoundTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTimerViewController.swift; sourceTree = "<group>"; };
+		3AA5B11A1E3821FA002E755E /* BabyModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyModeViewController.swift; sourceTree = "<group>"; };
+		3AA5B11D1E382222002E755E /* EventLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLogViewController.swift; sourceTree = "<group>"; };
+		3AA5B1201E382251002E755E /* BabyTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyTipsViewController.swift; sourceTree = "<group>"; };
+		3AA5B1231E382274002E755E /* SkyRattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyRattleViewController.swift; sourceTree = "<group>"; };
+		3AA5B1261E38228F002E755E /* AnimalNoisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalNoisesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +86,9 @@
 			children = (
 				3A21DB521E36F6A900AE46F7 /* Application */,
 				3A21DB5A1E36F6BC00AE46F7 /* Base.lproj */,
-				3A21DB541E36F6A900AE46F7 /* Controller */,
 				3A21DB551E36F6A900AE46F7 /* Model */,
 				3A21DB581E36F6A900AE46F7 /* View */,
+				3A21DB541E36F6A900AE46F7 /* Controller */,
 				3A21DB561E36F6A900AE46F7 /* Utils */,
 				3A21DB571E36F6A900AE46F7 /* Vender */,
 				3A21DB4C1E36EC2700AE46F7 /* Info.plist */,
@@ -98,6 +112,11 @@
 				3A21DB5B1E36F6DF00AE46F7 /* BaseViewController.swift */,
 				3A21DB5D1E36F6E800AE46F7 /* Home */,
 				3A5C20D21E37983F00DF05E7 /* Baby Status */,
+				3AA5B1191E3821BB002E755E /* Baby Mode */,
+				3AA5B11C1E38220E002E755E /* Event Log */,
+				3AA5B11F1E382239002E755E /* Baby Tips */,
+				3AA5B1221E382257002E755E /* Sky Rattle */,
+				3AA5B1251E382278002E755E /* Animal Noises */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +183,8 @@
 		3A5C20D21E37983F00DF05E7 /* Baby Status */ = {
 			isa = PBXGroup;
 			children = (
+				3AA5B1151E38213F002E755E /* BabyRadioViewController.swift */,
+				3AA5B1171E38215A002E755E /* SoundTimerViewController.swift */,
 			);
 			name = "Baby Status";
 			sourceTree = "<group>";
@@ -183,6 +204,46 @@
 				3A3884B51E37543200689D73 /* SOXShapedTapView.swift */,
 			);
 			name = ShapeTapView;
+			sourceTree = "<group>";
+		};
+		3AA5B1191E3821BB002E755E /* Baby Mode */ = {
+			isa = PBXGroup;
+			children = (
+				3AA5B11A1E3821FA002E755E /* BabyModeViewController.swift */,
+			);
+			name = "Baby Mode";
+			sourceTree = "<group>";
+		};
+		3AA5B11C1E38220E002E755E /* Event Log */ = {
+			isa = PBXGroup;
+			children = (
+				3AA5B11D1E382222002E755E /* EventLogViewController.swift */,
+			);
+			name = "Event Log";
+			sourceTree = "<group>";
+		};
+		3AA5B11F1E382239002E755E /* Baby Tips */ = {
+			isa = PBXGroup;
+			children = (
+				3AA5B1201E382251002E755E /* BabyTipsViewController.swift */,
+			);
+			name = "Baby Tips";
+			sourceTree = "<group>";
+		};
+		3AA5B1221E382257002E755E /* Sky Rattle */ = {
+			isa = PBXGroup;
+			children = (
+				3AA5B1231E382274002E755E /* SkyRattleViewController.swift */,
+			);
+			name = "Sky Rattle";
+			sourceTree = "<group>";
+		};
+		3AA5B1251E382278002E755E /* Animal Noises */ = {
+			isa = PBXGroup;
+			children = (
+				3AA5B1261E38228F002E755E /* AnimalNoisesViewController.swift */,
+			);
+			name = "Animal Noises";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,13 +321,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA5B1241E382274002E755E /* SkyRattleViewController.swift in Sources */,
 				3A5C20D61E379D6300DF05E7 /* SWRevealViewController.m in Sources */,
+				3AA5B11B1E3821FA002E755E /* BabyModeViewController.swift in Sources */,
 				3A3884B61E37543200689D73 /* SOXShapedTapView.swift in Sources */,
 				3A21DB611E36F71200AE46F7 /* SideMenuViewController.swift in Sources */,
 				3A21DB681E36FE0000AE46F7 /* FloatingImageContentView.swift in Sources */,
+				3AA5B1211E382251002E755E /* BabyTipsViewController.swift in Sources */,
 				3A21DB591E36F6A900AE46F7 /* AppDelegate.swift in Sources */,
 				3A21DB5C1E36F6DF00AE46F7 /* BaseViewController.swift in Sources */,
+				3AA5B1181E38215A002E755E /* SoundTimerViewController.swift in Sources */,
+				3AA5B1161E38213F002E755E /* BabyRadioViewController.swift in Sources */,
 				3A21DB5F1E36F70600AE46F7 /* HomeViewController.swift in Sources */,
+				3AA5B11E1E382222002E755E /* EventLogViewController.swift in Sources */,
+				3AA5B1271E38228F002E755E /* AnimalNoisesViewController.swift in Sources */,
 				3AA5B1141E37FD3A002E755E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

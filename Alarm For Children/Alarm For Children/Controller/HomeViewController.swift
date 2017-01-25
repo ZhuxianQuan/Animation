@@ -36,10 +36,6 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
         // Do any additional setup after loading the view.
 
-        /*if self.revealViewController() !=  nil{
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }*/
-
         setClouds()
         setupGustures()
 
