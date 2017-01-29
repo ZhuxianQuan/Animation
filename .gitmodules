@@ -1,0 +1,6 @@
+[submodule "Translations"]
+	path = Translations
+	url = https://github.com/CAAPIM/iOS-MAS-SDK.git
+[submodule "localizer"]
+	path = localizer
+	url = https://github.com/CAAPIM/iOS-MAS-SDK.git
