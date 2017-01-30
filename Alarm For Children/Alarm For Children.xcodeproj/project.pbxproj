@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A21DB461E36EC2700AE46F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A21DB441E36EC2700AE46F7 /* Main.storyboard */; };
-		3A21DB4B1E36EC2700AE46F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A21DB491E36EC2700AE46F7 /* LaunchScreen.storyboard */; };
+		05BD09AD9E433C84FCB432D4 /* Pods_Alarm_For_Children.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4B38F0170A746260D0FE94 /* Pods_Alarm_For_Children.framework */; };
 		3A21DB591E36F6A900AE46F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21DB531E36F6A900AE46F7 /* AppDelegate.swift */; };
 		3A21DB5C1E36F6DF00AE46F7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21DB5B1E36F6DF00AE46F7 /* BaseViewController.swift */; };
 		3A21DB5F1E36F70600AE46F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21DB5E1E36F70600AE46F7 /* HomeViewController.swift */; };
@@ -16,6 +15,9 @@
 		3A21DB641E36FB0000AE46F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A21DB631E36FB0000AE46F7 /* Assets.xcassets */; };
 		3A21DB661E36FB3600AE46F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A21DB651E36FB3600AE46F7 /* Images.xcassets */; };
 		3A21DB681E36FE0000AE46F7 /* FloatingImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A21DB671E36FE0000AE46F7 /* FloatingImageContentView.swift */; };
+		3A34FEBE1E3EE5CC004001BE /* MASSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A34FEBD1E3EE5CC004001BE /* MASSDK.framework */; };
+		3A34FEBF1E3EE5D8004001BE /* MASSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A34FEBD1E3EE5CC004001BE /* MASSDK.framework */; };
+		3A34FEC01E3EE5D8004001BE /* MASSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A34FEBD1E3EE5CC004001BE /* MASSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A3884B61E37543200689D73 /* SOXShapedTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3884B51E37543200689D73 /* SOXShapedTapView.swift */; };
 		3A5C20D61E379D6300DF05E7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C20D51E379D6300DF05E7 /* SWRevealViewController.m */; };
 		3AA5B1141E37FD3A002E755E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1131E37FD3A002E755E /* Constants.swift */; };
@@ -28,7 +30,23 @@
 		3AA5B1271E38228F002E755E /* AnimalNoisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA5B1261E38228F002E755E /* AnimalNoisesViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3A72BC431E3EE4A7004F4280 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A34FEC01E3EE5D8004001BE /* MASSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0F4B38F0170A746260D0FE94 /* Pods_Alarm_For_Children.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarm_For_Children.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3396C4FA4C800AB923ACCB2A /* Pods-Alarm For Children.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm For Children.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm For Children/Pods-Alarm For Children.release.xcconfig"; sourceTree = "<group>"; };
 		3A21DB3D1E36EC2700AE46F7 /* Alarm For Children.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarm For Children.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A21DB451E36EC2700AE46F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A21DB4A1E36EC2700AE46F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +58,7 @@
 		3A21DB631E36FB0000AE46F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A21DB651E36FB3600AE46F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A21DB671E36FE0000AE46F7 /* FloatingImageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingImageContentView.swift; sourceTree = "<group>"; };
+		3A34FEBD1E3EE5CC004001BE /* MASSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MASSDK.framework; sourceTree = "<group>"; };
 		3A3884B51E37543200689D73 /* SOXShapedTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOXShapedTapView.swift; sourceTree = "<group>"; };
 		3A5C20D31E379D6300DF05E7 /* Alarm For Children-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Alarm For Children-Bridging-Header.h"; path = "Vender/Alarm For Children-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A5C20D41E379D6300DF05E7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -52,6 +71,7 @@
 		3AA5B1201E382251002E755E /* BabyTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyTipsViewController.swift; sourceTree = "<group>"; };
 		3AA5B1231E382274002E755E /* SkyRattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyRattleViewController.swift; sourceTree = "<group>"; };
 		3AA5B1261E38228F002E755E /* AnimalNoisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalNoisesViewController.swift; sourceTree = "<group>"; };
+		A4ED7C4FC46D96AF19D009B6 /* Pods-Alarm For Children.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm For Children.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm For Children/Pods-Alarm For Children.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BD09AD9E433C84FCB432D4 /* Pods_Alarm_For_Children.framework in Frameworks */,
+				3A34FEBE1E3EE5CC004001BE /* MASSDK.framework in Frameworks */,
+				3A34FEBF1E3EE5D8004001BE /* MASSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +91,11 @@
 		3A21DB341E36EC2700AE46F7 = {
 			isa = PBXGroup;
 			children = (
+				3A34FEBC1E3EE5CC004001BE /* Frameworks */,
 				3A21DB3F1E36EC2700AE46F7 /* Alarm For Children */,
 				3A21DB3E1E36EC2700AE46F7 /* Products */,
+				B3972B448EC2E9D7AA3C9324 /* Pods */,
+				A052401658376D670FB713C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +206,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		3A34FEBC1E3EE5CC004001BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A34FEBD1E3EE5CC004001BE /* MASSDK.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		3A5C20D21E37983F00DF05E7 /* Baby Status */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +280,23 @@
 			name = "Animal Noises";
 			sourceTree = "<group>";
 		};
+		A052401658376D670FB713C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F4B38F0170A746260D0FE94 /* Pods_Alarm_For_Children.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3972B448EC2E9D7AA3C9324 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4ED7C4FC46D96AF19D009B6 /* Pods-Alarm For Children.debug.xcconfig */,
+				3396C4FA4C800AB923ACCB2A /* Pods-Alarm For Children.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,9 +304,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A21DB4F1E36EC2700AE46F7 /* Build configuration list for PBXNativeTarget "Alarm For Children" */;
 			buildPhases = (
+				0A3B07493F48678B7978A0D3 /* [CP] Check Pods Manifest.lock */,
 				3A21DB391E36EC2700AE46F7 /* Sources */,
 				3A21DB3A1E36EC2700AE46F7 /* Frameworks */,
 				3A21DB3B1E36EC2700AE46F7 /* Resources */,
+				7E296838412DA8A1C7389533 /* [CP] Embed Pods Frameworks */,
+				75A093FD1B982AFA520C9317 /* [CP] Copy Pods Resources */,
+				3A72BC431E3EE4A7004F4280 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,14 +362,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A21DB4B1E36EC2700AE46F7 /* LaunchScreen.storyboard in Resources */,
 				3A21DB641E36FB0000AE46F7 /* Assets.xcassets in Resources */,
 				3A21DB661E36FB3600AE46F7 /* Images.xcassets in Resources */,
-				3A21DB461E36EC2700AE46F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A3B07493F48678B7978A0D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75A093FD1B982AFA520C9317 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alarm For Children/Pods-Alarm For Children-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E296838412DA8A1C7389533 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alarm For Children/Pods-Alarm For Children-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A21DB391E36EC2700AE46F7 /* Sources */ = {
@@ -454,10 +555,16 @@
 		};
 		3A21DB501E36EC2700AE46F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4ED7C4FC46D96AF19D009B6 /* Pods-Alarm For Children.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4WGDATJ3CA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/MASSDK_Swift3",
+				);
 				INFOPLIST_FILE = "Alarm For Children/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -471,10 +578,16 @@
 		};
 		3A21DB511E36EC2700AE46F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3396C4FA4C800AB923ACCB2A /* Pods-Alarm For Children.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4WGDATJ3CA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/MASSDK_Swift3",
+				);
 				INFOPLIST_FILE = "Alarm For Children/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

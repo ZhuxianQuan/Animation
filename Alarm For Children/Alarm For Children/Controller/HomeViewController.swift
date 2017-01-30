@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MASSDK
 
 class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
@@ -125,9 +126,14 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
     //Mark - Show Menu
     @IBAction func menuButtonTapped(_ sender: Any) {
-        if self.revealViewController() != nil{
+        /*if self.revealViewController() != nil{
             self.revealViewController().revealToggle(sender)
-        }
+        }*/
+        
+    }
+
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        MASManager.sharedInstance.showGuideWithMasterTouchView()
     }
 
     //Mark - Add Pan Gesture Recognizer

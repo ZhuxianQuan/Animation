@@ -4,3 +4,9 @@
 [submodule "localizer"]
 	path = localizer
 	url = https://github.com/CAAPIM/iOS-MAS-SDK.git
+[submodule "Alarm For Children/MASSDK_Swift3"]
+	path = Alarm For Children/MASSDK_Swift3
+	url = https://gitlab.com/MAS_SDK/MASSDK_Swift3.git
+[submodule "Alarm/MASSDK_Swift3"]
+	path = Alarm/MASSDK_Swift3
+	url = https://gitlab.com/MAS_SDK/MASSDK_Swift3.git
