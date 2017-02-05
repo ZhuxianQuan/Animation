@@ -11,23 +11,23 @@
 		131D1A5D1CDB58F0007C9F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131D1A5B1CDB58F0007C9F2A /* LaunchScreen.storyboard */; };
 		131D1A931CDB5D8D007C9F2A /* MASSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 131D1A911CDB5D88007C9F2A /* MASSDK.framework */; };
 		131D1A941CDB5D8D007C9F2A /* MASSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 131D1A911CDB5D88007C9F2A /* MASSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A27F4901E4339D8008A7F7E /* SOXShapedTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F48D1E4339D8008A7F7E /* SOXShapedTapView.swift */; };
+		3A27F4911E4339D8008A7F7E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F48F1E4339D8008A7F7E /* SWRevealViewController.m */; };
+		3A27F49C1E433A0E008A7F7E /* AnimalNoisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4921E433A0E008A7F7E /* AnimalNoisesViewController.swift */; };
+		3A27F49D1E433A0E008A7F7E /* BabyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4931E433A0E008A7F7E /* BabyModeViewController.swift */; };
+		3A27F49E1E433A0E008A7F7E /* BabyRadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4941E433A0E008A7F7E /* BabyRadioViewController.swift */; };
+		3A27F49F1E433A0E008A7F7E /* BabyTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4951E433A0E008A7F7E /* BabyTipsViewController.swift */; };
+		3A27F4A01E433A0E008A7F7E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4961E433A0E008A7F7E /* BaseViewController.swift */; };
+		3A27F4A11E433A0E008A7F7E /* EventLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4971E433A0E008A7F7E /* EventLogViewController.swift */; };
+		3A27F4A21E433A0E008A7F7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4981E433A0E008A7F7E /* HomeViewController.swift */; };
+		3A27F4A31E433A0E008A7F7E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4991E433A0E008A7F7E /* SideMenuViewController.swift */; };
+		3A27F4A41E433A0E008A7F7E /* SkyRattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F49A1E433A0E008A7F7E /* SkyRattleViewController.swift */; };
+		3A27F4A51E433A0E008A7F7E /* SoundTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F49B1E433A0E008A7F7E /* SoundTimerViewController.swift */; };
+		3A27F4A71E433A83008A7F7E /* FloatingImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A27F4A61E433A83008A7F7E /* FloatingImageContentView.swift */; };
 		3A9BAEF11E3F7C36000FC640 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9BAEF01E3F7C36000FC640 /* DateExtension.swift */; };
 		3A9BAEF31E3F9882000FC640 /* EventLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9BAEF21E3F9882000FC640 /* EventLogTableViewCell.swift */; };
 		3A9BAEF51E3F9907000FC640 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9BAEF41E3F9907000FC640 /* EventModel.swift */; };
 		3AFB52FF1E3F26D700627C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB52F81E3F26D700627C8E /* AppDelegate.swift */; };
-		3AFB530B1E3F28DB00627C8E /* AnimalNoisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53011E3F28DB00627C8E /* AnimalNoisesViewController.swift */; };
-		3AFB530C1E3F28DB00627C8E /* BabyModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53021E3F28DB00627C8E /* BabyModeViewController.swift */; };
-		3AFB530D1E3F28DB00627C8E /* BabyRadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53031E3F28DB00627C8E /* BabyRadioViewController.swift */; };
-		3AFB530E1E3F28DB00627C8E /* BabyTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53041E3F28DB00627C8E /* BabyTipsViewController.swift */; };
-		3AFB530F1E3F28DB00627C8E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53051E3F28DB00627C8E /* BaseViewController.swift */; };
-		3AFB53101E3F28DB00627C8E /* EventLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53061E3F28DB00627C8E /* EventLogViewController.swift */; };
-		3AFB53111E3F28DB00627C8E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53071E3F28DB00627C8E /* HomeViewController.swift */; };
-		3AFB53121E3F28DB00627C8E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53081E3F28DB00627C8E /* SideMenuViewController.swift */; };
-		3AFB53131E3F28DB00627C8E /* SkyRattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53091E3F28DB00627C8E /* SkyRattleViewController.swift */; };
-		3AFB53141E3F28DB00627C8E /* SoundTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB530A1E3F28DB00627C8E /* SoundTimerViewController.swift */; };
-		3AFB53161E3F291C00627C8E /* FloatingImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53151E3F291C00627C8E /* FloatingImageContentView.swift */; };
-		3AFB531C1E3F294D00627C8E /* SOXShapedTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB53191E3F294D00627C8E /* SOXShapedTapView.swift */; };
-		3AFB531D1E3F294D00627C8E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB531B1E3F294D00627C8E /* SWRevealViewController.m */; };
 		3AFB531F1E3F298100627C8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB531E1E3F298100627C8E /* Images.xcassets */; };
 		3AFB53211E3F2A2400627C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB53201E3F2A2400627C8E /* Assets.xcassets */; };
 		3AFB532B1E3F6F9D00627C8E /* UIImageView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB532A1E3F6F9D00627C8E /* UIImageView+Color.swift */; };
@@ -54,25 +54,25 @@
 		131D1A5C1CDB58F0007C9F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		131D1A5E1CDB58F0007C9F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		131D1A911CDB5D88007C9F2A /* MASSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MASSDK.framework; sourceTree = "<group>"; };
+		3A27F48D1E4339D8008A7F7E /* SOXShapedTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOXShapedTapView.swift; sourceTree = "<group>"; };
+		3A27F48E1E4339D8008A7F7E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		3A27F48F1E4339D8008A7F7E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		3A27F4921E433A0E008A7F7E /* AnimalNoisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalNoisesViewController.swift; sourceTree = "<group>"; };
+		3A27F4931E433A0E008A7F7E /* BabyModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyModeViewController.swift; sourceTree = "<group>"; };
+		3A27F4941E433A0E008A7F7E /* BabyRadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyRadioViewController.swift; sourceTree = "<group>"; };
+		3A27F4951E433A0E008A7F7E /* BabyTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyTipsViewController.swift; sourceTree = "<group>"; };
+		3A27F4961E433A0E008A7F7E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3A27F4971E433A0E008A7F7E /* EventLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLogViewController.swift; sourceTree = "<group>"; };
+		3A27F4981E433A0E008A7F7E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3A27F4991E433A0E008A7F7E /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		3A27F49A1E433A0E008A7F7E /* SkyRattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyRattleViewController.swift; sourceTree = "<group>"; };
+		3A27F49B1E433A0E008A7F7E /* SoundTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTimerViewController.swift; sourceTree = "<group>"; };
+		3A27F4A61E433A83008A7F7E /* FloatingImageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingImageContentView.swift; sourceTree = "<group>"; };
 		3A9BAEF01E3F7C36000FC640 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3A9BAEF21E3F9882000FC640 /* EventLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLogTableViewCell.swift; sourceTree = "<group>"; };
 		3A9BAEF41E3F9907000FC640 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		3AFB52F81E3F26D700627C8E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AFB53011E3F28DB00627C8E /* AnimalNoisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimalNoisesViewController.swift; path = ../../../Alarm/Alarm/Controller/AnimalNoisesViewController.swift; sourceTree = "<group>"; };
-		3AFB53021E3F28DB00627C8E /* BabyModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyModeViewController.swift; path = ../../../Alarm/Alarm/Controller/BabyModeViewController.swift; sourceTree = "<group>"; };
-		3AFB53031E3F28DB00627C8E /* BabyRadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyRadioViewController.swift; path = ../../../Alarm/Alarm/Controller/BabyRadioViewController.swift; sourceTree = "<group>"; };
-		3AFB53041E3F28DB00627C8E /* BabyTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyTipsViewController.swift; path = ../../../Alarm/Alarm/Controller/BabyTipsViewController.swift; sourceTree = "<group>"; };
-		3AFB53051E3F28DB00627C8E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../../../Alarm/Alarm/Controller/BaseViewController.swift; sourceTree = "<group>"; };
-		3AFB53061E3F28DB00627C8E /* EventLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventLogViewController.swift; path = ../../../Alarm/Alarm/Controller/EventLogViewController.swift; sourceTree = "<group>"; };
-		3AFB53071E3F28DB00627C8E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../Alarm/Alarm/Controller/HomeViewController.swift; sourceTree = "<group>"; };
-		3AFB53081E3F28DB00627C8E /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = ../../../Alarm/Alarm/Controller/SideMenuViewController.swift; sourceTree = "<group>"; };
-		3AFB53091E3F28DB00627C8E /* SkyRattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkyRattleViewController.swift; path = ../../../Alarm/Alarm/Controller/SkyRattleViewController.swift; sourceTree = "<group>"; };
-		3AFB530A1E3F28DB00627C8E /* SoundTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundTimerViewController.swift; path = ../../../Alarm/Alarm/Controller/SoundTimerViewController.swift; sourceTree = "<group>"; };
-		3AFB53151E3F291C00627C8E /* FloatingImageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatingImageContentView.swift; path = ../../../Alarm/Alarm/View/FloatingImageContentView.swift; sourceTree = "<group>"; };
 		3AFB53171E3F294C00627C8E /* MASSDK_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASSDK_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		3AFB53191E3F294D00627C8E /* SOXShapedTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SOXShapedTapView.swift; path = ../../../Alarm/Alarm/Vender/SOXShapedTapView.swift; sourceTree = "<group>"; };
-		3AFB531A1E3F294D00627C8E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../Alarm/Alarm/Vender/SWRevealViewController.h; sourceTree = "<group>"; };
-		3AFB531B1E3F294D00627C8E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../Alarm/Alarm/Vender/SWRevealViewController.m; sourceTree = "<group>"; };
 		3AFB531E1E3F298100627C8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3AFB53201E3F2A2400627C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AFB532A1E3F6F9D00627C8E /* UIImageView+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Color.swift"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		3AFB52F91E3F26D700627C8E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53051E3F28DB00627C8E /* BaseViewController.swift */,
+				3A27F4961E433A0E008A7F7E /* BaseViewController.swift */,
 				3AFB53221E3F45A200627C8E /* Baby Radio */,
 				3AFB53231E3F461C00627C8E /* Sound Timer */,
 				3AFB53241E3F462E00627C8E /* Baby Mode */,
@@ -156,7 +156,7 @@
 				3AFB53261E3F464600627C8E /* Baby Tips */,
 				3AFB53271E3F466800627C8E /* Sky Rattle */,
 				3AFB53281E3F467300627C8E /* Animal Noises */,
-				3AFB53081E3F28DB00627C8E /* SideMenuViewController.swift */,
+				3A27F4991E433A0E008A7F7E /* SideMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,9 +190,9 @@
 		3AFB52FD1E3F26D700627C8E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53191E3F294D00627C8E /* SOXShapedTapView.swift */,
-				3AFB531A1E3F294D00627C8E /* SWRevealViewController.h */,
-				3AFB531B1E3F294D00627C8E /* SWRevealViewController.m */,
+				3A27F48D1E4339D8008A7F7E /* SOXShapedTapView.swift */,
+				3A27F48E1E4339D8008A7F7E /* SWRevealViewController.h */,
+				3A27F48F1E4339D8008A7F7E /* SWRevealViewController.m */,
 				3AFB53171E3F294C00627C8E /* MASSDK_Swift-Bridging-Header.h */,
 			);
 			path = Vendor;
@@ -201,7 +201,7 @@
 		3AFB52FE1E3F26D700627C8E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53151E3F291C00627C8E /* FloatingImageContentView.swift */,
+				3A27F4A61E433A83008A7F7E /* FloatingImageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,8 +218,8 @@
 		3AFB53221E3F45A200627C8E /* Baby Radio */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53071E3F28DB00627C8E /* HomeViewController.swift */,
-				3AFB53031E3F28DB00627C8E /* BabyRadioViewController.swift */,
+				3A27F4941E433A0E008A7F7E /* BabyRadioViewController.swift */,
+				3A27F4981E433A0E008A7F7E /* HomeViewController.swift */,
 			);
 			name = "Baby Radio";
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 		3AFB53231E3F461C00627C8E /* Sound Timer */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB530A1E3F28DB00627C8E /* SoundTimerViewController.swift */,
+				3A27F49B1E433A0E008A7F7E /* SoundTimerViewController.swift */,
 			);
 			name = "Sound Timer";
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 		3AFB53241E3F462E00627C8E /* Baby Mode */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53021E3F28DB00627C8E /* BabyModeViewController.swift */,
+				3A27F4931E433A0E008A7F7E /* BabyModeViewController.swift */,
 			);
 			name = "Baby Mode";
 			sourceTree = "<group>";
@@ -243,7 +243,7 @@
 		3AFB53251E3F463800627C8E /* Event Log */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53061E3F28DB00627C8E /* EventLogViewController.swift */,
+				3A27F4971E433A0E008A7F7E /* EventLogViewController.swift */,
 				3A9BAEF21E3F9882000FC640 /* EventLogTableViewCell.swift */,
 			);
 			name = "Event Log";
@@ -252,7 +252,7 @@
 		3AFB53261E3F464600627C8E /* Baby Tips */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53041E3F28DB00627C8E /* BabyTipsViewController.swift */,
+				3A27F4951E433A0E008A7F7E /* BabyTipsViewController.swift */,
 			);
 			name = "Baby Tips";
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 		3AFB53271E3F466800627C8E /* Sky Rattle */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53091E3F28DB00627C8E /* SkyRattleViewController.swift */,
+				3A27F49A1E433A0E008A7F7E /* SkyRattleViewController.swift */,
 			);
 			name = "Sky Rattle";
 			sourceTree = "<group>";
@@ -268,7 +268,7 @@
 		3AFB53281E3F467300627C8E /* Animal Noises */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53011E3F28DB00627C8E /* AnimalNoisesViewController.swift */,
+				3A27F4921E433A0E008A7F7E /* AnimalNoisesViewController.swift */,
 			);
 			name = "Animal Noises";
 			sourceTree = "<group>";
@@ -409,24 +409,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AFB53141E3F28DB00627C8E /* SoundTimerViewController.swift in Sources */,
-				3AFB530E1E3F28DB00627C8E /* BabyTipsViewController.swift in Sources */,
-				3AFB530D1E3F28DB00627C8E /* BabyRadioViewController.swift in Sources */,
-				3AFB530C1E3F28DB00627C8E /* BabyModeViewController.swift in Sources */,
-				3AFB53111E3F28DB00627C8E /* HomeViewController.swift in Sources */,
-				3AFB530B1E3F28DB00627C8E /* AnimalNoisesViewController.swift in Sources */,
+				3A27F4A21E433A0E008A7F7E /* HomeViewController.swift in Sources */,
+				3A27F49C1E433A0E008A7F7E /* AnimalNoisesViewController.swift in Sources */,
+				3A27F49D1E433A0E008A7F7E /* BabyModeViewController.swift in Sources */,
+				3A27F4A01E433A0E008A7F7E /* BaseViewController.swift in Sources */,
+				3A27F49E1E433A0E008A7F7E /* BabyRadioViewController.swift in Sources */,
+				3A27F4A11E433A0E008A7F7E /* EventLogViewController.swift in Sources */,
 				3AFB52FF1E3F26D700627C8E /* AppDelegate.swift in Sources */,
-				3AFB531D1E3F294D00627C8E /* SWRevealViewController.m in Sources */,
-				3AFB53131E3F28DB00627C8E /* SkyRattleViewController.swift in Sources */,
+				3A27F4911E4339D8008A7F7E /* SWRevealViewController.m in Sources */,
 				3A9BAEF11E3F7C36000FC640 /* DateExtension.swift in Sources */,
+				3A27F4A41E433A0E008A7F7E /* SkyRattleViewController.swift in Sources */,
+				3A27F4A31E433A0E008A7F7E /* SideMenuViewController.swift in Sources */,
+				3A27F4A51E433A0E008A7F7E /* SoundTimerViewController.swift in Sources */,
 				3A9BAEF51E3F9907000FC640 /* EventModel.swift in Sources */,
-				3AFB530F1E3F28DB00627C8E /* BaseViewController.swift in Sources */,
-				3AFB531C1E3F294D00627C8E /* SOXShapedTapView.swift in Sources */,
-				3AFB53121E3F28DB00627C8E /* SideMenuViewController.swift in Sources */,
-				3AFB53161E3F291C00627C8E /* FloatingImageContentView.swift in Sources */,
+				3A27F4901E4339D8008A7F7E /* SOXShapedTapView.swift in Sources */,
+				3A27F49F1E433A0E008A7F7E /* BabyTipsViewController.swift in Sources */,
 				3AFB532B1E3F6F9D00627C8E /* UIImageView+Color.swift in Sources */,
+				3A27F4A71E433A83008A7F7E /* FloatingImageContentView.swift in Sources */,
 				3A9BAEF31E3F9882000FC640 /* EventLogTableViewCell.swift in Sources */,
-				3AFB53101E3F28DB00627C8E /* EventLogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
