@@ -1,0 +1,15 @@
+PODS:
+  - CryptoSwift (0.6.0)
+  - SnapKit (3.0.1)
+
+DEPENDENCIES:
+  - CryptoSwift
+  - SnapKit
+
+SPEC CHECKSUMS:
+  CryptoSwift: 4a599b7241b8d3b857d6e2c28867d0bd5d1aae24
+  SnapKit: f818b8326d45b4e1c777d0ab27b5c0a3624bfdeb
+
+PODFILE CHECKSUM: 2c2e856b707ea85a4d97bd6d30b369d5ed8e8111
+
+COCOAPODS: 1.1.0.rc.2

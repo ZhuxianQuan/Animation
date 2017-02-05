@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DC91C366DA98FDAE6BF867F8C37FE739686C7905",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DC91C366DA98FDAE6BF867F8C37FE739686C7905" : 0,
+    "350857FACEBA341F813AE59AB4835521076DA8A8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B0D6C6F0-91CD-4B23-B53E-688B6396DC60",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DC91C366DA98FDAE6BF867F8C37FE739686C7905" : "framework\/",
+    "350857FACEBA341F813AE59AB4835521076DA8A8" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MASSDK_Obj-C",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Examples\/Obj-C\/MASSDK_Obj-C.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.i.masterinter.net\/master_ios\/MASSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "350857FACEBA341F813AE59AB4835521076DA8A8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:MAS_SDK\/massdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DC91C366DA98FDAE6BF867F8C37FE739686C7905"
+    }
+  ]
+}

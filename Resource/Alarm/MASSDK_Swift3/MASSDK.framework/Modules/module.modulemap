@@ -1,0 +1,10 @@
+framework module MASSDK {
+  umbrella header "MASSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MASSDK.Swift {
+    header "MASSDK-Swift.h"
+}
