@@ -8,6 +8,8 @@
 
 import UIKit
 
+import MASSDK
+
 class BabyModeViewController: BaseViewController {
 
     @IBOutlet weak var btnBabyModeStatus: UIButton!
@@ -16,6 +18,10 @@ class BabyModeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        
+        
+        
         // Do any additional setup after loading the view.
         if (babyModeStatus){
             btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
@@ -27,6 +33,7 @@ class BabyModeViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
     @IBAction func babyModeStatusButtonTapped(_ sender: Any) {

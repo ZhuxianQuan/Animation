@@ -19,7 +19,6 @@ class BaseViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let navigationBar = self.navigationController?.navigationBar
-        //navigationBar.setBackgroundImage(UIImage(named: "BarBackground"),                                         for: .default)
         navigationBar?.setBackgroundImage(UIImage(), for: .default)
         navigationBar?.shadowImage = UIImage()
     }

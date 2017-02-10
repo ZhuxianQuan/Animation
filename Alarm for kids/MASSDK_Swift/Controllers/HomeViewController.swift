@@ -41,12 +41,17 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         //self.navigationController?.navigationBar.
         setClouds()
         setupGustures()
-
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.isNavigationBarHidden = false
     }
 
     //Mark - Set Animating Clouds
@@ -124,6 +129,13 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
     func imageTapped(_ index: Int) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "BabyRadioViewController") as! BabyRadioViewController
+        
+        if index % 2 == 0{
+            viewController.itemStatus = Constants.BABY_RADIO_CLOUD
+        }
+        else{
+            viewController.itemStatus = Constants.BABY_RADIO_STAR
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
