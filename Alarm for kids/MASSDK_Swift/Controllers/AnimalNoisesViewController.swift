@@ -85,7 +85,7 @@ class AnimalNoisesViewController: BaseViewController {
     //Mark - Add Pan Gesture Recognizer
     
     func setupGustures(){
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(HomeViewController.pan(_:)))
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(AnimalNoisesViewController.pan(_:)))
         pan.maximumNumberOfTouches = 1
         pan.minimumNumberOfTouches = 1
         self.view.addGestureRecognizer(pan)

@@ -22,31 +22,66 @@ class SoundTimerViewController: BaseViewController {
 
     @IBOutlet weak var slider: UISlider!
 
+    @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var imvBack: UIImageView!
     @IBOutlet weak var btnBack: UIButton!
 
+    @IBOutlet weak var imvPointerPositionConstraint: NSLayoutConstraint!
     var finishTime = 0
     var currentHour = 0
     var currentMinute = 0
+    
+    var sliderSelectedValue: CGFloat = 0.0
 
+    @IBOutlet weak var imvPointer: UIImageView!
 
     var targetTime: Int64 = 0
-
-
-
+    
+    var maxNoiseValue = UIScreen.main.bounds.size.width - 70
+    
     var timer = Timer()
 
     var remainTime = 0
     var timerValidate = false
-
+    
+    var threshold:CGFloat = 0.0
+    var shouldDragX = false
+    var snapX : CGFloat = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+        imvBack.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.navigationController?.viewControllers.count == 1
+        {
+            btnBack.isHidden = true
+            imvBack.isHidden = true
+            self.navigationController?.isNavigationBarHidden = false
+        }
+        else{
+            self.navigationController?.isNavigationBarHidden = true
+            btnBack.isHidden = false
+            imvBack.isHidden = false
+            imvBack.setImageWith(color: UIColor.white)
+        }
+        initView()
 
+    }
+    
+    
+    
+    
+    
+    func initView(){
+        
         // Do any additional setup after loading the view.
         imvBack.setImageWith(color: UIColor.white)
-
+        
         remainTimeLabel.text = getRemainTimeString(remainTime)
-
+        
         guard let finishlasttime = userDefault.value(forKey: "FinishTime") else {
             return
         }
@@ -58,10 +93,103 @@ class SoundTimerViewController: BaseViewController {
         else{
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdated), userInfo: nil, repeats: true)
         }
-
+        
         remainTimeLabel.text = getRemainTimeString(remainTime)
         targetTimeLabel.text = getLocalTimeString(getTimeFromGMTTimeMillis(time: finishlasttime as! Int64))
+        
+        
+        if Settings.baby_mode_status == Constants.BABY_MODE_ON{
+            switchMonitor.isOn = true
+        }
+        else{
+            
+            switchMonitor.isOn = false
+        }
+        
+        imvPointerPositionConstraint.constant = maxNoiseValue * Settings.baby_noise_value
+        
+        
+        setupGustures()
     }
+    
+    //Mark - Add Pan Gesture Recognizer
+    
+    func setupGustures(){
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(SoundTimerViewController.pan(_:)))
+        pan.maximumNumberOfTouches = 1
+        pan.minimumNumberOfTouches = 1
+        self.view.addGestureRecognizer(pan)
+    }
+    
+    func pan(_ rec: UIPanGestureRecognizer){
+        
+        let p:CGPoint = rec.location(in: self.sliderView)
+        let rect = imvPointer.frame
+        
+        if (rect.contains(p))
+        {
+            sliderSelectedValue = imvPointerPositionConstraint.constant
+            threshold = p.x
+            shouldDragX = true
+        }
+        
+        switch rec.state {
+        case .began:
+            print("began")
+            
+        case .changed:
+            if shouldDragX{
+                NSLog("\(threshold) == \(p.x)")
+                let delta = p.x - threshold
+                if (delta > 0){
+                    if (sliderSelectedValue + delta > maxNoiseValue)
+                    {
+                        imvPointerPositionConstraint.constant = maxNoiseValue
+                    }
+                    else{
+                        imvPointerPositionConstraint.constant = sliderSelectedValue + delta
+                    }
+                    
+                }
+                else{
+                    if (sliderSelectedValue + delta < 0)
+                    {
+                        imvPointerPositionConstraint.constant = 0
+                    }
+                    else{
+                        imvPointerPositionConstraint.constant = sliderSelectedValue + delta
+                    }
+                }
+            }
+            
+        case .ended:
+            print("ended")
+            threshold = 0
+            shouldDragX = false
+            
+            
+        case .possible:
+            print("possible")
+        case .cancelled:
+            print("cancelled")
+        case .failed:
+            print("failed")
+            shouldDragX = false
+        }
+        Settings.baby_noise_value = imvPointerPositionConstraint.constant / maxNoiseValue
+        if Settings.baby_noise_value < 1.0 / 3.0
+        {
+            Settings.baby_crying_status = Constants.BABY_CRYING_SLEEPING
+        }
+        else if Settings.baby_noise_value < 2.0 / 3.0
+        {
+            Settings.baby_crying_status = Constants.BABY_CRYING_CRYING
+        }
+        else {
+            Settings.baby_crying_status = Constants.BABY_CRYING_MORECRYING
+        }
+    }
+
 
 
 
@@ -76,7 +204,7 @@ class SoundTimerViewController: BaseViewController {
 
     @IBAction func backButtonTapped(_ sender: Any) {
         if segmentItem.selectedSegmentIndex == 0{
-            segmentItem.selectedSegmentIndex = 1
+            _ = self.navigationController?.popViewController(animated: true)
         }
         else{
             segmentItem.selectedSegmentIndex = 0
@@ -105,6 +233,16 @@ class SoundTimerViewController: BaseViewController {
         }
     }
 
+    @IBAction func toggleBabyMonitor(_ sender: UISwitch) {
+        /*if Settings.baby_mode_status == Constants.BABY_MODE_ON{
+            Settings.baby_mode_status = Constants.BABY_MODE_OFF
+        }
+        else{
+            Settings.baby_mode_status = Constants.BABY_MODE_ON
+        }*/
+        Settings.baby_monitor = sender.isOn
+        
+    }
     func changeStatus(_ selected: Int){
         if selected == 0
         {
@@ -153,7 +291,7 @@ class SoundTimerViewController: BaseViewController {
 extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSource{
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 4
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -162,15 +300,29 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         if component == 0{
             result = 24
         }
-        else{
+        else if component == 2{
             result = 60
         }
+        else{
+            result = 1
+        }
+        
         return result
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        
         var result = ""
-        result = "\(row)"
+        if component == 1{
+            result = "hours"
+        }
+        else if component == 3{
+            result = "mins"
+        }
+        else{
+            result = "\(row)"
+        }
         return result
     }
 
@@ -179,12 +331,11 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         {
             currentHour = row
         }
-        else{
+        else if component == 2{
             currentMinute = row
         }
 
         remainTime = currentMinute * 60 + currentHour * 3600
     }
-
 
 }

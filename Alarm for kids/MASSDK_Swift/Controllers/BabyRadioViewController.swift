@@ -55,10 +55,10 @@ class BabyRadioViewController: BaseViewController {
             if Settings.baby_crying_status == Constants.BABY_CRYING_SLEEPING{
                 imvBaby.image = UIImage(named: "child_sleeping")
             }
-            if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING{
+            else if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING{
                 imvBaby.image = UIImage(named: "child_crying")
             }
-            if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING{
+            else if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING{
                 imvBaby.image = UIImage(named: "child_morecrying")
             }
             
@@ -67,21 +67,20 @@ class BabyRadioViewController: BaseViewController {
             if Settings.baby_crying_status == Constants.BABY_CRYING_SLEEPING{
                 imvBaby.image = UIImage(named: "child_sleeping_star")
             }
-            if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING{
+            else if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING{
                 imvBaby.image = UIImage(named: "child_crying_star")
             }
-            if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING{
-                imvBaby.image = UIImage(named: "child_morecrying_star ")
+            else if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING{
+                imvBaby.image = UIImage(named: "child_morecrying_star")
             }
             
         }
         
-        if (Settings.baby_sound_timer_status == Constants.BABY_SOUND_TIMER_ON)
+        if (Settings.baby_monitor)
         {
             btnTimer.backgroundColor = Constants.COLOR_BUTTON_SELECTED
         }
         else{
-            
             btnTimer.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
             
         }
@@ -92,6 +91,14 @@ class BabyRadioViewController: BaseViewController {
         else{
             
             btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
+            if itemStatus == Constants.BABY_RADIO_CLOUD{
+                imvBaby.image = UIImage(named: "child_sleeping")
+            }
+            else if itemStatus == Constants.BABY_RADIO_STAR{
+                imvBaby.image = UIImage(named: "child_sleeping_star")
+
+            }
+
         }
         
         if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
@@ -100,6 +107,8 @@ class BabyRadioViewController: BaseViewController {
         else{
             btnPlay.setImage(UIImage(named: "icon_play"), for: .normal)
         }
+        
+        
     }
 
     @IBAction func backButtonTapped(_ sender: UIButton) {

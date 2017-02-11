@@ -30,7 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menu_skyRattle = MASMenuItem(name: "Sky Rattle", iconImage: UIImage(named: "icon_sky_rattle")!, target: self, 	selector: "skyLattleTapped")
         let menu_animalNoise = MASMenuItem(name: "Animal Noices", iconImage: UIImage(named: "icon_sound_timer")!, target: self, selector: "animalNoisesTapped")
 
-        let menuItems = [menu_babyRadio, menu_soundTimer, menu_babyMode,menu_eventLog,menu_babyTips, menu_skyRattle, menu_animalNoise]
+        let menuItems = [menu_babyRadio, menu_soundTimer, menu_babyMode,menu_eventLog,menu_babyTips,menu_skyRattle, menu_animalNoise]
+        //let menuGameItems = [menu_skyRattle, menu_animalNoise]
+
 
         //set menu background color
         MASManager.sharedInstance.menuBackgroundColor = UIColor(colorLiteralRed: 233.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1)
@@ -44,8 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //MASManager.sharedInstance.menuba
         MASManager.sharedInstance.showMenuHeader = true
         //MASManager.sharedInstance.menuBackgroundColor = UIColor.groupTableViewBackground
-
+        
         MASManager.setup("AppHashYouReceived", appId: "AppIdFromItunesConnect", trackingIdentifier: "ProvidedTrackingIdentifier", menuItems: menuItems, releaseServer: true)
+        MASManager.setup("AppHashYouReceived", appId: "AppIdFromItunesConnect", trackingIdentifier: "ProvidedTrackingIdentifier", menuItems: menuItems, releaseServer: true)
+        
 
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController

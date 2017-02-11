@@ -12,13 +12,38 @@ class EventLogViewController: BaseViewController {
 
     @IBOutlet weak var tblEventLog: UITableView!
     var eventLogsArray : [EventModel] = []
+    
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var imvBack: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tblEventLog.separatorColor = UIColor.clear
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.navigationController?.viewControllers.count == 1
+        {
+            btnBack.isHidden = true
+            imvBack.isHidden = true
+            self.navigationController?.isNavigationBarHidden = false
+        }
+        else{
+            self.navigationController?.isNavigationBarHidden = true
+            btnBack.isHidden = false
+            imvBack.isHidden = false
+            imvBack.setImageWith(color: UIColor.white)
+        }
+        
+        
         getLogs()
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {

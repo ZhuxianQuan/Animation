@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol FloatingImageContentViewDelegate {
-    func imageTapped(_ index : Int)
+    func imageTapped(_ view : FloatingImageContentView)
 }
 
 public class FloatingImageContentView: UIView {
@@ -25,6 +25,9 @@ public class FloatingImageContentView: UIView {
     var button1 = UIButton()
     var button2 = UIButton()
     var imageSize = CGSize()
+    
+    var isCloud = 0
+    var statusText = ""
 
 
     var delegate: FloatingImageContentViewDelegate!
@@ -90,7 +93,7 @@ public class FloatingImageContentView: UIView {
         {
             return
         }
-        imageTapDelegate.imageTapped(self.tag)
+        imageTapDelegate.imageTapped(self)
         NSLog("buttonTapped")
     }
 

@@ -75,27 +75,40 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         jazzAndHappinessView.initWith(image: UIImage(named: "image_jazzcomedy")!)
         jazzAndHappinessView.tag = 1;
         jazzAndHappinessView.delegate = self
+        jazzAndHappinessView.isCloud = Constants.BABY_RADIO_CLOUD
+        jazzAndHappinessView.statusText = "Jazzcomedy"
 
         fireView.initWith(image: UIImage(named: "image_fire")!)
         fireView.delegate = self
         fireView.tag = 2
+        fireView.isCloud = Constants.BABY_RADIO_STAR
+        fireView.statusText = "Fire"
 
         forestView.initWith(image: UIImage(named: "image_forest")!)
         forestView.delegate = self
         forestView.tag = 3
-
+        
+        forestView.isCloud = Constants.BABY_RADIO_STAR
+        forestView.statusText = "Forest"
 
         sunnyView.initWith(image: UIImage(named: "image_sunny")!)
         sunnyView.delegate = self
         sunnyView.tag = 4
+        sunnyView.isCloud = Constants.BABY_RADIO_CLOUD
+        sunnyView.statusText = "Sunny"
 
         littleIdeaView.initWith(image: UIImage(named: "image_little_idea")!)
         littleIdeaView.delegate = self
         littleIdeaView.tag = 5
-
+        littleIdeaView.isCloud = Constants.BABY_RADIO_CLOUD
+        littleIdeaView.statusText = "Littleidea"
+        
+        
         happinessView.initWith(image: UIImage(named: "image_happiness")!)
         happinessView.delegate = self
         happinessView.tag = 6
+        happinessView.isCloud = Constants.BABY_RADIO_CLOUD
+        happinessView.statusText = "Happiness"
 
         _ = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveBackgroudImages), userInfo: nil, repeats: true)
     }
@@ -127,10 +140,11 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         happinessView.animateAccelateView()
     }
 
-    func imageTapped(_ index: Int) {
+    func imageTapped(_ floatingView: FloatingImageContentView) {
+        
         let viewController = storyboard?.instantiateViewController(withIdentifier: "BabyRadioViewController") as! BabyRadioViewController
         
-        if index % 2 == 0{
+        if floatingView.isCloud == Constants.BABY_RADIO_CLOUD{
             viewController.itemStatus = Constants.BABY_RADIO_CLOUD
         }
         else{
