@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "cock_awake@1x.png.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "image_awakecock.png",
+      "filename" : "cock_awake@2x.png.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "cock_awake@3x.png.png",
       "scale" : "3x"
     }
   ],

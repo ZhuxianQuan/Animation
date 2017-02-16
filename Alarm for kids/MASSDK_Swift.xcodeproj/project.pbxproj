@@ -576,7 +576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a95bda9-4816-4239-b0d4-7b7b93002147";
+				PROVISIONING_PROFILE = "b426ed5d-8893-4a1a-bed4-c355b4077ecf";
 				PROVISIONING_PROFILE_SPECIFIER = Alarm_ADhoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -604,7 +604,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a95bda9-4816-4239-b0d4-7b7b93002147";
+				PROVISIONING_PROFILE = "b426ed5d-8893-4a1a-bed4-c355b4077ecf";
 				PROVISIONING_PROFILE_SPECIFIER = Alarm_ADhoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

@@ -76,8 +76,7 @@ public class AnimalsView: UIView {
         addSubview(view1)
         addSubview(view2)
         NSLog("\(view1.frame)")
-        NSLog("\(view2.frame)")
-        
+        NSLog("\(view2.frame)")        
         
     }
     

@@ -28,20 +28,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menu_eventLog = MASMenuItem(name: "Event Log", iconImage: UIImage(named: "icon_event_log")!, target: self, 	selector: "eventLogTapped")
         let menu_babyTips = MASMenuItem(name: "Baby Tips", iconImage: UIImage(named: "icon_baby_tips")!, target: self, 	selector: "babyTipsTapped")
         let menu_skyRattle = MASMenuItem(name: "Sky Rattle", iconImage: UIImage(named: "icon_sky_rattle")!, target: self, 	selector: "skyLattleTapped")
-        let menu_animalNoise = MASMenuItem(name: "Animal Noices", iconImage: UIImage(named: "icon_sound_timer")!, target: self, selector: "animalNoisesTapped")
+        let menu_animalNoise = MASMenuItem(name: "Animal Noises", iconImage: UIImage(named: "icon_animal_noise")!, target: self, selector: "animalNoisesTapped")
 
         let menuItems = [menu_babyRadio, menu_soundTimer, menu_babyMode,menu_eventLog,menu_babyTips,menu_skyRattle, menu_animalNoise]
         //let menuGameItems = [menu_skyRattle, menu_animalNoise]
 
 
         //set menu background color
-        MASManager.sharedInstance.menuBackgroundColor = UIColor(colorLiteralRed: 233.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1)
+        MASManager.sharedInstance.menuBackgroundColor = UIColor(colorLiteralRed: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
         //set menu title color
         MASManager.sharedInstance.menuCellFontColor = UIColor.darkGray
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
         MASManager.sharedInstance.hidePromotions = false
 
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
+        //MASManager.sharedInstance.MASAbout
+        //UIColor(colorLiteralRed: <#T##Float#>, green: <#T##Float#>, blue: <#T##Float#>, alpha: <#T##Float#>)
+    
         MASManager.sharedInstance.menuCellBackgroundColor = UIColor(colorLiteralRed: 178.0/255.0, green: 204.0/255.0, blue: 229.0/255.0, alpha: 1)
         //MASManager.sharedInstance.menuba
         MASManager.sharedInstance.showMenuHeader = true
