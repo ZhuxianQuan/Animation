@@ -69,75 +69,68 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
         bottom3CloudView.initWith(image: UIImage(named: "cloud_bottom_3")!)
         bottom3CloudView.isUserInteractionEnabled = false
-
-
-
-        jazzAndHappinessView.initWith(image: UIImage(named: "image_jazzcomedy")!)
-        jazzAndHappinessView.tag = 1;
-        jazzAndHappinessView.delegate = self
-        jazzAndHappinessView.isCloud = Constants.BABY_RADIO_CLOUD
-        jazzAndHappinessView.statusText = "Jazzcomedy"
-
-        fireView.initWith(image: UIImage(named: "image_fire")!)
-        fireView.delegate = self
-        fireView.tag = 2
-        fireView.isCloud = Constants.BABY_RADIO_STAR
-        fireView.statusText = "Fire"
-
-        forestView.initWith(image: UIImage(named: "image_forest")!)
-        forestView.delegate = self
-        forestView.tag = 3
         
-        forestView.isCloud = Constants.BABY_RADIO_STAR
-        forestView.statusText = "Forest"
+        for page in 1...5{
+            for index in 1...6{
+                let tagValue = page * 10 + index
+                let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
+                floatingView.initWith(image: UIImage(named: "image_\(tagValue)")!)
+                floatingView.delegate = self
+                if (index == 3 || index == 4) && page == 1{
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                if (index == 3 || index == 6) && page == 2{
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                if (index == 1 || index == 4) && page == 3{
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                if (index == 1 || index == 2) && page == 4{
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                if (index == 3 || index == 4) && page == 5{
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                else{
+                    floatingView.isCloud = Constants.BABY_RADIO_CLOUD
+                }
+                
+            }
+        }
 
-        sunnyView.initWith(image: UIImage(named: "image_sunny")!)
-        sunnyView.delegate = self
-        sunnyView.tag = 4
-        sunnyView.isCloud = Constants.BABY_RADIO_CLOUD
-        sunnyView.statusText = "Sunny"
-
-        littleIdeaView.initWith(image: UIImage(named: "image_little_idea")!)
-        littleIdeaView.delegate = self
-        littleIdeaView.tag = 5
-        littleIdeaView.isCloud = Constants.BABY_RADIO_CLOUD
-        littleIdeaView.statusText = "Littleidea"
-        
-        
-        happinessView.initWith(image: UIImage(named: "image_happiness")!)
-        happinessView.delegate = self
-        happinessView.tag = 6
-        happinessView.isCloud = Constants.BABY_RADIO_CLOUD
-        happinessView.statusText = "Happiness"
 
         _ = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveBackgroudImages), userInfo: nil, repeats: true)
     }
 
     func moveBackgroudImages(){
 
-        headerCloudView.animateView()
+        /*headerCloudView.animateView()
         bottom1ContentView.animateView()
         bottom2ContentView.animateView()
-        bottom3CloudView.animateView()
-        jazzAndHappinessView.animateView()
-        fireView.animateView()
-        forestView.animateView()
-        sunnyView.animateView()
-        littleIdeaView.animateView()
-        happinessView.animateView()
+        bottom3CloudView.animateView()*/
+        for page in 1...4{
+            for index in 1...6{
+                let tagValue = page * 10 + index
+                let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
+                floatingView.animateView()
+                
+            }
+        }
     }
 
     func moveFaseBackgroundImages(){
-        headerCloudView.animateAccelateView()
+        /*headerCloudView.animateAccelateView()
         bottom1ContentView.animateAccelateView()
         bottom2ContentView.animateAccelateView()
-        bottom3CloudView.animateAccelateView()
-        jazzAndHappinessView.animateAccelateView()
-        fireView.animateAccelateView()
-        forestView.animateAccelateView()
-        sunnyView.animateAccelateView()
-        littleIdeaView.animateAccelateView()
-        happinessView.animateAccelateView()
+        bottom3CloudView.animateAccelateView()*/
+        for page in 1...4{
+            for index in 1...6{
+                let tagValue = page * 10 + index
+                let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
+                floatingView.animateAccelateView()
+                
+            }
+        }
     }
 
     func imageTapped(_ floatingView: FloatingImageContentView) {

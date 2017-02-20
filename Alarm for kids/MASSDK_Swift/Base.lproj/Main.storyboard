@@ -77,7 +77,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDc-4K-s1h" id="5fS-Db-kjo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9137254901960784" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,68 +270,219 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8F-JG-OKK" userLabel="Stars View">
                                         <rect key="frame" x="0.0" y="182" width="375" height="455"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-pa-4cF" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3T-YC-wlN" userLabel="Jazzcomedy View" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                            <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3T-YC-wlN" userLabel="1-1" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="128" id="hKp-eE-xdy"/>
+                                                    <constraint firstAttribute="height" constant="81" id="hKp-eE-xdy"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRa-Jp-XSs" userLabel="Sunny View" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="297" width="375" height="88"/>
+                                            <view tag="21" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvr-0Y-Ycj" userLabel="2-1" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="31" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chw-s1-j3S" userLabel="3-1" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="41" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q06-ly-TQ9" userLabel="4-1" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-pa-4cF" userLabel="1-2" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="375" height="81"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="88" id="JS4-pq-BWD"/>
+                                                    <constraint firstAttribute="height" constant="81" id="YHM-Im-gKN"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lN-mr-zo4" userLabel="Forest View" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="186" width="375" height="83"/>
+                                            <view tag="22" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzU-eW-KcQ" userLabel="2-2" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="31" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvj-QD-hbW" userLabel="3-1" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="41" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAT-u7-MYc" userLabel="4-1" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="15" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRa-Jp-XSs" userLabel="1-5" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="289.5" width="375" height="81"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="83" id="76O-kr-pla"/>
+                                                    <constraint firstAttribute="height" constant="81" id="JS4-pq-BWD"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vun-en-x0f" userLabel="Fire View" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="137" width="375" height="91"/>
+                                            <view tag="25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jV-aH-YrY" userLabel="2-5" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="289.5" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="35" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBv-Bz-g8D" userLabel="3-5" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="289.5" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="45" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qW2-Ve-bQI" userLabel="4-5" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="289.5" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="14" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lN-mr-zo4" userLabel="1-4" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="198.5" width="375" height="81"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="91" id="Sc4-Nd-7qf"/>
+                                                    <constraint firstAttribute="height" constant="81" id="76O-kr-pla"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38U-cB-Z6a" userLabel="Little Idea View" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="346" width="375" height="109"/>
+                                            <view tag="24" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynq-PM-kfx" userLabel="2-4" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="198.5" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="34" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alO-6P-zs5" userLabel="3-4" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="198.5" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="44" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQz-T6-2DS" userLabel="4-4" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="198.5" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vun-en-x0f" userLabel="1-3" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="142" width="375" height="81"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="109" id="W96-9h-Avn"/>
+                                                    <constraint firstAttribute="height" constant="81" id="Sc4-Nd-7qf"/>
                                                 </constraints>
+                                            </view>
+                                            <view tag="23" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndg-Zh-6Es" userLabel="2-3" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="142" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="33" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XE-XB-6MW" userLabel="3-3" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="142" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="43" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJX-vL-kcE" userLabel="4-3" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="142" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="16" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38U-cB-Z6a" userLabel="1-6" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="354" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="81" id="W96-9h-Avn"/>
+                                                </constraints>
+                                            </view>
+                                            <view tag="26" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNv-pw-tTI" userLabel="2-6" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="354" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="36" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7A-nU-MEJ" userLabel="3-6" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="354" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view tag="46" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkR-tV-Gou" userLabel="4-6" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="354" width="375" height="81"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="GzU-pa-4cF" firstAttribute="leading" secondItem="X3T-YC-wlN" secondAttribute="leading" id="5n7-4a-z8s"/>
-                                            <constraint firstItem="GzU-pa-4cF" firstAttribute="trailing" secondItem="X3T-YC-wlN" secondAttribute="trailing" id="97K-MN-21w"/>
+                                            <constraint firstItem="lQz-T6-2DS" firstAttribute="bottom" secondItem="Ynq-PM-kfx" secondAttribute="bottom" id="0mi-MI-YaM"/>
+                                            <constraint firstItem="TBv-Bz-g8D" firstAttribute="bottom" secondItem="4jV-aH-YrY" secondAttribute="bottom" id="2Oq-A1-vIG"/>
+                                            <constraint firstItem="TBv-Bz-g8D" firstAttribute="top" secondItem="4jV-aH-YrY" secondAttribute="top" id="4Ab-PR-z6c"/>
+                                            <constraint firstItem="alO-6P-zs5" firstAttribute="top" secondItem="Ynq-PM-kfx" secondAttribute="top" id="4k5-Sf-MFl"/>
+                                            <constraint firstItem="TBv-Bz-g8D" firstAttribute="leading" secondItem="4jV-aH-YrY" secondAttribute="leading" id="4tT-ri-e29"/>
+                                            <constraint firstItem="ndg-Zh-6Es" firstAttribute="bottom" secondItem="vun-en-x0f" secondAttribute="bottom" id="5Ja-3N-zOG"/>
+                                            <constraint firstItem="T7A-nU-MEJ" firstAttribute="bottom" secondItem="HNv-pw-tTI" secondAttribute="bottom" id="5Ry-jm-yEN"/>
+                                            <constraint firstItem="38U-cB-Z6a" firstAttribute="trailing" secondItem="HNv-pw-tTI" secondAttribute="trailing" id="7pk-zK-0JZ"/>
+                                            <constraint firstItem="Jvj-QD-hbW" firstAttribute="bottom" secondItem="GzU-pa-4cF" secondAttribute="bottom" id="8IG-Bh-Vth"/>
+                                            <constraint firstItem="qW2-Ve-bQI" firstAttribute="top" secondItem="4jV-aH-YrY" secondAttribute="top" id="8UP-cX-oxR"/>
+                                            <constraint firstItem="Jvj-QD-hbW" firstAttribute="leading" secondItem="GzU-pa-4cF" secondAttribute="leading" id="9hY-3h-q8h"/>
+                                            <constraint firstItem="pRa-Jp-XSs" firstAttribute="top" secondItem="4jV-aH-YrY" secondAttribute="top" id="9ms-yK-8Lr"/>
+                                            <constraint firstItem="chw-s1-j3S" firstAttribute="bottom" secondItem="X3T-YC-wlN" secondAttribute="bottom" id="AMP-xr-Jmt"/>
+                                            <constraint firstItem="38U-cB-Z6a" firstAttribute="leading" secondItem="HNv-pw-tTI" secondAttribute="leading" id="ASS-CC-jwb"/>
+                                            <constraint firstItem="lQz-T6-2DS" firstAttribute="top" secondItem="Ynq-PM-kfx" secondAttribute="top" id="AYj-U6-50F"/>
+                                            <constraint firstItem="lQz-T6-2DS" firstAttribute="leading" secondItem="Ynq-PM-kfx" secondAttribute="leading" id="Ca8-7E-Mkx"/>
                                             <constraint firstItem="X3T-YC-wlN" firstAttribute="leading" secondItem="v8F-JG-OKK" secondAttribute="leading" id="D6y-Pb-sXE"/>
+                                            <constraint firstItem="chw-s1-j3S" firstAttribute="trailing" secondItem="X3T-YC-wlN" secondAttribute="trailing" id="Fgt-B6-eWX"/>
+                                            <constraint firstItem="Q06-ly-TQ9" firstAttribute="leading" secondItem="X3T-YC-wlN" secondAttribute="leading" id="GRe-Zd-ygX"/>
                                             <constraint firstItem="vun-en-x0f" firstAttribute="leading" secondItem="v8F-JG-OKK" secondAttribute="leading" id="Gcs-ZN-JvM"/>
+                                            <constraint firstItem="alO-6P-zs5" firstAttribute="trailing" secondItem="Ynq-PM-kfx" secondAttribute="trailing" id="HTC-mV-xXJ"/>
+                                            <constraint firstItem="38U-cB-Z6a" firstAttribute="bottom" secondItem="HNv-pw-tTI" secondAttribute="bottom" id="HfE-dD-oBD"/>
+                                            <constraint firstItem="HzU-eW-KcQ" firstAttribute="trailing" secondItem="GzU-pa-4cF" secondAttribute="trailing" id="I5o-r4-JTf"/>
+                                            <constraint firstItem="ndg-Zh-6Es" firstAttribute="leading" secondItem="vun-en-x0f" secondAttribute="leading" id="JJd-ud-GfZ"/>
                                             <constraint firstItem="X3T-YC-wlN" firstAttribute="top" secondItem="v8F-JG-OKK" secondAttribute="top" id="Kgk-Ua-sT3"/>
+                                            <constraint firstItem="dkR-tV-Gou" firstAttribute="top" secondItem="HNv-pw-tTI" secondAttribute="top" id="Kha-ce-hQp"/>
+                                            <constraint firstItem="6lN-mr-zo4" firstAttribute="trailing" secondItem="Ynq-PM-kfx" secondAttribute="trailing" id="Ld8-Xf-wVT"/>
+                                            <constraint firstItem="CJX-vL-kcE" firstAttribute="trailing" secondItem="vun-en-x0f" secondAttribute="trailing" id="MLQ-dE-jD5"/>
+                                            <constraint firstItem="Q06-ly-TQ9" firstAttribute="trailing" secondItem="X3T-YC-wlN" secondAttribute="trailing" id="Mte-WI-Kzp"/>
                                             <constraint firstAttribute="trailing" secondItem="pRa-Jp-XSs" secondAttribute="trailing" id="NcG-z6-x0m"/>
+                                            <constraint firstItem="6lN-mr-zo4" firstAttribute="top" secondItem="Ynq-PM-kfx" secondAttribute="top" id="PHg-mm-hg5"/>
+                                            <constraint firstItem="TBv-Bz-g8D" firstAttribute="trailing" secondItem="4jV-aH-YrY" secondAttribute="trailing" id="Py0-hK-Cmm"/>
+                                            <constraint firstItem="pRa-Jp-XSs" firstAttribute="trailing" secondItem="4jV-aH-YrY" secondAttribute="trailing" id="QJ9-IJ-EJa"/>
+                                            <constraint firstItem="wvr-0Y-Ycj" firstAttribute="top" secondItem="X3T-YC-wlN" secondAttribute="top" id="QJm-i0-fXP"/>
+                                            <constraint firstItem="qW2-Ve-bQI" firstAttribute="leading" secondItem="4jV-aH-YrY" secondAttribute="leading" id="QL4-ob-lah"/>
+                                            <constraint firstItem="alO-6P-zs5" firstAttribute="bottom" secondItem="Ynq-PM-kfx" secondAttribute="bottom" id="R8Y-5p-tUY"/>
+                                            <constraint firstItem="6lN-mr-zo4" firstAttribute="leading" secondItem="Ynq-PM-kfx" secondAttribute="leading" id="REw-Pj-C3a"/>
+                                            <constraint firstItem="HzU-eW-KcQ" firstAttribute="top" secondItem="GzU-pa-4cF" secondAttribute="top" id="RK7-rH-if2"/>
+                                            <constraint firstItem="CJX-vL-kcE" firstAttribute="bottom" secondItem="vun-en-x0f" secondAttribute="bottom" id="RyA-Tr-2nd"/>
+                                            <constraint firstItem="wvr-0Y-Ycj" firstAttribute="bottom" secondItem="X3T-YC-wlN" secondAttribute="bottom" id="Sjs-0c-6KR"/>
                                             <constraint firstAttribute="trailing" secondItem="38U-cB-Z6a" secondAttribute="trailing" id="T6r-yH-lfX"/>
+                                            <constraint firstItem="dkR-tV-Gou" firstAttribute="leading" secondItem="HNv-pw-tTI" secondAttribute="leading" id="Trb-dp-PkY"/>
                                             <constraint firstAttribute="trailing" secondItem="X3T-YC-wlN" secondAttribute="trailing" id="UQN-bc-mBk"/>
-                                            <constraint firstItem="GzU-pa-4cF" firstAttribute="bottom" secondItem="X3T-YC-wlN" secondAttribute="bottom" id="Vpf-c9-g9l"/>
-                                            <constraint firstItem="GzU-pa-4cF" firstAttribute="top" secondItem="X3T-YC-wlN" secondAttribute="top" id="XSd-gg-7hk"/>
-                                            <constraint firstItem="pRa-Jp-XSs" firstAttribute="centerY" secondItem="v8F-JG-OKK" secondAttribute="centerY" multiplier="1.5" id="ZbW-2V-o76"/>
-                                            <constraint firstItem="6lN-mr-zo4" firstAttribute="centerY" secondItem="v8F-JG-OKK" secondAttribute="centerY" id="dhN-cf-ZOi"/>
+                                            <constraint firstItem="dkR-tV-Gou" firstAttribute="bottom" secondItem="HNv-pw-tTI" secondAttribute="bottom" id="VlD-hB-JYK"/>
+                                            <constraint firstItem="6XE-XB-6MW" firstAttribute="top" secondItem="vun-en-x0f" secondAttribute="top" id="Vmi-t9-qIr"/>
+                                            <constraint firstItem="6XE-XB-6MW" firstAttribute="bottom" secondItem="vun-en-x0f" secondAttribute="bottom" id="W9b-4j-Hzp"/>
+                                            <constraint firstItem="Jvj-QD-hbW" firstAttribute="trailing" secondItem="GzU-pa-4cF" secondAttribute="trailing" id="Yi5-lj-6bR"/>
+                                            <constraint firstItem="ndg-Zh-6Es" firstAttribute="top" secondItem="vun-en-x0f" secondAttribute="top" id="ZPu-Nt-vtm"/>
+                                            <constraint firstItem="pRa-Jp-XSs" firstAttribute="centerY" secondItem="v8F-JG-OKK" secondAttribute="centerY" multiplier="1.45" id="ZbW-2V-o76"/>
+                                            <constraint firstItem="GzU-pa-4cF" firstAttribute="top" secondItem="v8F-JG-OKK" secondAttribute="top" constant="40" id="Zsw-Vb-auU"/>
+                                            <constraint firstItem="ndg-Zh-6Es" firstAttribute="trailing" secondItem="vun-en-x0f" secondAttribute="trailing" id="aPT-xm-D0U"/>
+                                            <constraint firstItem="GzU-pa-4cF" firstAttribute="leading" secondItem="v8F-JG-OKK" secondAttribute="leading" id="azD-vP-iXs"/>
+                                            <constraint firstItem="RAT-u7-MYc" firstAttribute="trailing" secondItem="GzU-pa-4cF" secondAttribute="trailing" id="azg-PC-p7N"/>
+                                            <constraint firstItem="qW2-Ve-bQI" firstAttribute="bottom" secondItem="4jV-aH-YrY" secondAttribute="bottom" id="bCe-Ag-fku"/>
+                                            <constraint firstItem="wvr-0Y-Ycj" firstAttribute="trailing" secondItem="X3T-YC-wlN" secondAttribute="trailing" id="bbw-xt-jJh"/>
+                                            <constraint firstItem="6lN-mr-zo4" firstAttribute="centerY" secondItem="v8F-JG-OKK" secondAttribute="centerY" multiplier="1.05" id="dhN-cf-ZOi"/>
                                             <constraint firstItem="38U-cB-Z6a" firstAttribute="leading" secondItem="v8F-JG-OKK" secondAttribute="leading" id="e8p-GB-7eU"/>
+                                            <constraint firstItem="6lN-mr-zo4" firstAttribute="bottom" secondItem="Ynq-PM-kfx" secondAttribute="bottom" id="eqg-mR-lVj"/>
+                                            <constraint firstItem="38U-cB-Z6a" firstAttribute="top" secondItem="HNv-pw-tTI" secondAttribute="top" id="ew8-YD-Wk5"/>
                                             <constraint firstAttribute="trailing" secondItem="6lN-mr-zo4" secondAttribute="trailing" id="fSP-OF-98c"/>
+                                            <constraint firstItem="chw-s1-j3S" firstAttribute="top" secondItem="X3T-YC-wlN" secondAttribute="top" id="gF3-QD-XAm"/>
+                                            <constraint firstItem="Q06-ly-TQ9" firstAttribute="top" secondItem="X3T-YC-wlN" secondAttribute="top" id="ggo-AQ-Wlw"/>
+                                            <constraint firstItem="Jvj-QD-hbW" firstAttribute="top" secondItem="GzU-pa-4cF" secondAttribute="top" id="gkL-Pq-qBX"/>
+                                            <constraint firstItem="T7A-nU-MEJ" firstAttribute="leading" secondItem="HNv-pw-tTI" secondAttribute="leading" id="hQ4-Jk-asN"/>
+                                            <constraint firstItem="pRa-Jp-XSs" firstAttribute="bottom" secondItem="4jV-aH-YrY" secondAttribute="bottom" id="hWc-fB-PUz"/>
+                                            <constraint firstItem="HzU-eW-KcQ" firstAttribute="bottom" secondItem="GzU-pa-4cF" secondAttribute="bottom" id="j1r-Ms-Lor"/>
+                                            <constraint firstItem="chw-s1-j3S" firstAttribute="leading" secondItem="X3T-YC-wlN" secondAttribute="leading" id="jQX-eZ-4d8"/>
                                             <constraint firstAttribute="trailing" secondItem="vun-en-x0f" secondAttribute="trailing" id="jWI-p1-nSs"/>
+                                            <constraint firstItem="RAT-u7-MYc" firstAttribute="top" secondItem="GzU-pa-4cF" secondAttribute="top" id="k4G-Mo-gsB"/>
+                                            <constraint firstItem="alO-6P-zs5" firstAttribute="leading" secondItem="Ynq-PM-kfx" secondAttribute="leading" id="kpr-1v-IXR"/>
+                                            <constraint firstItem="dkR-tV-Gou" firstAttribute="trailing" secondItem="HNv-pw-tTI" secondAttribute="trailing" id="ldk-BV-XRn"/>
+                                            <constraint firstItem="pRa-Jp-XSs" firstAttribute="leading" secondItem="4jV-aH-YrY" secondAttribute="leading" id="m5u-IL-5XY"/>
                                             <constraint firstItem="vun-en-x0f" firstAttribute="centerY" secondItem="v8F-JG-OKK" secondAttribute="centerY" multiplier="0.8" id="mmS-73-WCV"/>
+                                            <constraint firstItem="6XE-XB-6MW" firstAttribute="trailing" secondItem="vun-en-x0f" secondAttribute="trailing" id="oif-fJ-Oqh"/>
+                                            <constraint firstItem="HzU-eW-KcQ" firstAttribute="leading" secondItem="GzU-pa-4cF" secondAttribute="leading" id="pJ7-0h-L1R"/>
+                                            <constraint firstItem="CJX-vL-kcE" firstAttribute="top" secondItem="vun-en-x0f" secondAttribute="top" id="pM6-Ph-Sc6"/>
+                                            <constraint firstItem="T7A-nU-MEJ" firstAttribute="trailing" secondItem="HNv-pw-tTI" secondAttribute="trailing" id="q4z-uy-ZEP"/>
+                                            <constraint firstAttribute="trailing" secondItem="GzU-pa-4cF" secondAttribute="trailing" id="qas-dX-MeO"/>
+                                            <constraint firstItem="RAT-u7-MYc" firstAttribute="leading" secondItem="GzU-pa-4cF" secondAttribute="leading" id="qe7-FD-Arg"/>
+                                            <constraint firstItem="lQz-T6-2DS" firstAttribute="trailing" secondItem="Ynq-PM-kfx" secondAttribute="trailing" id="r8X-HN-bxd"/>
+                                            <constraint firstItem="qW2-Ve-bQI" firstAttribute="trailing" secondItem="4jV-aH-YrY" secondAttribute="trailing" id="sB7-Gg-hoV"/>
+                                            <constraint firstItem="6XE-XB-6MW" firstAttribute="leading" secondItem="vun-en-x0f" secondAttribute="leading" id="sMT-Vp-tjR"/>
+                                            <constraint firstItem="Q06-ly-TQ9" firstAttribute="bottom" secondItem="X3T-YC-wlN" secondAttribute="bottom" id="vXa-jF-Ycx"/>
+                                            <constraint firstItem="wvr-0Y-Ycj" firstAttribute="leading" secondItem="X3T-YC-wlN" secondAttribute="leading" id="wec-kF-dQm"/>
                                             <constraint firstItem="6lN-mr-zo4" firstAttribute="leading" secondItem="v8F-JG-OKK" secondAttribute="leading" id="xDg-IZ-OtP"/>
-                                            <constraint firstAttribute="bottom" secondItem="38U-cB-Z6a" secondAttribute="bottom" id="xcu-Kc-62m"/>
+                                            <constraint firstAttribute="bottom" secondItem="38U-cB-Z6a" secondAttribute="bottom" constant="20" id="xcu-Kc-62m"/>
+                                            <constraint firstItem="CJX-vL-kcE" firstAttribute="leading" secondItem="vun-en-x0f" secondAttribute="leading" id="yDF-fa-bya"/>
                                             <constraint firstItem="pRa-Jp-XSs" firstAttribute="leading" secondItem="v8F-JG-OKK" secondAttribute="leading" id="yEo-Jf-57I"/>
+                                            <constraint firstItem="RAT-u7-MYc" firstAttribute="bottom" secondItem="GzU-pa-4cF" secondAttribute="bottom" id="z50-bo-N2K"/>
+                                            <constraint firstItem="T7A-nU-MEJ" firstAttribute="top" secondItem="HNv-pw-tTI" secondAttribute="top" id="zAX-Rk-cgY"/>
                                         </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQe-r1-DHV">
+                                        <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -442,7 +593,7 @@
                                 <rect key="frame" x="26" y="593" width="323" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJ7-2Z-ijw">
-                                        <rect key="frame" x="-10" y="0.0" width="167" height="44"/>
+                                        <rect key="frame" x="-10" y="0.0" width="166.5" height="44"/>
                                         <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="SOUND TIMER : 1:59:46">
@@ -459,7 +610,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlh-NY-pI8">
-                                        <rect key="frame" x="167" y="0.0" width="166" height="44"/>
+                                        <rect key="frame" x="166.5" y="0.0" width="166.5" height="44"/>
                                         <color key="backgroundColor" red="0.29411764705882354" green="0.48627450980392156" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <state key="normal" title="BABY MODE: OFF">
@@ -1165,7 +1316,7 @@ If you press the start button, you will redirected to the System Settings</strin
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mR0-BS-ZRt" id="NVq-3t-Bwt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1t-Pe-swL">
@@ -1310,7 +1461,7 @@ If you press the start button, you will redirected to the System Settings</strin
                                         <rect key="frame" x="20" y="17" width="9" height="16"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="fiM-0d-cd4">
-                                        <rect key="frame" x="246" y="18" width="9" height="16"/>
+                                        <rect key="frame" x="246" y="17" width="9" height="16"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

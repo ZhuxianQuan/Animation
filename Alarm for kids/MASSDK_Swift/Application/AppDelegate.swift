@@ -43,9 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
         //MASManager.sharedInstance.MASAbout
-        //UIColor(colorLiteralRed: <#T##Float#>, green: <#T##Float#>, blue: <#T##Float#>, alpha: <#T##Float#>)
     
-        MASManager.sharedInstance.menuCellBackgroundColor = UIColor(colorLiteralRed: 178.0/255.0, green: 204.0/255.0, blue: 229.0/255.0, alpha: 1)
+        MASManager.sharedInstance.menuCellBackgroundColor = UIColor(colorLiteralRed: 233.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1)//UIColor(colorLiteralRed: 178.0/255.0, green: 204.0/255.0, blue: 229.0/255.0, alpha: 1)
         //MASManager.sharedInstance.menuba
         MASManager.sharedInstance.showMenuHeader = true
         //MASManager.sharedInstance.menuBackgroundColor = UIColor.groupTableViewBackground
