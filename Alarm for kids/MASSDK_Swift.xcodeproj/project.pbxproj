@@ -10,6 +10,8 @@
 		0A3AF9C91E4E3D7200D3FBAD /* AnimalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */; };
 		0A3AF9CB1E4E43AB00D3FBAD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */; };
 		0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */; };
+		0A61EC7F1E602CDB00A0DBF9 /* ImageAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */; };
+		0A61EC811E602D0100A0DBF9 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61EC801E602D0100A0DBF9 /* ImageModel.swift */; };
 		131D1A581CDB58F0007C9F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131D1A561CDB58F0007C9F2A /* Main.storyboard */; };
 		131D1A5D1CDB58F0007C9F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131D1A5B1CDB58F0007C9F2A /* LaunchScreen.storyboard */; };
 		131D1A931CDB5D8D007C9F2A /* MASSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 131D1A911CDB5D88007C9F2A /* MASSDK.framework */; };
@@ -55,6 +57,8 @@
 		0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsView.swift; sourceTree = "<group>"; };
 		0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAnimationView.swift; sourceTree = "<group>"; };
+		0A61EC801E602D0100A0DBF9 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		131D1A4F1CDB58F0007C9F2A /* MASSDK_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MASSDK_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		131D1A571CDB58F0007C9F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		131D1A5C1CDB58F0007C9F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				3A9BAEF41E3F9907000FC640 /* EventModel.swift */,
+				0A61EC801E602D0100A0DBF9 /* ImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			children = (
 				3A27F4A61E433A83008A7F7E /* FloatingImageContentView.swift */,
 				0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */,
+				0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A61EC7F1E602CDB00A0DBF9 /* ImageAnimationView.swift in Sources */,
 				3A27F4A21E433A0E008A7F7E /* HomeViewController.swift in Sources */,
 				3A27F49C1E433A0E008A7F7E /* AnimalNoisesViewController.swift in Sources */,
 				3A27F49D1E433A0E008A7F7E /* BabyModeViewController.swift in Sources */,
@@ -429,6 +436,7 @@
 				3A27F4911E4339D8008A7F7E /* SWRevealViewController.m in Sources */,
 				3A9BAEF11E3F7C36000FC640 /* DateExtension.swift in Sources */,
 				3A27F4A41E433A0E008A7F7E /* SkyRattleViewController.swift in Sources */,
+				0A61EC811E602D0100A0DBF9 /* ImageModel.swift in Sources */,
 				3A27F4A31E433A0E008A7F7E /* SideMenuViewController.swift in Sources */,
 				3A27F4A51E433A0E008A7F7E /* SoundTimerViewController.swift in Sources */,
 				3A9BAEF51E3F9907000FC640 /* EventModel.swift in Sources */,

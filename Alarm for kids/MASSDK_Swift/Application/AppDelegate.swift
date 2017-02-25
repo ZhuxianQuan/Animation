@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menuItems = [menu_babyRadio, menu_soundTimer, menu_babyMode,menu_eventLog,menu_babyTips,menu_skyRattle, menu_animalNoise]
         //let menuGameItems = [menu_skyRattle, menu_animalNoise]
 
-
         //set menu background color
         MASManager.sharedInstance.menuBackgroundColor = UIColor(colorLiteralRed: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
         //set menu title color
@@ -42,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MASManager.sharedInstance.hidePromotions = false
 
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
-        //MASManager.sharedInstance.MASAbout
+        
     
         MASManager.sharedInstance.menuCellBackgroundColor = UIColor(colorLiteralRed: 233.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1)//UIColor(colorLiteralRed: 178.0/255.0, green: 204.0/255.0, blue: 229.0/255.0, alpha: 1)
         //MASManager.sharedInstance.menuba

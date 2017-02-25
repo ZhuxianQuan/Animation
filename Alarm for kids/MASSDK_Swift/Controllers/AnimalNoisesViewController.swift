@@ -55,7 +55,7 @@ class AnimalNoisesViewController: BaseViewController {
         animalImages = []
         if noiseStatus == Constants.NOISE_STATUS_SLEEP {
             
-            /*animalImages.append(UIImage(named: "image_sleepingcat")!)
+            animalImages.append(UIImage(named: "image_sleepingcat")!)
             animalImages.append(UIImage(named: "image_sleepinggoat")!)
             animalImages.append(UIImage(named: "image_sleepingcock")!)
             animalImages.append(UIImage(named: "image_sleepingdog")!)
@@ -63,11 +63,11 @@ class AnimalNoisesViewController: BaseViewController {
             animalImages.append(UIImage(named: "image_sleepingsheep")!)
             animalImages.append(UIImage(named: "image_sleepingcow")!)
             animalImages.append(UIImage(named: "image_sleepinghorse")!)
-            animalImages.append(UIImage(named: "image_sleepingpig")!)*/
-            animalImages.append(UIImage(named: "image_sleeping_animals")!)
+            animalImages.append(UIImage(named: "image_sleepingpig")!)
+            //animalImages.append(UIImage(named: "image_sleeping_animals")!)
         }
         else {
-            /*animalImages.append(UIImage(named: "image_awakecat")!)
+            animalImages.append(UIImage(named: "image_awakecat")!)
             animalImages.append(UIImage(named: "image_awakegoat")!)
             animalImages.append(UIImage(named: "image_awakecock")!)
             animalImages.append(UIImage(named: "image_awakedog")!)
@@ -75,9 +75,9 @@ class AnimalNoisesViewController: BaseViewController {
             animalImages.append(UIImage(named: "image_awakesheep")!)
             animalImages.append(UIImage(named: "image_awakecow")!)
             animalImages.append(UIImage(named: "image_awakehorse")!)
-            animalImages.append(UIImage(named: "image_awakepig")!)*/
+            animalImages.append(UIImage(named: "image_awakepig")!)
             
-            animalImages.append(UIImage(named: "image_sleeping_animals")!)
+            //animalImages.append(UIImage(named: "image_sleeping_animals")!)
         }
     }
     

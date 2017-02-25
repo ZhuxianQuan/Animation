@@ -282,7 +282,7 @@ class SoundTimerViewController: BaseViewController {
     {
         remainTimeLabel.text = getRemainTimeString(remainTime)
         targetTime = getGlobalTime() / 1000 + remainTime
-        targetTimeLabel.text = getLocalTimeString(getTimeFromGMTTimeMillis(time: targetTime))
+        targetTimeLabel.text = "Sound stop at " + getLocalTimeString(getTimeFromGMTTimeMillis(time: targetTime))
     }
 
 
@@ -318,7 +318,7 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
             result = "hours"
         }
         else if component == 3{
-            result = "mins"
+            result = "min"
         }
         else{
             result = "\(row)"
@@ -336,6 +336,16 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         }
 
         remainTime = currentMinute * 60 + currentHour * 3600
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+       
+        if component == 0 || component == 2 {
+            return 40
+        }
+        else{
+            return 70
+        }
     }
 
 }

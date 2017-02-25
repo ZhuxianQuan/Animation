@@ -72,23 +72,25 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         
         for page in 1...5{
             for index in 1...6{
+                NSLog("\(page) - \(index)")
                 let tagValue = page * 10 + index
                 let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
+                floatingView.leftCoValue = getLeftCoValue(page , index)
                 floatingView.initWith(image: UIImage(named: "image_\(tagValue)")!)
                 floatingView.delegate = self
                 if (index == 3 || index == 4) && page == 1{
                     floatingView.isCloud = Constants.BABY_RADIO_STAR
                 }
-                if (index == 3 || index == 6) && page == 2{
+                else if  (index == 3 || index == 6) && page == 2{
                     floatingView.isCloud = Constants.BABY_RADIO_STAR
                 }
-                if (index == 1 || index == 4) && page == 3{
+                else if (index == 1 || index == 4) && page == 3{
                     floatingView.isCloud = Constants.BABY_RADIO_STAR
                 }
-                if (index == 1 || index == 2) && page == 4{
+                else if (index == 1 || index == 2) && page == 4{
                     floatingView.isCloud = Constants.BABY_RADIO_STAR
                 }
-                if (index == 3 || index == 4) && page == 5{
+                else if (index == 3 || index == 4) && page == 5{
                     floatingView.isCloud = Constants.BABY_RADIO_STAR
                 }
                 else{
@@ -101,6 +103,137 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
         _ = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveBackgroudImages), userInfo: nil, repeats: true)
     }
+    
+    func getLeftCoValue(_ page: Int,  _ index: Int) -> CGFloat{
+        var leftCoValue : CGFloat = 0
+        switch page {
+        case 1:
+            switch index {
+            case 1:
+                leftCoValue = 34
+                break
+            case 2:
+                leftCoValue = 426
+                break
+            case 3:
+                leftCoValue = 152
+                break
+            case 4:
+                leftCoValue = 519
+                break
+            case 5:
+                leftCoValue = 361
+                break
+            case 6:
+                leftCoValue = 80
+                break
+            default:
+                break
+            }
+            break
+        case 2:
+            switch index {
+            case 1:
+                leftCoValue = 770
+                break
+            case 2:
+                leftCoValue = 1170
+                break
+            case 3:
+                leftCoValue = 850
+                break
+            case 4:
+                leftCoValue = 1175
+                break
+            case 5:
+                leftCoValue = 815
+                break
+            case 6:
+                leftCoValue = 1220
+                break
+            default:
+                break
+            }
+            break
+        case 3:
+            
+            switch index {
+            case 1:
+                leftCoValue = 1568
+                break
+            case 2:
+                leftCoValue = 1924
+                break
+            case 3:
+                leftCoValue = 1550
+                break
+            case 4:
+                leftCoValue = 2014
+                break
+            case 5:
+                leftCoValue = 1850
+                break
+            case 6:
+                leftCoValue = 1570
+                break
+            default:
+                break
+            }
+        case 4:
+            
+            switch index {
+            case 1:
+                leftCoValue = 2385
+                break
+            case 2:
+                leftCoValue = 2705
+                break
+            case 3:
+                leftCoValue = 2327
+                break
+            case 4:
+                leftCoValue = 2713
+                break
+            case 5:
+                leftCoValue = 2433
+                break
+            case 6:
+                leftCoValue = 2713
+                break
+            default:
+                break
+            }
+            break
+        case 5:
+            
+            switch index {
+            case 1:
+                leftCoValue = 3034
+                break
+            case 2:
+                leftCoValue = 3426
+                break
+            case 3:
+                leftCoValue = 3119
+                break
+            case 4:
+                leftCoValue = 3485
+                break
+            case 5:
+                leftCoValue = 3421
+                break
+            case 6:
+                leftCoValue = 3079
+                break
+            default:
+                break
+            }
+        default:
+            break
+        }
+        
+        return leftCoValue / 2
+    }
 
     func moveBackgroudImages(){
 
@@ -108,7 +241,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         bottom1ContentView.animateView()
         bottom2ContentView.animateView()
         bottom3CloudView.animateView()*/
-        for page in 1...4{
+        for page in 1...5{
             for index in 1...6{
                 let tagValue = page * 10 + index
                 let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
@@ -123,7 +256,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         bottom1ContentView.animateAccelateView()
         bottom2ContentView.animateAccelateView()
         bottom3CloudView.animateAccelateView()*/
-        for page in 1...4{
+        for page in 1...5{
             for index in 1...6{
                 let tagValue = page * 10 + index
                 let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView

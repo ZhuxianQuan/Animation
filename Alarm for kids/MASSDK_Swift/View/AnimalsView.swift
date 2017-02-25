@@ -29,37 +29,39 @@ public class AnimalsView: UIView {
         var index = 0
         
         
-        
         NSLog("\(viewSize)")
         
         
+        viewSize = CGSize(width: screenSize.width * CGFloat(Int(images.count + 1)) / 2 , height: screenSize.height - 81)
         
         for image in images{
             var imageView = UIImageView()
             
+            
             let imageSize = image.size
-            viewSize = CGSize(width: imageSize.width, height: screenSize.height - 81)
             if index % 2 == 0{
-                imageView.frame = CGRect(x: 0 + screenSize.width * CGFloat(Int(index / 2)), y: 0, width: imageSize.width, height: screenSize.height - 81)
+                imageView.frame = CGRect(x: 0 + screenSize.width * CGFloat(Int(index / 2)), y: 75, width: imageSize.width, height: imageSize.height)
             }
             else
             {
-                imageView.frame = CGRect(x: screenSize.width - 0 - imageSize.width + screenSize.width * CGFloat(Int(index / 2)), y: screenSize.height - imageSize.height - 121, width: imageSize.width, height: screenSize.height - 81)
+                imageView.frame = CGRect(x: screenSize.width - 0 - imageSize.width + screenSize.width * CGFloat(Int(index / 2)), y: screenSize.height - imageSize.height - 121, width: imageSize.width, height: imageSize.height)
             }
             
             imageView.image = image
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleToFill
             NSLog("\(imageView.frame)")
             view1.addSubview(imageView)
+            
+            
             
             imageView = UIImageView()
             
             if index % 2 == 0{
-                imageView.frame = CGRect(x: 0  + screenSize.width * CGFloat(Int(index / 2)), y: 0, width: imageSize.width, height: screenSize.height - 81)
+                imageView.frame = CGRect(x: screenSize.width * CGFloat(index / 2) + screenSize.width * CGFloat(Int(index / 2)), y: 75, width: imageSize.width, height: imageSize.height)
             }
             else
             {
-                imageView.frame = CGRect(x: screenSize.width - 20 - imageSize.width + screenSize.width * CGFloat(Int(index / 2)), y: screenSize.height - imageSize.height - 121, width: imageSize.width, height: imageSize.height)
+                imageView.frame = CGRect(x: screenSize.width * CGFloat(index / 2) + screenSize.width - 0 - imageSize.width + screenSize.width * CGFloat(Int(index / 2)), y: screenSize.height - imageSize.height - 121, width: imageSize.width, height: imageSize.height)
             }
             
             imageView.image = image

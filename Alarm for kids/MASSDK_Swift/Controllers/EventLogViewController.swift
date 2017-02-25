@@ -16,11 +16,21 @@ class EventLogViewController: BaseViewController {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var imvBack: UIImageView!
 
+    let screenSize = UIScreen.main.bounds.size
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tblEventLog.separatorColor = UIColor.clear
+        let clearButton = UIButton()
+        clearButton.frame = CGRect(x: screenSize.width - 60, y : 2, width: 40, height: 40)
+        //clearButton.backgroundColor = UIColor.black
+        
+        clearButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            
+        clearButton.setTitle("Clear", for: .normal)
+        clearButton.addTarget(self, action: #selector(clearButtonTapped), for: .touchUpInside)
+        self.navigationController?.navigationBar.addSubview(clearButton)
     }
     
     
@@ -37,8 +47,6 @@ class EventLogViewController: BaseViewController {
             imvBack.isHidden = false
             imvBack.setImageWith(color: UIColor.white)
         }
-        
-        
         getLogs()
     }
     
@@ -51,6 +59,10 @@ class EventLogViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func clearButtonTapped() {
+        eventLogsArray = []
+        tblEventLog.reloadData()
+    }
     func getLogs(){
         eventLogsArray = []
         var event = EventModel()
@@ -115,7 +127,7 @@ extension EventLogViewController: UITableViewDelegate, UITableViewDataSource{
         else if(event.eventType == EventModel.EVENT_TYPE_STOP){
             cell.imvStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
         }
-        cell.lblEventLog.text = "\(event.eventTime):\(event.eventContent)"
+        cell.lblEventLog.text = "\(event.eventTime): \(event.eventContent)"
         return cell
     }
 

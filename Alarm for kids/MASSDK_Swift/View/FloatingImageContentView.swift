@@ -28,49 +28,167 @@ public class FloatingImageContentView: UIView {
     
     var isCloud = 0
     var statusText = ""
+    
+    var maxMovingAmountForCloud:CGFloat = 5
+    let maxRotatingAmountForStar:CGFloat = 0.1
+    var rotateAngle : CGFloat = 0
+    var isMovingUp = true
+    
+    var leftCoValue: CGFloat = 0
 
+    var maxSizeOfWidth: CGFloat = 1875
 
     var delegate: FloatingImageContentViewDelegate!
 
     func initWith(image: UIImage)
     {
         imageSize = image.size
-        self.frame.size = CGSize(width: imageSize.width * 2 , height: imageSize.height)
+        self.frame.size = CGSize(width: maxSizeOfWidth * 2 , height: imageSize.height)
         button1.setImage(image, for: .normal)
         button2.setImage(image, for: .normal)
         button1.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button2.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-
         setInitFrame()
         addSubview(button1)
         addSubview(button2)
+        if getGlobalTime() % 2 == 0{
+            isMovingUp = true
+        }
+        else{
+            isMovingUp = false
+        }
     }
 
     func animateView(){
-        if (button1.frame.origin.x - 1.5 < -1 * (imageSize.width)){
-            setInitFrame()
+        if isCloud == Constants.BABY_RADIO_CLOUD{
+            if (button1.frame.origin.x - 1.5 < -1 * (maxSizeOfWidth) + leftCoValue){
+                setInitFrame()
+            }
+            else{
+                button1.frame.origin.x -= 0.5
+                button2.frame.origin.x -= 0.5
+                
+                if isMovingUp{
+                    if button1.frame.origin.y < maxMovingAmountForCloud{
+                    
+                    button1.frame.origin.y += 0.1
+                        button2.frame.origin.y += 0.1
+                    }
+                    else{
+                        isMovingUp = false
+                    }
+                }
+                else{
+                    
+                    if button1.frame.origin.y > maxMovingAmountForCloud * (-1){
+                        
+                        button1.frame.origin.y -= 0.1
+                        button2.frame.origin.y -= 0.1
+                    }
+                        
+                    else{
+                        isMovingUp = true
+                    }
+                }
+            }
+        }
+        else if isCloud == Constants.BABY_RADIO_STAR {
+            if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue)
+            {
+                setInitFrame()
+            }
+            else {
+                button1.center.x -= 0.5
+                button2.center.x -= 0.5
+                if isMovingUp{
+                    if maxRotatingAmountForStar > rotateAngle{
+                        button1.transform = CGAffineTransform(rotationAngle: rotateAngle)
+                        button2.transform = CGAffineTransform(rotationAngle: rotateAngle)
+                        rotateAngle += 0.003
+                    }
+                    else{
+                        isMovingUp = false
+                    }
+                }
+                else{
+                    if maxRotatingAmountForStar > (-1) * rotateAngle{
+                        if rotateAngle < 0{
+                            button1.transform = CGAffineTransform(rotationAngle: 6.28 + rotateAngle)
+                            button2.transform = CGAffineTransform(rotationAngle: 6.28 + rotateAngle)
+                        }
+                        else{
+                            button1.transform = CGAffineTransform(rotationAngle: rotateAngle)
+                            button2.transform = CGAffineTransform(rotationAngle: rotateAngle)
+                        }
+                        rotateAngle -= 0.003
+                        
+                        
+                    }
+                    else{
+                        isMovingUp = true
+                    }
+                }
+            }
         }
         else{
-            button1.frame.origin.x -= 0.5
-            button2.frame.origin.x -= 0.5
+            
+            if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue)
+            {
+                setInitFrame()
+            }
+            else {
+                button1.center.x -= 0.5
+                button2.center.x -= 0.5
+            }
+            
+            
         }
 
     }
 
     func animateAccelateView(){
-        if (button1.frame.origin.x < -1 * (imageSize.width)){
-            setInitFrame()
+        if isCloud == Constants.BABY_RADIO_CLOUD{
+            if (button1.frame.origin.x < -1 * (maxSizeOfWidth)){
+                setInitFrame()
+            }
+            else{
+                button1.frame.origin.x -= 5
+                button2.frame.origin.x -= 5
+            }
+        }
+        else if isCloud == Constants.BABY_RADIO_STAR{
+            if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue){
+                setInitFrame()
+            }
+            else{
+                button1.center.x -= 5
+                button2.center.x -= 5
+            }
         }
         else{
-            button1.frame.origin.x -= 2
-            button2.frame.origin.x -= 2
+            
+            if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue)
+            {
+                setInitFrame()
+            }
+            else {
+                button1.center.x -= 0.5
+                button2.center.x -= 0.5
+            }
+            
+            
         }
+        
+
 
     }
 
     func setInitFrame() {
-            button1.frame = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
-            button2.frame = CGRect(x: imageSize.width - 2, y: 0, width: imageSize.width, height: imageSize.height)
+        rotateAngle = 0
+        button1.transform = CGAffineTransform(rotationAngle: 0)
+        button2.transform = CGAffineTransform(rotationAngle: 0)
+        button1.frame = CGRect(x: leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
+        button2.frame = CGRect(x: maxSizeOfWidth - 2 + leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
     }
 
     @IBInspectable var treshold: CGFloat = 1.0 {
