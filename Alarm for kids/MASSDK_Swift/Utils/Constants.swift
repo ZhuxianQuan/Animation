@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class Constants {
     
@@ -32,6 +32,6 @@ class Constants {
     
     
     static let COLOR_BUTTON_SELECTED        = UIColor(colorLiteralRed: 89.0 / 255.0, green: 122.0/255.0, blue: 160.0 / 255.0 , alpha: 1)
-    static let COLOR_BUTTON_UNSELECTED      = UIColor(colorLiteralRed: 181.0 / 255.0, green: 202.0/255.0, blue: 224.0 / 255.0 , alpha: 1)
+    static let COLOR_BUTTON_UNSELECTED      = UIColor(colorLiteralRed: 178.0 / 255.0, green: 204.0/255.0, blue: 229.0 / 255.0 , alpha: 1)
     
 }

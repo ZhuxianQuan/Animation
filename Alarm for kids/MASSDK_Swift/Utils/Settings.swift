@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Settings{
     
@@ -14,7 +15,7 @@ class Settings{
     static var baby_mode_status             = 1
     static var baby_sound_isplaying         = 1
     static var baby_crying_status           = 1
-    static var baby_noise_value:CGFloat     = 0.0
+    static var baby_noise_value: CGFloat     = 0.0
     static var baby_monitor                 = true
     
     

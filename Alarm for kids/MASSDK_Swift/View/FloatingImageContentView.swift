@@ -30,7 +30,7 @@ public class FloatingImageContentView: UIView {
     var statusText = ""
     
     var maxMovingAmountForCloud:CGFloat = 5
-    let maxRotatingAmountForStar:CGFloat = 0.1
+    let maxRotatingAmountForStar:CGFloat = 0.5
     var rotateAngle : CGFloat = 0
     var isMovingUp = true
     

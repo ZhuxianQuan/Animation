@@ -31,15 +31,20 @@ class SoundTimerViewController: BaseViewController {
     var currentHour = 0
     var currentMinute = 0
     
+    var targetHour = 0
+    var targetMin = 0
+    var targetM = 0
+    
     var sliderSelectedValue: CGFloat = 0.0
 
     @IBOutlet weak var imvPointer: UIImageView!
+    
 
     var targetTime: Int64 = 0
     
     var maxNoiseValue = UIScreen.main.bounds.size.width - 70
     
-    var timer = Timer()
+    var timer : Timer!
 
     var remainTime = 0
     var timerValidate = false
@@ -80,22 +85,6 @@ class SoundTimerViewController: BaseViewController {
         // Do any additional setup after loading the view.
         imvBack.setImageWith(color: UIColor.white)
         
-        remainTimeLabel.text = getRemainTimeString(remainTime)
-        
-        guard let finishlasttime = userDefault.value(forKey: "FinishTime") else {
-            return
-        }
-        targetTime = Int64(finishlasttime as! Int64 / 1000)
-        remainTime = Int((getGlobalTime() - targetTime) / 1000)
-        if (remainTime < 0){
-            userDefault.removeObject(forKey: "FinishTime")
-        }
-        else{
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdated), userInfo: nil, repeats: true)
-        }
-        
-        remainTimeLabel.text = getRemainTimeString(remainTime)
-        targetTimeLabel.text = getLocalTimeString(getTimeFromGMTTimeMillis(time: finishlasttime as! Int64))
         
         
         if Settings.baby_mode_status == Constants.BABY_MODE_ON{
@@ -110,6 +99,31 @@ class SoundTimerViewController: BaseViewController {
         
         
         setupGustures()
+        
+        remainTimeLabel.text = getRemainTimeString(remainTime)
+        
+        guard let finishlasttime = userDefault.value(forKey: "FinishTime") else {
+            return
+        }
+        targetTime = Int64((finishlasttime as! Int64) / 1000)
+        remainTime = Int((getGlobalTime() - targetTime) / 1000)
+        if (remainTime < 0){
+            userDefault.removeObject(forKey: "FinishTime")
+        }
+        else{
+            if timer != nil {
+                if timer.isValid{
+                    timer.invalidate()
+                }
+                
+            }
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdated), userInfo: nil, repeats: true)
+        }
+        
+        remainTimeLabel.text = getRemainTimeString(remainTime)
+        targetTimeLabel.text = getLocalTimeString(getTimeFromGMTTimeMillis(time: finishlasttime as! Int64))
+        
+        
     }
     
     //Mark - Add Pan Gesture Recognizer
@@ -199,28 +213,26 @@ class SoundTimerViewController: BaseViewController {
     }
 
     @IBAction func timerItemSelected(_ sender: UISegmentedControl) {
-        changeStatus(sender.selectedSegmentIndex)
+        timePickerView.reloadAllComponents()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-        if segmentItem.selectedSegmentIndex == 0{
-            _ = self.navigationController?.popViewController(animated: true)
-        }
-        else{
-            segmentItem.selectedSegmentIndex = 0
-        }
-        changeStatus(segmentItem.selectedSegmentIndex)
+        _ = self.navigationController?.popViewController(animated: true)
+        
     }
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
 
         remainTime = currentHour * 3600 + 60 * currentMinute
-        targetTime = getGlobalTime() / 1000 + remainTime
-        userDefault.set(targetTime * 1000, forKey: "FinishTime")
+        targetTime = getGlobalTime() + remainTime * 1000
+        userDefault.set(targetTime, forKey: "FinishTime")
         setTimeStrings()
-        if timer.isValid{
-            timer.invalidate()
-        }
+        if timer != nil{
+            if timer.isValid{
+                timer.invalidate()
+                
+            }
+         }
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdated), userInfo: nil, repeats: true)
         changeStatus(1)
     }
@@ -229,8 +241,11 @@ class SoundTimerViewController: BaseViewController {
 
         if (remainTime > 0){
             userDefault.removeObject(forKey: "FinishTime")
+            remainTime = 0
+            setTimeStrings()
             timer.invalidate()
         }
+        changeStatus(0)
     }
 
     @IBAction func toggleBabyMonitor(_ sender: UISwitch) {
@@ -243,6 +258,7 @@ class SoundTimerViewController: BaseViewController {
         Settings.baby_monitor = sender.isOn
         
     }
+    
     func changeStatus(_ selected: Int){
         if selected == 0
         {
@@ -270,6 +286,7 @@ class SoundTimerViewController: BaseViewController {
         if remainTime == 0
         {
             timer.invalidate()
+            userDefault.removeObject(forKey: "FinishTime")
         }
         else
         {
@@ -291,20 +308,40 @@ class SoundTimerViewController: BaseViewController {
 extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSource{
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 4
+        if segmentItem.selectedSegmentIndex == 0{
+            return 4
+        }
+        else {
+            return 3
+        }
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-
+        
         var result = 0
-        if component == 0{
-            result = 24
-        }
-        else if component == 2{
-            result = 60
+        if segmentItem.selectedSegmentIndex == 0{
+            
+            if component == 0{
+                result = 24
+            }
+            else if component == 2{
+                result = 60
+            }
+            else{
+                result = 1
+            }
         }
         else{
-            result = 1
+            if component == 0
+            {
+                result = 12
+            }
+            else if component == 1{
+                result = 60
+            }
+            else {
+                result = 2
+            }
         }
         
         return result
@@ -314,25 +351,57 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         
         
         var result = ""
-        if component == 1{
-            result = "hours"
-        }
-        else if component == 3{
-            result = "min"
+        if segmentItem.selectedSegmentIndex == 0 {
+            if component == 1{
+                result = "hours"
+            }
+            else if component == 3{
+                result = "min"
+            }
+            else{
+                result = "\(row)"
+            }
         }
         else{
-            result = "\(row)"
+            if component == 0{
+                result = "\(row + 1)"
+            }
+            else if component == 1{
+                result = String.init(format: "%02d", row)
+            }
+            else{
+                if row == 0{
+                    result = "AM"
+                }
+                else{
+                    result = "PM"
+                }
+            }
         }
         return result
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0
-        {
-            currentHour = row
+        if segmentItem.selectedSegmentIndex == 0{
+            if component == 0
+            {
+                currentHour = row
+            }
+            else if component == 2{
+                currentMinute = row
+            }
         }
-        else if component == 2{
-            currentMinute = row
+        else{
+            if component == 0
+            {
+                targetHour = row + 1
+            }
+            else if component == 1{
+                targetMin = row
+            }
+            else{
+                targetM = row
+            }
         }
 
         remainTime = currentMinute * 60 + currentHour * 3600
@@ -340,8 +409,13 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
        
-        if component == 0 || component == 2 {
-            return 40
+        if segmentItem.selectedSegmentIndex == 0 {
+            if component == 0 || component == 2 {
+                return 40
+            }
+            else{
+                return 70
+            }
         }
         else{
             return 70

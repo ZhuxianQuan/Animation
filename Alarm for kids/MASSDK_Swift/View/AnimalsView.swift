@@ -25,7 +25,7 @@ public class AnimalsView: UIView {
     
     func initWith(images: [UIImage])
     {
-        let screenSize = UIScreen.main.bounds.size
+        
         var index = 0
         
         
@@ -36,9 +36,13 @@ public class AnimalsView: UIView {
         
         for image in images{
             var imageView = UIImageView()
-            
-            
-            let imageSize = image.size
+            var imageSize = CGSize()
+            if UIScreen.main.bounds.width < 330 {
+                imageSize = CGSize(width: image.size.width * 0.8, height: image.size.height * 0.8)
+            }
+            else{
+                imageSize = image.size
+            }
             if index % 2 == 0{
                 imageView.frame = CGRect(x: 0 + screenSize.width * CGFloat(Int(index / 2)), y: 75, width: imageSize.width, height: imageSize.height)
             }

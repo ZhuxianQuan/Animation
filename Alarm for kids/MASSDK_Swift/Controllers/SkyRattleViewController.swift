@@ -22,8 +22,6 @@ class SkyRattleViewController: BaseViewController {
     var snapX : CGFloat = 1
     var timer = Timer()
     var currentAcceleration: CGFloat = 0.0
-
-    let screenSize = UIScreen.main.bounds.size
     
     override func viewDidLoad() {
         super.viewDidLoad()

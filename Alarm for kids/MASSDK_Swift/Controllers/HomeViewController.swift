@@ -9,6 +9,7 @@
 import UIKit
 import MASSDK
 
+var screenSize : CGSize!
 class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
     @IBOutlet weak var headerCloudView: FloatingImageContentView!
@@ -31,17 +32,12 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
     var snapX : CGFloat = 1
     var timer = Timer()
     var currentAcceleration: CGFloat = 0.0
+    
+    var loaded = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
-        //self.navigationController?.navigationBar.titleTextAttributes =
-        //self.navigationController?.navigationBar.
-        setClouds()
-        setupGustures()
-        
+        loaded = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +48,15 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
     override func viewWillAppear(_ animated: Bool) {
         
         self.navigationController?.isNavigationBarHidden = false
+        if loaded {
+            screenSize = self.view.frame.size
+            loaded = false
+            
+            setClouds()
+            setupGustures()
+        }
+        
+        
     }
 
     //Mark - Set Animating Clouds

@@ -16,7 +16,7 @@ class EventLogViewController: BaseViewController {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var imvBack: UIImageView!
 
-    let screenSize = UIScreen.main.bounds.size
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

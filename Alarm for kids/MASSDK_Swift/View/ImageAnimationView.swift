@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol ImageAnimationViewDelegate {
     func imageTapped(_ view : ImageAnimationView)
