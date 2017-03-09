@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SkyRattleViewController: BaseViewController {
 
     
@@ -209,4 +210,8 @@ class SkyRattleViewController: BaseViewController {
     }
     
 
+}
+
+extension SkyRattleViewController : UIAccelerometerDelegate{
+    
 }
