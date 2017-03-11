@@ -34,4 +34,10 @@ class Constants {
     static let COLOR_BUTTON_SELECTED        = UIColor(colorLiteralRed: 89.0 / 255.0, green: 122.0/255.0, blue: 160.0 / 255.0 , alpha: 1)
     static let COLOR_BUTTON_UNSELECTED      = UIColor(colorLiteralRed: 178.0 / 255.0, green: 204.0/255.0, blue: 229.0 / 255.0 , alpha: 1)
     
+    
+    static let CORNER_LEFT                  = 1
+    static let CORNER_RIGHT                 = 2
+    static let CORNER_TOP                   = 3
+    static let CORNER_BOTTOM                = 4
+    
 }

@@ -109,13 +109,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEB-A5-MIo">
-                                                        <rect key="frame" x="85" y="9" width="85" height="18"/>
+                                                        <rect key="frame" x="85" y="9" width="85.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ch-ML-cUE">
-                                                        <rect key="frame" x="170" y="9" width="85" height="18"/>
+                                                        <rect key="frame" x="170.5" y="9" width="84.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -541,7 +541,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="child_crying" translatesAutoresizingMaskIntoConstraints="NO" id="Iuz-ya-wrA">
-                                <rect key="frame" x="36" y="64" width="303" height="379.5"/>
+                                <rect key="frame" x="36" y="64" width="303" height="379"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Iuz-ya-wrA" secondAttribute="height" multiplier="0.8" id="t2b-oJ-etu"/>
                                 </constraints>
@@ -760,7 +760,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcM-A9-Z6v">
-                                <rect key="frame" x="103" y="587" width="170" height="40"/>
+                                <rect key="frame" x="102.5" y="587" width="170" height="40"/>
                                 <color key="backgroundColor" red="0.28235294117647058" green="0.58431372549019611" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="6mS-46-hVA"/>
@@ -787,8 +787,8 @@
                                     <outlet property="delegate" destination="Iwp-w7-vtp" id="usL-58-FFS"/>
                                 </connections>
                             </pickerView>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MID-6F-M2w">
-                                <rect key="frame" x="16" y="89" width="375" height="586"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MID-6F-M2w">
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0u-id-v67">
                                         <rect key="frame" x="62" y="80" width="250" height="100"/>
@@ -834,7 +834,7 @@
                                         </connections>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s92-c9-MCk">
-                                        <rect key="frame" x="103" y="506" width="170" height="40"/>
+                                        <rect key="frame" x="102.5" y="506" width="170" height="40"/>
                                         <color key="backgroundColor" red="0.67843137254901964" green="0.14509803921568626" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2Yf-MQ-P7t"/>
@@ -1417,17 +1417,17 @@ If you press the start button, you will redirected to the System Settings</strin
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jy-1j-F18">
                                 <rect key="frame" x="0.0" y="176" width="375" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To each his own bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-Ed-qCO">
-                                        <rect key="frame" x="109.5" y="15.5" width="157" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To each his own bed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-Ed-qCO">
+                                        <rect key="frame" x="89.5" y="15.5" width="197" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backArrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Np6-mi-Khe">
-                                        <rect key="frame" x="80.5" y="17" width="9" height="16"/>
+                                        <rect key="frame" x="48.5" y="17" width="9" height="16"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-aW-4Si">
-                                        <rect key="frame" x="62" y="5" width="46" height="40"/>
+                                        <rect key="frame" x="30" y="5" width="46" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="9du-qj-7Ty"/>
                                             <constraint firstAttribute="height" constant="40" id="cia-KD-klb"/>
@@ -1437,10 +1437,10 @@ If you press the start button, you will redirected to the System Settings</strin
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="fiM-0d-cd4">
-                                        <rect key="frame" x="286.5" y="17" width="9" height="16"/>
+                                        <rect key="frame" x="318" y="17" width="9" height="16"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc1-42-cAD">
-                                        <rect key="frame" x="267.5" y="5" width="46" height="40"/>
+                                        <rect key="frame" x="299" y="5" width="46" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="6P7-ZP-9Nd"/>
                                             <constraint firstAttribute="height" constant="40" id="aML-tb-dwv"/>
@@ -1453,15 +1453,16 @@ If you press the start button, you will redirected to the System Settings</strin
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="fiM-0d-cd4" firstAttribute="centerX" secondItem="Xc1-42-cAD" secondAttribute="centerX" id="0tx-e8-Ydd"/>
+                                    <constraint firstItem="zbh-aW-4Si" firstAttribute="leading" secondItem="2Jy-1j-F18" secondAttribute="leading" constant="30" id="6vg-Pl-fGe"/>
                                     <constraint firstAttribute="height" constant="50" id="FbJ-hU-J7k"/>
-                                    <constraint firstItem="kSa-Ed-qCO" firstAttribute="leading" secondItem="Np6-mi-Khe" secondAttribute="trailing" constant="20" id="Nen-UN-Pfg"/>
                                     <constraint firstItem="Np6-mi-Khe" firstAttribute="centerY" secondItem="2Jy-1j-F18" secondAttribute="centerY" id="Ocf-sw-6aI"/>
                                     <constraint firstItem="fiM-0d-cd4" firstAttribute="centerY" secondItem="2Jy-1j-F18" secondAttribute="centerY" id="QGr-ZK-2pj"/>
                                     <constraint firstItem="Np6-mi-Khe" firstAttribute="centerX" secondItem="zbh-aW-4Si" secondAttribute="centerX" id="X3x-GE-f6J"/>
-                                    <constraint firstItem="fiM-0d-cd4" firstAttribute="leading" secondItem="kSa-Ed-qCO" secondAttribute="trailing" constant="20" id="You-Lr-btf"/>
                                     <constraint firstItem="Np6-mi-Khe" firstAttribute="centerY" secondItem="zbh-aW-4Si" secondAttribute="centerY" id="eId-aZ-cJQ"/>
                                     <constraint firstItem="fiM-0d-cd4" firstAttribute="centerY" secondItem="Xc1-42-cAD" secondAttribute="centerY" id="gJJ-AW-MvK"/>
                                     <constraint firstItem="kSa-Ed-qCO" firstAttribute="centerY" secondItem="2Jy-1j-F18" secondAttribute="centerY" id="hsM-kS-dMv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xc1-42-cAD" secondAttribute="trailing" constant="30" id="m3B-Ly-uo8"/>
+                                    <constraint firstItem="Xc1-42-cAD" firstAttribute="leading" secondItem="kSa-Ed-qCO" secondAttribute="trailing" constant="12.5" id="nE9-4x-uru"/>
                                     <constraint firstItem="kSa-Ed-qCO" firstAttribute="centerX" secondItem="2Jy-1j-F18" secondAttribute="centerX" id="wWU-Je-U1P"/>
                                 </constraints>
                             </view>

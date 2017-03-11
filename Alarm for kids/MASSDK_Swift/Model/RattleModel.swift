@@ -11,7 +11,7 @@ import UIKit
 
 typealias RattleRect = (x: CGFloat, y : CGFloat, radius: CGFloat)
 typealias RattleVelocity = (vx: CGFloat, vy: CGFloat, angle: CGFloat)
-
+typealias RattleBounds = (width: CGFloat, height: CGFloat)
 
 class RattleModel{
     
@@ -20,10 +20,10 @@ class RattleModel{
     //center position x range is 0 to 1
     //
     
-    static let RATTLE_ACCELERATION : CGFloat = -1.2
-    static let RATTLE_MAX_SPEED : CGFloat = 0.5
-    static let RATTLE_MAX_ANGULARSPEED : CGFloat = 6.28
-    static let RATTLE_ANGULARACCELERATION : CGFloat = 3.14
+    static let RATTLE_ACCELERATION : CGFloat = -1.2             // 1.2 unit per second
+    static let RATTLE_MAX_SPEED : CGFloat = 0.5                 //(0.5 unit per second)
+    static let RATTLE_MAX_ANGULARSPEED : CGFloat = 6.28         //rad per square second
+    static let RATTLE_ANGULARACCELERATION : CGFloat = 3.14      //rad per square second
     
     static let RATTLE_INTERVAL : CGFloat = 0.001
     
