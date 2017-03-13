@@ -51,11 +51,9 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         if loaded {
             screenSize = self.view.frame.size
             loaded = false
-            
             setClouds()
             setupGustures()
         }
-        
         
     }
 
@@ -241,11 +239,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
     }
 
     func moveBackgroudImages(){
-
-        /*headerCloudView.animateView()
-        bottom1ContentView.animateView()
-        bottom2ContentView.animateView()
-        bottom3CloudView.animateView()*/
+        
         for page in 1...5{
             for index in 1...6{
                 let tagValue = page * 10 + index
@@ -257,10 +251,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
     }
 
     func moveFaseBackgroundImages(){
-        /*headerCloudView.animateAccelateView()
-        bottom1ContentView.animateAccelateView()
-        bottom2ContentView.animateAccelateView()
-        bottom3CloudView.animateAccelateView()*/
+        
         for page in 1...5{
             for index in 1...6{
                 let tagValue = page * 10 + index

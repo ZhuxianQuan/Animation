@@ -12,6 +12,9 @@
 		0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */; };
 		0A61EC7F1E602CDB00A0DBF9 /* ImageAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */; };
 		0A61EC811E602D0100A0DBF9 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61EC801E602D0100A0DBF9 /* ImageModel.swift */; };
+		0A775F761E74A81A000526DC /* RattlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F751E74A81A000526DC /* RattlesView.swift */; };
+		0A775F781E74ACA9000526DC /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F771E74ACA9000526DC /* CommonUtils.swift */; };
+		0A775F7A1E74B1D2000526DC /* RattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F791E74B1D2000526DC /* RattleView.swift */; };
 		0AD0BFF01E6D5CDE0000C1D3 /* BabyTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */; };
 		0AE18AA71E6FEAE500932FB8 /* RattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */; };
 		0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */; };
@@ -61,6 +64,9 @@
 		0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAnimationView.swift; sourceTree = "<group>"; };
 		0A61EC801E602D0100A0DBF9 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		0A775F751E74A81A000526DC /* RattlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattlesView.swift; sourceTree = "<group>"; };
+		0A775F771E74ACA9000526DC /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		0A775F791E74B1D2000526DC /* RattleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleView.swift; sourceTree = "<group>"; };
 		0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyTips.swift; sourceTree = "<group>"; };
 		0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleModel.swift; sourceTree = "<group>"; };
 		0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleUtils.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */,
 				0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */,
 				0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */,
+				0A775F771E74ACA9000526DC /* CommonUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -221,6 +228,8 @@
 				3A27F4A61E433A83008A7F7E /* FloatingImageContentView.swift */,
 				0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */,
 				0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */,
+				0A775F751E74A81A000526DC /* RattlesView.swift */,
+				0A775F791E74B1D2000526DC /* RattleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,16 +451,19 @@
 				3A27F4A41E433A0E008A7F7E /* SkyRattleViewController.swift in Sources */,
 				0A61EC811E602D0100A0DBF9 /* ImageModel.swift in Sources */,
 				3A27F4A31E433A0E008A7F7E /* SideMenuViewController.swift in Sources */,
+				0A775F7A1E74B1D2000526DC /* RattleView.swift in Sources */,
 				3A27F4A51E433A0E008A7F7E /* SoundTimerViewController.swift in Sources */,
 				0AD0BFF01E6D5CDE0000C1D3 /* BabyTips.swift in Sources */,
 				3A9BAEF51E3F9907000FC640 /* EventModel.swift in Sources */,
 				3A27F4901E4339D8008A7F7E /* SOXShapedTapView.swift in Sources */,
 				0A3AF9CB1E4E43AB00D3FBAD /* Constants.swift in Sources */,
 				3A27F49F1E433A0E008A7F7E /* BabyTipsViewController.swift in Sources */,
+				0A775F761E74A81A000526DC /* RattlesView.swift in Sources */,
 				3AFB532B1E3F6F9D00627C8E /* UIImageView+Color.swift in Sources */,
 				0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */,
 				0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */,
 				3A27F4A71E433A83008A7F7E /* FloatingImageContentView.swift in Sources */,
+				0A775F781E74ACA9000526DC /* CommonUtils.swift in Sources */,
 				3A9BAEF31E3F9882000FC640 /* EventLogTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

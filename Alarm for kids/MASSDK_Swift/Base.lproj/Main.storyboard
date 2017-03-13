@@ -1067,7 +1067,7 @@
                                     <constraint firstItem="28n-FB-a7c" firstAttribute="centerX" secondItem="HwH-bx-EUl" secondAttribute="centerX" id="lsT-Dk-f1f"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnf-lZ-UgB">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnf-lZ-UgB" customClass="RattlesView" customModule="MASSDK_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -1091,7 +1091,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animalsView" destination="gnf-lZ-UgB" id="G5G-qg-EzF"/>
+                        <outlet property="rattlesView" destination="gnf-lZ-UgB" id="PTE-V8-ZeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfb-wt-0Zk" userLabel="First Responder" sceneMemberID="firstResponder"/>
