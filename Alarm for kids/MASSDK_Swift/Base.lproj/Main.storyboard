@@ -55,11 +55,20 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud_main_header" translatesAutoresizingMaskIntoConstraints="NO" id="lK1-Nd-Yuc">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQA-I5-5U3" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQA-I5-5U3">
                                                 <rect key="frame" x="0.0" y="80" width="375" height="52"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud_header" translatesAutoresizingMaskIntoConstraints="NO" id="Rj5-sS-Fzk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="Rj5-sS-Fzk" firstAttribute="leading" secondItem="XQA-I5-5U3" secondAttribute="leading" id="MUm-rr-cTN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rj5-sS-Fzk" secondAttribute="trailing" id="URE-x4-2fM"/>
                                                     <constraint firstAttribute="height" constant="52" id="ZvR-j3-uO9"/>
+                                                    <constraint firstItem="Rj5-sS-Fzk" firstAttribute="top" secondItem="XQA-I5-5U3" secondAttribute="top" id="fnS-sA-ARa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Rj5-sS-Fzk" secondAttribute="bottom" id="wVC-ko-UMf"/>
                                                 </constraints>
                                             </view>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bo-IW-ufW">
@@ -98,6 +107,9 @@
                                                     <segment title=""/>
                                                 </segments>
                                                 <color key="tintColor" red="0.29411764705882354" green="0.48627450980392156" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="selectSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="37l-9p-Fcm"/>
+                                                </connections>
                                             </segmentedControl>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ws2-tW-Ptn">
                                                 <rect key="frame" x="60" y="74" width="255" height="35"/>
@@ -160,25 +172,52 @@
                                             <constraint firstItem="LXB-Er-Dwh" firstAttribute="leading" secondItem="Ws2-tW-Ptn" secondAttribute="leading" id="ybX-o4-d5X"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-hR-MYC" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-hR-MYC">
                                         <rect key="frame" x="0.0" y="350" width="375" height="317"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud_bottom_3" translatesAutoresizingMaskIntoConstraints="NO" id="wCQ-TG-WOt">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="317"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wCQ-TG-WOt" secondAttribute="bottom" id="7Me-WM-xi3"/>
+                                            <constraint firstAttribute="trailing" secondItem="wCQ-TG-WOt" secondAttribute="trailing" id="KiX-1E-pFb"/>
                                             <constraint firstAttribute="height" constant="317" id="TG9-up-ulo"/>
+                                            <constraint firstItem="wCQ-TG-WOt" firstAttribute="leading" secondItem="BOn-hR-MYC" secondAttribute="leading" id="ujT-ed-wtU"/>
+                                            <constraint firstItem="wCQ-TG-WOt" firstAttribute="top" secondItem="BOn-hR-MYC" secondAttribute="top" id="yQC-Ta-BuV"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0DG-Dr-gr2" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0DG-Dr-gr2">
                                         <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud_bottom_2" translatesAutoresizingMaskIntoConstraints="NO" id="yYB-zO-8cd">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="yYB-zO-8cd" firstAttribute="top" secondItem="0DG-Dr-gr2" secondAttribute="top" id="9t6-h8-lby"/>
+                                            <constraint firstAttribute="trailing" secondItem="yYB-zO-8cd" secondAttribute="trailing" id="DV2-oh-fu6"/>
+                                            <constraint firstAttribute="bottom" secondItem="yYB-zO-8cd" secondAttribute="bottom" id="WQN-YU-eIp"/>
                                             <constraint firstAttribute="height" constant="200" id="unv-Aj-2c5"/>
+                                            <constraint firstItem="yYB-zO-8cd" firstAttribute="leading" secondItem="0DG-Dr-gr2" secondAttribute="leading" id="x4r-gw-uK9"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-nc-63Y" customClass="FloatingImageContentView" customModule="MASSDK_Swift" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-nc-63Y">
                                         <rect key="frame" x="0.0" y="493" width="375" height="174"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud_bottom_1" translatesAutoresizingMaskIntoConstraints="NO" id="Zqk-OV-mae">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="174" id="1V5-NQ-WBe"/>
+                                            <constraint firstItem="Zqk-OV-mae" firstAttribute="top" secondItem="7N1-nc-63Y" secondAttribute="top" id="1dA-Xj-jPm"/>
+                                            <constraint firstItem="Zqk-OV-mae" firstAttribute="leading" secondItem="7N1-nc-63Y" secondAttribute="leading" id="9Xh-nd-xXx"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zqk-OV-mae" secondAttribute="bottom" id="AlU-cb-B0J"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zqk-OV-mae" secondAttribute="trailing" id="gjI-J4-Zj7"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8F-JG-OKK" userLabel="Stars View">
@@ -477,17 +516,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="byU-kr-sh0"/>
                     <connections>
-                        <outlet property="bottom1ContentView" destination="7N1-nc-63Y" id="QJt-D6-NeI"/>
-                        <outlet property="bottom2ContentView" destination="0DG-Dr-gr2" id="0Ja-Z2-dSb"/>
-                        <outlet property="bottom3CloudView" destination="BOn-hR-MYC" id="xnq-Er-n2T"/>
-                        <outlet property="fireView" destination="vun-en-x0f" id="7Wx-6X-uiS"/>
-                        <outlet property="forestView" destination="6lN-mr-zo4" id="YGh-dC-cur"/>
-                        <outlet property="happinessView" destination="GzU-pa-4cF" id="BlH-nv-ek5"/>
-                        <outlet property="headerCloudView" destination="XQA-I5-5U3" id="l3e-kq-FLs"/>
-                        <outlet property="jazzAndHappinessView" destination="X3T-YC-wlN" id="N21-4H-YiN"/>
-                        <outlet property="littleIdeaView" destination="38U-cB-Z6a" id="tMs-8a-HuW"/>
+                        <outlet property="segmentedControl" destination="LXB-Er-Dwh" id="hI2-i4-WV0"/>
                         <outlet property="starsView" destination="v8F-JG-OKK" id="Pbh-pe-nn6"/>
-                        <outlet property="sunnyView" destination="pRa-Jp-XSs" id="MgS-x8-h9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -674,6 +704,7 @@
                         <outlet property="btnPlay" destination="GCw-0a-MbD" id="DSd-oR-pfw"/>
                         <outlet property="btnTimer" destination="eJ7-2Z-ijw" id="tNq-NX-LBH"/>
                         <outlet property="imvBaby" destination="Iuz-ya-wrA" id="ZRK-yk-eJe"/>
+                        <outlet property="itemTitle" destination="xWp-a3-7QW" id="WrN-Kt-ifK"/>
                         <outlet property="slidernoiseLevel" destination="hXb-nl-dlZ" id="xbp-pd-3hG"/>
                     </connections>
                 </viewController>
@@ -760,7 +791,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcM-A9-Z6v">
-                                <rect key="frame" x="102.5" y="587" width="170" height="40"/>
+                                <rect key="frame" x="103" y="587" width="170" height="40"/>
                                 <color key="backgroundColor" red="0.28235294117647058" green="0.58431372549019611" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="6mS-46-hVA"/>
@@ -834,7 +865,7 @@
                                         </connections>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s92-c9-MCk">
-                                        <rect key="frame" x="102.5" y="506" width="170" height="40"/>
+                                        <rect key="frame" x="103" y="506" width="170" height="40"/>
                                         <color key="backgroundColor" red="0.67843137254901964" green="0.14509803921568626" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2Yf-MQ-P7t"/>
@@ -1281,7 +1312,7 @@ If you press the start button, you will redirected to the System Settings</strin
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mR0-BS-ZRt" id="NVq-3t-Bwt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1t-Pe-swL">
@@ -1471,7 +1502,7 @@ If you press the start button, you will redirected to the System Settings</strin
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Remember mom and dad, that sweet bundle of joy is a little human being just like you. Think about when you first started dating. Everything had to be right. What youwore, how you smelled, and what you said helped create the mood. Same for insuring you baby has a good...Remember mom and dad, that sweet bundle of joy is a little human being just like you. Think about when you first started dating. Everything had to be right. What youwore, how you smelled, and what you said helped create the mood. Same for insuring you baby has a good...</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -1512,13 +1543,17 @@ If you press the start button, you will redirected to the System Settings</strin
     <resources>
         <image name="backArrowBlue" width="9" height="16"/>
         <image name="child_crying" width="297" height="316"/>
+        <image name="cloud_bottom_1" width="510" height="176"/>
+        <image name="cloud_bottom_2" width="375" height="216"/>
+        <image name="cloud_bottom_3" width="410" height="317"/>
+        <image name="cloud_header" width="612" height="52"/>
         <image name="cloud_main" width="375" height="666"/>
         <image name="cloud_main_header" width="870" height="200"/>
         <image name="forward" width="9" height="16"/>
         <image name="header" width="391" height="81"/>
         <image name="icon_menu" width="42" height="30"/>
         <image name="icon_pointer" width="15" height="32"/>
-        <image name="icon_slider" width="608" height="94"/>
+        <image name="icon_slider" width="629" height="121"/>
         <image name="play_pause" width="10" height="15"/>
         <image name="play_speeddown" width="20" height="16"/>
         <image name="play_speedup" width="20" height="16"/>

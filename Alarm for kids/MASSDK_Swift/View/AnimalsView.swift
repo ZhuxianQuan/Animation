@@ -20,23 +20,26 @@ public class AnimalsView: UIView {
     
     var viewSize = CGSize()
     
+    var animals : [AnimalNoiseModel] = []
+    
     
     //var delegate: AnimalsViewDelegate!
     
-    func initWith(images: [UIImage])
+    func initWith(animals: [AnimalNoiseModel])
     {
         
         var index = 0
         
-        
+        self.animals = animals
         NSLog("\(viewSize)")
         
         
-        viewSize = CGSize(width: screenSize.width * CGFloat(Int(images.count + 1)) / 2 , height: screenSize.height - 81)
+        viewSize = CGSize(width: screenSize.width * CGFloat(Int(animals.count + 1)) / 2 , height: screenSize.height - 81)
         
-        for image in images{
+        for animal in animals{
             var imageView = UIImageView()
             var imageSize = CGSize()
+            let image = UIImage(named: animal.getSleepingAnimalImageName())!
             if UIScreen.main.bounds.width < 330 {
                 imageSize = CGSize(width: image.size.width * 0.8, height: image.size.height * 0.8)
             }
@@ -55,8 +58,11 @@ public class AnimalsView: UIView {
             imageView.contentMode = .scaleToFill
             NSLog("\(imageView.frame)")
             view1.addSubview(imageView)
-            
-            
+            var button = UIButton(frame: imageView.frame)
+            view1.addSubview(button)
+            button.tag = index * 10 + 10
+            imageView.tag = index * 10 + 11
+            button.addTarget(self, action: #selector(selectAnimal(_:)), for: .touchUpInside)
             
             imageView = UIImageView()
             
@@ -73,6 +79,11 @@ public class AnimalsView: UIView {
             NSLog("\(imageView.frame)")
 
             view2.addSubview(imageView)
+            button = UIButton(frame: imageView.frame)
+            view2.addSubview(button)
+            button.tag = index * 10 + 10
+            imageView.tag = index * 10 + 11 + 1000
+            button.addTarget(self, action: #selector(selectAnimal(_:)), for: .touchUpInside)
             index += 1
             
         }
@@ -80,10 +91,44 @@ public class AnimalsView: UIView {
         self.frame.size = CGSize(width: viewSize.width * 2 , height: viewSize.height)
         setInitFrame()
         addSubview(view1)
+        
         addSubview(view2)
         NSLog("\(view1.frame)")
         NSLog("\(view2.frame)")        
         
+    }
+    
+    func selectAnimal(_ sender : UIButton){
+        NSLog("Tag ===== \(sender.tag)")
+        
+        var imageView = self.viewWithTag(sender.tag + 1) as? UIImageView
+        if imageView != nil{
+            var imagename = ""
+            if animals[(sender.tag - 10) / 10].animal_status == Constants.ANIMAL_SLEEP{
+                imagename = animals[(sender.tag - 10) / 10].getAwakeAnimalImageName()
+                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_AWAKE
+            }
+            else{
+                imagename = animals[(sender.tag - 10) / 10].getSleepingAnimalImageName()
+                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_SLEEP
+            }
+            imageView?.image = UIImage(named: imagename)!
+        }
+        imageView = self.viewWithTag(sender.tag + 1 + 1000) as? UIImageView
+        
+        if imageView != nil{
+            
+            var imagename = ""
+            if animals[(sender.tag - 10) / 10].animal_status == Constants.ANIMAL_SLEEP{
+                imagename = animals[(sender.tag - 10) / 10].getAwakeAnimalImageName()
+                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_AWAKE
+            }
+            else{
+                imagename = animals[(sender.tag - 10) / 10].getSleepingAnimalImageName()
+                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_SLEEP
+            }
+            imageView?.image = UIImage(named: imagename)!
+        }
     }
     
     func animateView(){

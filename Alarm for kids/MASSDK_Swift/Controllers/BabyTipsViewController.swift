@@ -81,6 +81,8 @@ class BabyTipsViewController: BaseViewController {
         nextImageView.isHidden = false
         prevButton.isHidden = false
         prevImageView.isHidden = false
+        sleepingSelected = 0
+        safetySelected = 0
         if statusSegmentedControl.selectedSegmentIndex == 0 {
             setText(selected: sleepingSelected, status: 0)
         }

@@ -20,7 +20,7 @@ class Constants {
     static let BABY_SOUND_TIMER_ON          = 1
     static let BABY_SOUND_TIMER_OFF         = 2
     
-    static let BABY_SOUND_PLAYING          = 1
+    static let BABY_SOUND_PLAYING           = 1
     static let BABY_SOUND_UNPLAYING         = 2
     
     static let BABY_RADIO_STAR              = 1
@@ -40,5 +40,12 @@ class Constants {
     static let CORNER_TOP                   = 3
     static let CORNER_BOTTOM                = 4
     
+    
+    static let BABY_RADIO_SOUND             = 2
+    static let BABY_RADIO_MUSIC             = 1
+    static let BABY_RADIO_ALL               = 0
+    
+    static let ANIMAL_SLEEP                 = 1
+    static let ANIMAL_AWAKE                 = 2
     
 }

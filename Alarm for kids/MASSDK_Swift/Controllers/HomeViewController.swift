@@ -12,28 +12,22 @@ import MASSDK
 var screenSize : CGSize!
 class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
-    @IBOutlet weak var headerCloudView: FloatingImageContentView!
-    @IBOutlet weak var bottom3CloudView: FloatingImageContentView!
-    @IBOutlet weak var bottom2ContentView: FloatingImageContentView!
-    @IBOutlet weak var bottom1ContentView: FloatingImageContentView!
-
-    @IBOutlet weak var jazzAndHappinessView: FloatingImageContentView!
-    @IBOutlet weak var fireView: FloatingImageContentView!
-    @IBOutlet weak var forestView: FloatingImageContentView!
-    @IBOutlet weak var sunnyView: FloatingImageContentView!
-    @IBOutlet weak var littleIdeaView: FloatingImageContentView!
-    @IBOutlet weak var happinessView: FloatingImageContentView!
 
     @IBOutlet weak var starsView: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     //Acceleration setting variables 
     var threshold:CGFloat = 0.0
     var shouldDragX = true
     var snapX : CGFloat = 1
     var timer = Timer()
+    
+    var mainTimer = Timer()
     var currentAcceleration: CGFloat = 0.0
     
     var loaded = false
+    
+    var floatingItems : [FloatingItemModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,185 +41,263 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         
+        threshold = 0
         self.navigationController?.isNavigationBarHidden = false
         if loaded {
             screenSize = self.view.frame.size
             loaded = false
-            setClouds()
+            setFlaotingItems(Constants.BABY_RADIO_ALL)
             setupGustures()
         }
         
     }
 
-    //Mark - Set Animating Clouds
-
-    func setClouds(){
-
-        headerCloudView.initWith(image: UIImage(named: "cloud_header")!)
-        headerCloudView.isUserInteractionEnabled = false
-        bottom1ContentView.initWith(image: UIImage(named: "cloud_bottom_1")!)
-        bottom1ContentView.isUserInteractionEnabled = false
-
-
-        bottom2ContentView.initWith(image: UIImage(named: "cloud_bottom_2")!)
-        bottom2ContentView.isUserInteractionEnabled = false
-
-        bottom3CloudView.initWith(image: UIImage(named: "cloud_bottom_3")!)
-        bottom3CloudView.isUserInteractionEnabled = false
+    
+    func setFlaotingItems(_ index: Int) {
+        mainTimer.invalidate()
+        timer.invalidate()
+        clearView()
         
-        for page in 1...5{
-            for index in 1...6{
-                NSLog("\(page) - \(index)")
-                let tagValue = page * 10 + index
+        if index == Constants.BABY_RADIO_ALL{
+            
+            floatingItems = BabyRadioItems.getAllItems()
+            
+            var index = 0
+            for item in floatingItems{
+                let tagValue = (Int(index / 6) + 1) * 10 + (index % 6) +
+                 1
+                
                 let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
-                floatingView.leftCoValue = getLeftCoValue(page , index)
-                floatingView.initWith(image: UIImage(named: "image_\(tagValue)")!)
-                floatingView.delegate = self
-                if (index == 3 || index == 4) && page == 1{
-                    floatingView.isCloud = Constants.BABY_RADIO_STAR
-                }
-                else if  (index == 3 || index == 6) && page == 2{
-                    floatingView.isCloud = Constants.BABY_RADIO_STAR
-                }
-                else if (index == 1 || index == 4) && page == 3{
-                    floatingView.isCloud = Constants.BABY_RADIO_STAR
-                }
-                else if (index == 1 || index == 2) && page == 4{
-                    floatingView.isCloud = Constants.BABY_RADIO_STAR
-                }
-                else if (index == 3 || index == 4) && page == 5{
-                    floatingView.isCloud = Constants.BABY_RADIO_STAR
-                }
-                else{
+                
+                floatingView.maxSizeOfWidth = CGFloat(Int((floatingItems.count - 1) / 6 + 1) * 375)
+                floatingView.leftCoValue = getLeftCoValue(index)
+                floatingView.initWith(item: item)
+                if item.item_type == Constants.BABY_RADIO_SOUND{
                     floatingView.isCloud = Constants.BABY_RADIO_CLOUD
                 }
+                else if item.item_type == Constants.BABY_RADIO_MUSIC {
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                floatingView.delegate = self
                 
+                index += 1
+            }
+        /*
+            for page in 1...5{
+                for index in 1...6{
+                    NSLog("\(page) - \(index)")
+                    let tagValue = page * 10 + index
+                    let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
+                    floatingView.leftCoValue = getLeftCoValue(page , index)
+                    floatingView.initWith(image: UIImage(named: "image_\(tagValue)")!)
+                    floatingView.delegate = self
+                    if (index == 3 || index == 4) && page == 1{
+                        floatingView.isCloud = Constants.BABY_RADIO_STAR
+                    }
+                    else if  (index == 3 || index == 6) && page == 2{
+                        floatingView.isCloud = Constants.BABY_RADIO_STAR
+                    }
+                    else if (index == 1 || index == 4) && page == 3{
+                        floatingView.isCloud = Constants.BABY_RADIO_STAR
+                    }
+                    else if (index == 1 || index == 2) && page == 4{
+                        floatingView.isCloud = Constants.BABY_RADIO_STAR
+                    }
+                    else if (index == 3 || index == 4) && page == 5{
+                        floatingView.isCloud = Constants.BABY_RADIO_STAR
+                    }
+                    else{
+                        floatingView.isCloud = Constants.BABY_RADIO_CLOUD
+                    }
+                }
+            }
+ */
+        }
+        else if index == Constants.BABY_RADIO_MUSIC{
+            floatingItems = BabyRadioItems.getMusic()
+            var index = 0
+            for item in floatingItems{
+                let tagValue = (Int(index / 6) + 1) * 10 + (index % 6) +
+                1
+                
+                let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
+                
+                floatingView.maxSizeOfWidth = CGFloat(Int((floatingItems.count - 1) / 6 + 1) * 375)
+                floatingView.leftCoValue = getLeftCoValue(index)
+                floatingView.initWith(item: item)
+                if item.item_type == Constants.BABY_RADIO_SOUND{
+                    floatingView.isCloud = Constants.BABY_RADIO_CLOUD
+                }
+                else if item.item_type == Constants.BABY_RADIO_MUSIC {
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                floatingView.delegate = self
+                
+                index += 1
             }
         }
-
-
-        _ = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveBackgroudImages), userInfo: nil, repeats: true)
+        else if index == Constants.BABY_RADIO_SOUND{
+            floatingItems = BabyRadioItems.getSounds()
+            var index = 0
+            for item in floatingItems{
+                let tagValue = (Int(index / 6) + 1) * 10 + (index % 6) +
+                1
+                
+                let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
+                
+                floatingView.maxSizeOfWidth = CGFloat(Int((floatingItems.count - 1) / 6 + 1) * 375)
+                floatingView.leftCoValue = getLeftCoValue(index)
+                floatingView.initWith(item: item)
+                if item.item_type == Constants.BABY_RADIO_SOUND{
+                    floatingView.isCloud = Constants.BABY_RADIO_CLOUD
+                }
+                else if item.item_type == Constants.BABY_RADIO_MUSIC {
+                    floatingView.isCloud = Constants.BABY_RADIO_STAR
+                }
+                floatingView.delegate = self
+                
+                index += 1
+            }
+        }
+        mainTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveBackgroudImages), userInfo: nil, repeats: true)
     }
     
-    func getLeftCoValue(_ page: Int,  _ index: Int) -> CGFloat{
+    func clearView(){
+        for page in 1...5{
+            for index in 1...6{
+                let floatingView = self.view.viewWithTag(page * 10 + index)
+                if floatingView != nil
+                {
+                    let subViews = floatingView?.subviews
+                    if subViews != nil{
+                        for subview in subViews!{
+                            subview.removeFromSuperview()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getLeftCoValue(_ index: Int) -> CGFloat{
         var leftCoValue : CGFloat = 0
-        switch page {
-        case 1:
-            switch index {
-            case 1:
+        switch Int(index / 6) {
+        case 1 - 1:
+            switch index % 6 {
+            case 1 - 1:
                 leftCoValue = 34
                 break
-            case 2:
+            case 2 - 1:
                 leftCoValue = 426
                 break
-            case 3:
+            case 3 - 1:
                 leftCoValue = 152
                 break
-            case 4:
+            case 4 - 1:
                 leftCoValue = 519
                 break
-            case 5:
+            case 5 - 1:
                 leftCoValue = 361
                 break
-            case 6:
+            case 6 - 1:
                 leftCoValue = 80
                 break
             default:
                 break
             }
             break
-        case 2:
-            switch index {
-            case 1:
+        case 2 - 1:
+            switch index % 6 {
+            case 1 - 1:
                 leftCoValue = 770
                 break
-            case 2:
+            case 2 - 1:
                 leftCoValue = 1170
                 break
-            case 3:
+            case 3 - 1:
                 leftCoValue = 850
                 break
-            case 4:
+            case 4 - 1:
                 leftCoValue = 1175
                 break
-            case 5:
+            case 5 - 1:
                 leftCoValue = 815
                 break
-            case 6:
+            case 6 - 1:
                 leftCoValue = 1220
                 break
             default:
                 break
             }
             break
-        case 3:
+        case 3 - 1:
             
-            switch index {
-            case 1:
+            switch index % 6 {
+            case 1 - 1:
                 leftCoValue = 1568
                 break
-            case 2:
+            case 2 - 1:
                 leftCoValue = 1924
                 break
-            case 3:
+            case 3 - 1:
                 leftCoValue = 1550
                 break
-            case 4:
+            case 4 - 1:
                 leftCoValue = 2014
                 break
-            case 5:
+            case 5 - 1:
                 leftCoValue = 1850
                 break
-            case 6:
+            case 6 - 1:
                 leftCoValue = 1570
                 break
             default:
                 break
             }
-        case 4:
+        case 4 - 1:
             
-            switch index {
-            case 1:
+            switch index % 6 {
+            case 1 - 1:
                 leftCoValue = 2385
                 break
-            case 2:
+            case 2 - 1:
                 leftCoValue = 2705
                 break
-            case 3:
+            case 3 - 1:
                 leftCoValue = 2327
                 break
-            case 4:
+            case 4 - 1:
                 leftCoValue = 2713
                 break
-            case 5:
+            case 5 - 1:
                 leftCoValue = 2433
                 break
-            case 6:
+            case 6 - 1:
                 leftCoValue = 2713
                 break
             default:
                 break
             }
             break
-        case 5:
+        case 5 - 1:
             
-            switch index {
-            case 1:
+            switch index % 6 {
+            case 1 - 1:
                 leftCoValue = 3034
                 break
-            case 2:
+            case 2 - 1:
                 leftCoValue = 3426
                 break
-            case 3:
+            case 3 - 1:
                 leftCoValue = 3119
                 break
-            case 4:
+            case 4 - 1:
                 leftCoValue = 3485
                 break
-            case 5:
+            case 5 - 1:
                 leftCoValue = 3421
                 break
-            case 6:
+            case 6 - 1:
                 leftCoValue = 3079
                 break
             default:
@@ -250,6 +322,17 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         }
     }
 
+    @IBAction func selectSegmentedControl(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == Constants.BABY_RADIO_SOUND{
+            setFlaotingItems(Constants.BABY_RADIO_SOUND)
+        }
+        else if sender.selectedSegmentIndex == Constants.BABY_RADIO_ALL{
+            setFlaotingItems(Constants.BABY_RADIO_ALL)
+        }
+        else if sender.selectedSegmentIndex == Constants.BABY_RADIO_MUSIC{
+            setFlaotingItems(Constants.BABY_RADIO_MUSIC)
+        }
+    }
     func moveFaseBackgroundImages(){
         
         for page in 1...5{
@@ -272,6 +355,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         else{
             viewController.itemStatus = Constants.BABY_RADIO_STAR
         }
+        viewController.item = floatingView.floatingItem
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
@@ -325,6 +409,8 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
             print("possible")
         case .cancelled:
             print("cancelled")
+            
+            threshold = 0
         case .failed:
             print("failed")
         }

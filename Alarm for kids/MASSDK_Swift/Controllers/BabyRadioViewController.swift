@@ -11,6 +11,7 @@ import UIKit
 class BabyRadioViewController: BaseViewController {
     
     var itemStatus = 0
+    
 
     @IBOutlet weak var imvBaby: UIImageView!
     @IBOutlet weak var btnTimer: UIButton!
@@ -20,11 +21,15 @@ class BabyRadioViewController: BaseViewController {
     
     @IBOutlet weak var btnPlay: UIButton!
     
+    @IBOutlet weak var itemTitle: UILabel!
+    
+    var item : FloatingItemModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        itemTitle.text = item.item_title
         
     }
     

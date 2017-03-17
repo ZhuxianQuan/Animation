@@ -39,9 +39,13 @@ public class FloatingImageContentView: UIView {
     var maxSizeOfWidth: CGFloat = 1875
 
     var delegate: FloatingImageContentViewDelegate!
+    
+    var floatingItem: FloatingItemModel!
 
-    func initWith(image: UIImage)
+    func initWith(item: FloatingItemModel)
     {
+        floatingItem = item
+        let image = UIImage(named: item.getImageName())!
         imageSize = image.size
         self.frame.size = CGSize(width: maxSizeOfWidth * 2 , height: imageSize.height)
         button1.setImage(image, for: .normal)

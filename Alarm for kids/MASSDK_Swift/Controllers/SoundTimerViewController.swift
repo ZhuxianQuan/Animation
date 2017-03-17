@@ -217,6 +217,11 @@ class SoundTimerViewController: BaseViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
+        
+            clockView.isHidden = true
+            imvBack.isHidden = true
+            btnBack.isHidden = true
+            self.navigationController?.isNavigationBarHidden = false
         _ = self.navigationController?.popViewController(animated: true)
         
     }
@@ -249,12 +254,6 @@ class SoundTimerViewController: BaseViewController {
     }
 
     @IBAction func toggleBabyMonitor(_ sender: UISwitch) {
-        /*if Settings.baby_mode_status == Constants.BABY_MODE_ON{
-            Settings.baby_mode_status = Constants.BABY_MODE_OFF
-        }
-        else{
-            Settings.baby_mode_status = Constants.BABY_MODE_ON
-        }*/
         Settings.baby_monitor = sender.isOn
         
     }

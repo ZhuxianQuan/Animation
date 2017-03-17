@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "splashscreen_6plX1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "image_31_star.png",
+      "filename" : "splashscreen_6plX2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "splashscreen_6plX3.png",
       "scale" : "3x"
     }
   ],

@@ -10,11 +10,14 @@
 		0A3AF9C91E4E3D7200D3FBAD /* AnimalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */; };
 		0A3AF9CB1E4E43AB00D3FBAD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */; };
 		0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */; };
-		0A61EC7F1E602CDB00A0DBF9 /* ImageAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */; };
-		0A61EC811E602D0100A0DBF9 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61EC801E602D0100A0DBF9 /* ImageModel.swift */; };
+		0A3EEBA51E78AD150009706B /* BabyRadioItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EEBA41E78AD150009706B /* BabyRadioItems.swift */; };
+		0A3EEBA81E793DF60009706B /* AnimalNoises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EEBA71E793DF60009706B /* AnimalNoises.swift */; };
+		0A3EEBAA1E7944190009706B /* AnimalNoiseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EEBA91E7944190009706B /* AnimalNoiseModel.swift */; };
+		0A3EEBAC1E79736F0009706B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3EEBAB1E79736F0009706B /* Assets.xcassets */; };
 		0A775F761E74A81A000526DC /* RattlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F751E74A81A000526DC /* RattlesView.swift */; };
 		0A775F781E74ACA9000526DC /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F771E74ACA9000526DC /* CommonUtils.swift */; };
 		0A775F7A1E74B1D2000526DC /* RattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F791E74B1D2000526DC /* RattleView.swift */; };
+		0ACB08FA1E782BE700D257D6 /* FloatingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB08F91E782BE700D257D6 /* FloatingItemModel.swift */; };
 		0AD0BFF01E6D5CDE0000C1D3 /* BabyTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */; };
 		0AE18AA71E6FEAE500932FB8 /* RattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */; };
 		0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */; };
@@ -39,7 +42,6 @@
 		3A9BAEF51E3F9907000FC640 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9BAEF41E3F9907000FC640 /* EventModel.swift */; };
 		3AFB52FF1E3F26D700627C8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB52F81E3F26D700627C8E /* AppDelegate.swift */; };
 		3AFB531F1E3F298100627C8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB531E1E3F298100627C8E /* Images.xcassets */; };
-		3AFB53211E3F2A2400627C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB53201E3F2A2400627C8E /* Assets.xcassets */; };
 		3AFB532B1E3F6F9D00627C8E /* UIImageView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB532A1E3F6F9D00627C8E /* UIImageView+Color.swift */; };
 		BE39897EED516E52B2BF7B14 /* Pods_MASSDK_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B746C121D4E0A09DEA96CDF /* Pods_MASSDK_Swift.framework */; };
 /* End PBXBuildFile section */
@@ -62,12 +64,15 @@
 		0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsView.swift; sourceTree = "<group>"; };
 		0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAnimationView.swift; sourceTree = "<group>"; };
-		0A61EC801E602D0100A0DBF9 /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		0A3EEBA41E78AD150009706B /* BabyRadioItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyRadioItems.swift; sourceTree = "<group>"; };
+		0A3EEBA71E793DF60009706B /* AnimalNoises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalNoises.swift; sourceTree = "<group>"; };
+		0A3EEBA91E7944190009706B /* AnimalNoiseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalNoiseModel.swift; sourceTree = "<group>"; };
+		0A3EEBAB1E79736F0009706B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A775F751E74A81A000526DC /* RattlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattlesView.swift; sourceTree = "<group>"; };
 		0A775F771E74ACA9000526DC /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		0A775F791E74B1D2000526DC /* RattleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleView.swift; sourceTree = "<group>"; };
-		0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyTips.swift; sourceTree = "<group>"; };
+		0ACB08F91E782BE700D257D6 /* FloatingItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingItemModel.swift; sourceTree = "<group>"; };
+		0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyTips.swift; path = ../Model/BabyTips.swift; sourceTree = "<group>"; };
 		0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleModel.swift; sourceTree = "<group>"; };
 		0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleUtils.swift; sourceTree = "<group>"; };
 		131D1A4F1CDB58F0007C9F2A /* MASSDK_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MASSDK_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +98,6 @@
 		3AFB52F81E3F26D700627C8E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AFB53171E3F294C00627C8E /* MASSDK_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASSDK_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		3AFB531E1E3F298100627C8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3AFB53201E3F2A2400627C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AFB532A1E3F6F9D00627C8E /* UIImageView+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Color.swift"; sourceTree = "<group>"; };
 		5B746C121D4E0A09DEA96CDF /* Pods_MASSDK_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MASSDK_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D525EED754EA1F5B7FB9D13 /* Pods-MASSDK_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MASSDK_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MASSDK_Swift/Pods-MASSDK_Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +117,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3EEBA61E78D1100009706B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0A3EEBA41E78AD150009706B /* BabyRadioItems.swift */,
+				0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */,
+				0A3EEBA71E793DF60009706B /* AnimalNoises.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		0ACB08F61E782AB300D257D6 /* Baby Radio */ = {
+			isa = PBXGroup;
+			children = (
+				3A27F4A61E433A83008A7F7E /* FloatingImageContentView.swift */,
+			);
+			name = "Baby Radio";
+			sourceTree = "<group>";
+		};
+		0ACB08F71E782AC700D257D6 /* Animal noises */ = {
+			isa = PBXGroup;
+			children = (
+				0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */,
+			);
+			name = "Animal noises";
+			sourceTree = "<group>";
+		};
+		0ACB08F81E782AD700D257D6 /* Rattles */ = {
+			isa = PBXGroup;
+			children = (
+				0A775F791E74B1D2000526DC /* RattleView.swift */,
+				0A775F751E74A81A000526DC /* RattlesView.swift */,
+			);
+			name = Rattles;
+			sourceTree = "<group>";
+		};
 		13184192EE0C2069675ADF8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,9 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				3A9BAEF41E3F9907000FC640 /* EventModel.swift */,
-				0A61EC801E602D0100A0DBF9 /* ImageModel.swift */,
-				0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */,
 				0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */,
+				0ACB08F91E782BE700D257D6 /* FloatingItemModel.swift */,
+				0A3EEBA91E7944190009706B /* AnimalNoiseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,7 +233,7 @@
 		3AFB52FB1E3F26D700627C8E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB53201E3F2A2400627C8E /* Assets.xcassets */,
+				0A3EEBAB1E79736F0009706B /* Assets.xcassets */,
 				3AFB531E1E3F298100627C8E /* Images.xcassets */,
 			);
 			path = Resource;
@@ -203,6 +242,7 @@
 		3AFB52FC1E3F26D700627C8E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0A3EEBA61E78D1100009706B /* Data */,
 				3AFB532A1E3F6F9D00627C8E /* UIImageView+Color.swift */,
 				3A9BAEF01E3F7C36000FC640 /* DateExtension.swift */,
 				0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */,
@@ -225,11 +265,9 @@
 		3AFB52FE1E3F26D700627C8E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3A27F4A61E433A83008A7F7E /* FloatingImageContentView.swift */,
-				0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */,
-				0A61EC7E1E602CDB00A0DBF9 /* ImageAnimationView.swift */,
-				0A775F751E74A81A000526DC /* RattlesView.swift */,
-				0A775F791E74B1D2000526DC /* RattleView.swift */,
+				0ACB08F61E782AB300D257D6 /* Baby Radio */,
+				0ACB08F71E782AC700D257D6 /* Animal noises */,
+				0ACB08F81E782AD700D257D6 /* Rattles */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,7 +386,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4WGDATJ3CA;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -377,7 +415,7 @@
 			files = (
 				131D1A5D1CDB58F0007C9F2A /* LaunchScreen.storyboard in Resources */,
 				3AFB531F1E3F298100627C8E /* Images.xcassets in Resources */,
-				3AFB53211E3F2A2400627C8E /* Assets.xcassets in Resources */,
+				0A3EEBAC1E79736F0009706B /* Assets.xcassets in Resources */,
 				131D1A581CDB58F0007C9F2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,9 +475,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A61EC7F1E602CDB00A0DBF9 /* ImageAnimationView.swift in Sources */,
 				3A27F4A21E433A0E008A7F7E /* HomeViewController.swift in Sources */,
 				3A27F49C1E433A0E008A7F7E /* AnimalNoisesViewController.swift in Sources */,
+				0A3EEBA81E793DF60009706B /* AnimalNoises.swift in Sources */,
 				3A27F49D1E433A0E008A7F7E /* BabyModeViewController.swift in Sources */,
 				3A27F4A01E433A0E008A7F7E /* BaseViewController.swift in Sources */,
 				3A27F49E1E433A0E008A7F7E /* BabyRadioViewController.swift in Sources */,
@@ -449,9 +487,10 @@
 				0AE18AA71E6FEAE500932FB8 /* RattleModel.swift in Sources */,
 				3A9BAEF11E3F7C36000FC640 /* DateExtension.swift in Sources */,
 				3A27F4A41E433A0E008A7F7E /* SkyRattleViewController.swift in Sources */,
-				0A61EC811E602D0100A0DBF9 /* ImageModel.swift in Sources */,
+				0ACB08FA1E782BE700D257D6 /* FloatingItemModel.swift in Sources */,
 				3A27F4A31E433A0E008A7F7E /* SideMenuViewController.swift in Sources */,
 				0A775F7A1E74B1D2000526DC /* RattleView.swift in Sources */,
+				0A3EEBA51E78AD150009706B /* BabyRadioItems.swift in Sources */,
 				3A27F4A51E433A0E008A7F7E /* SoundTimerViewController.swift in Sources */,
 				0AD0BFF01E6D5CDE0000C1D3 /* BabyTips.swift in Sources */,
 				3A9BAEF51E3F9907000FC640 /* EventModel.swift in Sources */,
@@ -460,6 +499,7 @@
 				3A27F49F1E433A0E008A7F7E /* BabyTipsViewController.swift in Sources */,
 				0A775F761E74A81A000526DC /* RattlesView.swift in Sources */,
 				3AFB532B1E3F6F9D00627C8E /* UIImageView+Color.swift in Sources */,
+				0A3EEBAA1E7944190009706B /* AnimalNoiseModel.swift in Sources */,
 				0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */,
 				0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */,
 				3A27F4A71E433A83008A7F7E /* FloatingImageContentView.swift in Sources */,
@@ -590,8 +630,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chuck  Luther (4WGDATJ3CA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 4WGDATJ3CA;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -602,11 +642,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "30fae4cb-f806-4c09-8a25-0e4381f2ce06";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -618,8 +659,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chuck  Luther (4WGDATJ3CA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 4WGDATJ3CA;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -630,10 +671,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "30fae4cb-f806-4c09-8a25-0e4381f2ce06";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
