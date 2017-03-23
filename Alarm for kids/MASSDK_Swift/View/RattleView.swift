@@ -32,6 +32,7 @@ class RattleView: UIView {
     {
         center.x = rattle.rattle_rect.x * screenSize.width
         center.y = rattle.rattle_rect.y * screenSize.width
+        
         frame.size = CGSize(width : screenSize.width * rattle.rattle_rect.radius * 2 , height : screenSize.width * rattle.rattle_rect.radius * 2)
         
         imageView.image = rattle.rattle_image

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "dog_awake@2x.png.png",
+      "filename" : "dog_awake@1x.png.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dog_awake@2x.png-1.png",
+      "filename" : "dog_awake@2x.png.png",
       "scale" : "2x"
     },
     {

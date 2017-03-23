@@ -36,6 +36,11 @@ class BabyTipsViewController: BaseViewController {
         // Do any additional setup after loading the view.
         setText(selected: 0, status: 0)
     }
+    
+        
+    override func viewDidAppear(_ animated: Bool) {
+        tipContent.contentOffset.y = 0
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -92,6 +97,7 @@ class BabyTipsViewController: BaseViewController {
     }
     
     func setText(selected: Int, status: Int){
+        
         if status == 1 {
             tipTitle.text = safetyTips[selected].tip_title
             tipContent.text = safetyTips[selected].tip_content
@@ -139,5 +145,6 @@ class BabyTipsViewController: BaseViewController {
                 nextImageView.isHidden = false
             }
         }
+        tipContent.contentOffset.y = 0
     }
 }

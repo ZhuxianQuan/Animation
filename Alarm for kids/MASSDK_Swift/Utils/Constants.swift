@@ -37,8 +37,8 @@ class Constants {
     
     static let CORNER_LEFT                  = 1
     static let CORNER_RIGHT                 = 2
-    static let CORNER_TOP                   = 3
-    static let CORNER_BOTTOM                = 4
+    static let CORNER_TOP                   = 4
+    static let CORNER_BOTTOM                = 8
     
     
     static let BABY_RADIO_SOUND             = 2

@@ -22,6 +22,9 @@ public class AnimalsView: UIView {
     
     var animals : [AnimalNoiseModel] = []
     
+    var awakedItem : Int = -1
+    
+    var awakedItemMoved : CGFloat = 0.0
     
     //var delegate: AnimalsViewDelegate!
     
@@ -55,7 +58,7 @@ public class AnimalsView: UIView {
             }
             
             imageView.image = image
-            imageView.contentMode = .scaleToFill
+            imageView.contentMode = .scaleAspectFit
             NSLog("\(imageView.frame)")
             view1.addSubview(imageView)
             var button = UIButton(frame: imageView.frame)
@@ -101,43 +104,59 @@ public class AnimalsView: UIView {
     func selectAnimal(_ sender : UIButton){
         NSLog("Tag ===== \(sender.tag)")
         
-        var imageView = self.viewWithTag(sender.tag + 1) as? UIImageView
-        if imageView != nil{
+        let imageView1 = self.viewWithTag(sender.tag + 1) as? UIImageView
+        let imageView2 = self.viewWithTag(sender.tag + 1001) as? UIImageView
+        if imageView1 != nil && imageView2 != nil{
             var imagename = ""
-            if animals[(sender.tag - 10) / 10].animal_status == Constants.ANIMAL_SLEEP{
-                imagename = animals[(sender.tag - 10) / 10].getAwakeAnimalImageName()
-                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_AWAKE
+            if awakedItem == -1{
+                if animals[(sender.tag - 10) / 10].animal_status == Constants.ANIMAL_SLEEP{
+                    imagename = animals[(sender.tag - 10) / 10].getAwakeAnimalImageName()
+                    animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_AWAKE
+                    awakedItem = (sender.tag - 10) / 10
+                    
+                    imageView1?.image = UIImage(named: imagename)!
+                    imageView2?.image = UIImage(named: imagename)!
+                    
+                    awakedItemMoved = 0
+                }
+                
             }
             else{
-                imagename = animals[(sender.tag - 10) / 10].getSleepingAnimalImageName()
-                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_SLEEP
+                if animals[(sender.tag - 10) / 10].animal_status == Constants.ANIMAL_AWAKE{
+                    imagename = animals[(sender.tag - 10) / 10].getSleepingAnimalImageName()
+                    animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_SLEEP
+                    awakedItem = -1
+                    
+                    imageView1?.image = UIImage(named: imagename)!
+                    imageView2?.image = UIImage(named: imagename)!
+                }
+                
             }
-            imageView?.image = UIImage(named: imagename)!
         }
-        imageView = self.viewWithTag(sender.tag + 1 + 1000) as? UIImageView
-        
-        if imageView != nil{
-            
-            var imagename = ""
-            if animals[(sender.tag - 10) / 10].animal_status == Constants.ANIMAL_SLEEP{
-                imagename = animals[(sender.tag - 10) / 10].getAwakeAnimalImageName()
-                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_AWAKE
-            }
-            else{
-                imagename = animals[(sender.tag - 10) / 10].getSleepingAnimalImageName()
-                animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_SLEEP
-            }
-            imageView?.image = UIImage(named: imagename)!
-        }
+    }
+    
+    func setItemSleep() {
+        animals[awakedItem].animal_status = Constants.ANIMAL_SLEEP
+        let imageView1 = self.viewWithTag(awakedItem * 10 + 11) as? UIImageView
+        let imageView2 = self.viewWithTag(awakedItem * 10 + 1011) as? UIImageView
+        let imagename = animals[awakedItem].getSleepingAnimalImageName()
+        imageView1?.image = UIImage(named: imagename)!
+        imageView2?.image = UIImage(named: imagename)!
+        awakedItem = -1
     }
     
     func animateView(){
         if (view1.frame.origin.x - 1.5 < -1 * (viewSize.width)){
             setInitFrame()
+            
         }
         else{
             view1.frame.origin.x -= 0.5
             view2.frame.origin.x -= 0.5
+            awakedItemMoved += 0.5
+            if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
+                setItemSleep()
+            }
         }
         
     }
@@ -147,8 +166,12 @@ public class AnimalsView: UIView {
             setInitFrame()
         }
         else{
-            view1.frame.origin.x -= 2
-            view2.frame.origin.x -= 2
+            view1.frame.origin.x -= 4
+            view2.frame.origin.x -= 4
+            awakedItemMoved += 4
+            if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
+                setItemSleep()
+            }
         }
         
     }

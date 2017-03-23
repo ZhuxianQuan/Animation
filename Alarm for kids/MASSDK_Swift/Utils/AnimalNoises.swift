@@ -9,25 +9,6 @@
 import Foundation
 
 class AnimalNoises{
-    /*animalImages.append(UIImage(named: "image_awakecat")!)
-    animalImages.append(UIImage(named: "image_awakegoat")!)
-    animalImages.append(UIImage(named: "image_awakecock")!)
-    animalImages.append(UIImage(named: "image_awakedog")!)
-    animalImages.append(UIImage(named: "image_awakehen")!)
-    animalImages.append(UIImage(named: "image_awakesheep")!)
-    animalImages.append(UIImage(named: "image_awakecow")!)
-    animalImages.append(UIImage(named: "image_awakehorse")!)
-    animalImages.append(UIImage(named: "image_awakepig")!)
-    
-    animalImages.append(UIImage(named: "image_sleepingcat")!)
-    animalImages.append(UIImage(named: "image_sleepinggoat")!)
-    animalImages.append(UIImage(named: "image_sleepingcock")!)
-    animalImages.append(UIImage(named: "image_sleepingdog")!)
-    animalImages.append(UIImage(named: "image_sleepinghen")!)
-    animalImages.append(UIImage(named: "image_sleepingsheep")!)
-    animalImages.append(UIImage(named: "image_sleepingcow")!)
-    animalImages.append(UIImage(named: "image_sleepinghorse")!)
-    animalImages.append(UIImage(named: "image_sleepingpig")!)*/
     
     static func getAnimalNoises() -> [AnimalNoiseModel]{
         var result : [AnimalNoiseModel] = []

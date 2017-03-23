@@ -19,6 +19,8 @@
 		0A775F7A1E74B1D2000526DC /* RattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F791E74B1D2000526DC /* RattleView.swift */; };
 		0ACB08FA1E782BE700D257D6 /* FloatingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB08F91E782BE700D257D6 /* FloatingItemModel.swift */; };
 		0AD0BFF01E6D5CDE0000C1D3 /* BabyTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */; };
+		0AD7CD8C1E8274CB00839CF8 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7CD8B1E8274CB00839CF8 /* UIView+Extensions.swift */; };
+		0AD7CD8E1E827D0300839CF8 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7CD8D1E827D0300839CF8 /* right.mp3 */; };
 		0AE18AA71E6FEAE500932FB8 /* RattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */; };
 		0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */; };
 		131D1A581CDB58F0007C9F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131D1A561CDB58F0007C9F2A /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 		0A775F791E74B1D2000526DC /* RattleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleView.swift; sourceTree = "<group>"; };
 		0ACB08F91E782BE700D257D6 /* FloatingItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingItemModel.swift; sourceTree = "<group>"; };
 		0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyTips.swift; path = ../Model/BabyTips.swift; sourceTree = "<group>"; };
+		0AD7CD8B1E8274CB00839CF8 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		0AD7CD8D1E827D0300839CF8 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
 		0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleModel.swift; sourceTree = "<group>"; };
 		0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleUtils.swift; sourceTree = "<group>"; };
 		131D1A4F1CDB58F0007C9F2A /* MASSDK_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MASSDK_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +237,7 @@
 		3AFB52FB1E3F26D700627C8E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0AD7CD8D1E827D0300839CF8 /* right.mp3 */,
 				0A3EEBAB1E79736F0009706B /* Assets.xcassets */,
 				3AFB531E1E3F298100627C8E /* Images.xcassets */,
 			);
@@ -249,6 +254,7 @@
 				0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */,
 				0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */,
 				0A775F771E74ACA9000526DC /* CommonUtils.swift */,
+				0AD7CD8B1E8274CB00839CF8 /* UIView+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD7CD8E1E827D0300839CF8 /* right.mp3 in Resources */,
 				131D1A5D1CDB58F0007C9F2A /* LaunchScreen.storyboard in Resources */,
 				3AFB531F1E3F298100627C8E /* Images.xcassets in Resources */,
 				0A3EEBAC1E79736F0009706B /* Assets.xcassets in Resources */,
@@ -503,6 +510,7 @@
 				0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */,
 				0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */,
 				3A27F4A71E433A83008A7F7E /* FloatingImageContentView.swift in Sources */,
+				0AD7CD8C1E8274CB00839CF8 /* UIView+Extensions.swift in Sources */,
 				0A775F781E74ACA9000526DC /* CommonUtils.swift in Sources */,
 				3A9BAEF31E3F9882000FC640 /* EventLogTableViewCell.swift in Sources */,
 			);
@@ -642,7 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "30fae4cb-f806-4c09-8a25-0e4381f2ce06";
+				PROVISIONING_PROFILE = "7d705b62-f1c0-4b92-97fd-fa109a4bd28e";
 				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -671,7 +679,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "30fae4cb-f806-4c09-8a25-0e4381f2ce06";
+				PROVISIONING_PROFILE = "7d705b62-f1c0-4b92-97fd-fa109a4bd28e";
 				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

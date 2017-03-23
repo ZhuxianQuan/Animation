@@ -11,7 +11,7 @@ import Foundation
 class AnimalNoiseModel {
     
     var animal_name = ""
-    var animal_status = 0
+    var animal_status = Constants.ANIMAL_SLEEP
     
     func getAwakeAnimalImageName() -> String{
         return "image_awake" + animal_name.lowercased()

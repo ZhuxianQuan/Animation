@@ -46,14 +46,14 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
         if loaded {
             screenSize = self.view.frame.size
             loaded = false
-            setFlaotingItems(Constants.BABY_RADIO_ALL)
+            setFloatingItems(Constants.BABY_RADIO_ALL)
             setupGustures()
         }
         
     }
 
     
-    func setFlaotingItems(_ index: Int) {
+    func setFloatingItems(_ index: Int) {
         mainTimer.invalidate()
         timer.invalidate()
         clearView()
@@ -324,13 +324,13 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
     @IBAction func selectSegmentedControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == Constants.BABY_RADIO_SOUND{
-            setFlaotingItems(Constants.BABY_RADIO_SOUND)
+            setFloatingItems(Constants.BABY_RADIO_SOUND)
         }
         else if sender.selectedSegmentIndex == Constants.BABY_RADIO_ALL{
-            setFlaotingItems(Constants.BABY_RADIO_ALL)
+            setFloatingItems(Constants.BABY_RADIO_ALL)
         }
         else if sender.selectedSegmentIndex == Constants.BABY_RADIO_MUSIC{
-            setFlaotingItems(Constants.BABY_RADIO_MUSIC)
+            setFloatingItems(Constants.BABY_RADIO_MUSIC)
         }
     }
     func moveFaseBackgroundImages(){

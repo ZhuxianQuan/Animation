@@ -121,17 +121,17 @@ class BabyRadioViewController: BaseViewController {
     }
     @IBAction func gotoBabyModeTapped(_ sender: Any) {
         
-        if (itemStatus == Constants.BABY_RADIO_STAR){
+        //if (itemStatus == Constants.BABY_RADIO_STAR){
             let viewController = storyboard?.instantiateViewController(withIdentifier: "BabyModeViewController") as! BabyModeViewController
             self.navigationController?.pushViewController(viewController, animated: true)
-        }
+        //}
     }
 
     @IBAction func gotoTimerButtonTapped(_ sender: Any) {
         
-        if (itemStatus == Constants.BABY_RADIO_STAR){
+        //if (itemStatus == Constants.BABY_RADIO_STAR){
             let viewController = storyboard?.instantiateViewController(withIdentifier: "SoundTimerViewController") as! SoundTimerViewController
             self.navigationController?.pushViewController(viewController, animated: true)
-        }
+        //}
     }
 }

@@ -23,23 +23,3 @@ extension UIView {
         return floatAlpha
     }
 }
-/*
-@IBDesignable
-class SOXShapedTapButton: UIButton {
-    
-    @IBInspectable var treshold: CGFloat = 1.0 {
-        didSet {
-            if treshold > 1.0 {
-                treshold = 1.0
-            }
-            if treshold < 0.0 {
-                treshold = 0.0
-            }
-        }
-    }
-    
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        return self.alphaFromPoint(point) > treshold
-    }
-}
-*/

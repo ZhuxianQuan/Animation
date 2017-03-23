@@ -22,17 +22,25 @@ class SkyRattleViewController: BaseViewController {
     var timer = Timer()
     var currentAcceleration: CGFloat = 0.0
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         setRattlesView()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        rattlesView.setTimer()
     }
     
     func setRattlesView(){
         var images : [UIImage] = []
-        for index in 3...8 {
-            images.append(UIImage(named: "skyrattle_\(index)")!)
+        for index in 4...5 {
+            images.append(UIImage(named: "skyrattle_\(index)")!) //\(index)
+        }
+        for index in 9...10 {
+            images.append(UIImage(named: "skyrattle_\(index)")!) //\(index)
         }
         rattlesView.initRattleView(images: images)
     }
@@ -43,9 +51,17 @@ class SkyRattleViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        rattlesView.timer.invalidate()
+    }
     
     
-   
     
 }
+/*
+extension SkyRattleViewController : UIAccelerometerDelegate {
+    
+}*/
+
+
 
