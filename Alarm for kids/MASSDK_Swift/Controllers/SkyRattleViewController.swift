@@ -39,9 +39,10 @@ class SkyRattleViewController: BaseViewController {
         for index in 4...5 {
             images.append(UIImage(named: "skyrattle_\(index)")!) //\(index)
         }
-        for index in 9...10 {
-            images.append(UIImage(named: "skyrattle_\(index)")!) //\(index)
-        }
+        //for index in 9...10 {
+        images.append(UIImage(named: "skyrattle_10")!)
+        images.append(UIImage(named: "skyrattle_13")!) //\(index)
+        //}
         rattlesView.initRattleView(images: images)
     }
     
