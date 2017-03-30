@@ -159,6 +159,11 @@ extension AppDelegate : AVAudioPlayerDelegate{
             else
             {
                 player?.pause()
+                let event = EventModel()
+                event.eventTime = getGlobalTime()
+                event.eventType = EventModel.EVENT_SOUND_STOP
+                event.eventContent = currentPlayingAudioName + " stopped by User"
+                SetDataToFMDB.saveEvent(event)
             }
         }
         if currentPlayingAudioName == filename as! String{
@@ -188,10 +193,10 @@ extension AppDelegate : AVAudioPlayerDelegate{
         isRepeated = false
         
         
-        guard let audioFileUrlString = Bundle.main.path(forResource: currentPlayingAudioName, ofType: nil) else {
+        guard let audioFileUrlString = Bundle.main.path(forResource: "sound_" + currentPlayingAudioName.lowercased().replacingOccurrences(of: " ", with: "_") + ".wav", ofType: nil) else {
             return
         }
-        guard let url = URL(string: "sound_" + audioFileUrlString.lowercased().replacingOccurrences(of: " ", with: "_") + ".wav") else {
+        guard let url = URL(string: audioFileUrlString) else {
             return
         }
         do {

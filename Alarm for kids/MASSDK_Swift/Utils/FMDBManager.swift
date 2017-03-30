@@ -52,7 +52,9 @@ class FMDBManager{
     func emptyTables()
     {
         do{
-            try database.executeUpdate("DROP TABLE " + EventModel.localTableName, values: nil)
+            database.open()
+            try database.executeUpdate("DELETE FROM " + EventModel.localTableName, values: nil)
+            database.close()
         }
         catch{
             print("failed: \(error.localizedDescription)")
@@ -85,8 +87,7 @@ class FMDBManager{
 
         resultString.remove(at: resultString.index(before: resultString.endIndex))
         resultString.append(")")
-
-        NSLog("create tableString ===== \(resultString)")
+        
         return resultString
     }
 
@@ -102,10 +103,11 @@ class FMDBManager{
             keysString.append("\(key),")
             valuesString += " '"
             if(key == primaryKey){
-                valuesString += ("(SELECT \(key) FROM \(tableName) where \(key)= \(tableData[key] as AnyObject))")
+                let valueString1 = "\(tableData[key] as AnyObject)".replacingOccurrences(of: "'", with: "''")
+                valuesString += ("(SELECT \(key) FROM \(tableName) where \(key)= \(valueString1))")
             }
             else{
-                valuesString += ("\(tableData[key] as AnyObject)")
+                valuesString += ("\(tableData[key] as AnyObject)").replacingOccurrences(of: "'", with: "''")
             }
             valuesString += "' ,"
 
@@ -119,7 +121,7 @@ class FMDBManager{
         insertString.append(keysString)
         insertString.append(valuesString.replacingOccurrences(of: "Optional(", with: "").replacingOccurrences(of: ")',", with: "',"))
 
-        NSLog(insertString)
+        
 
         return insertString
         
@@ -135,7 +137,6 @@ class FMDBManager{
 
             while rs.next(){
                 var resultItem : [String: AnyObject] = [:]
-                NSLog("\(tableObject)")
                 for item in tableObject{
                     resultItem[item.key] = getObjectFromKey(value: rs, type: item.value, key: item.key)
                 }
@@ -150,8 +151,11 @@ class FMDBManager{
     }
 
     func getObjectFromKey(value: FMResultSet, type: String, key: String) -> AnyObject{
-
+        
         if (type.hasPrefix("VARCHAR")){
+            return value.string(forColumn: key) as AnyObject
+        }
+        else if (type.hasPrefix("TEXT")){
             return value.string(forColumn: key) as AnyObject
         }
         else if(type.hasPrefix("TINYINT")){

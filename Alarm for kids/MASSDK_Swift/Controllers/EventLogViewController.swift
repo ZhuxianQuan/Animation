@@ -60,36 +60,11 @@ class EventLogViewController: BaseViewController {
     }
 
     func clearButtonTapped() {
+        SetDataToFMDB.clearEvent()
         eventLogsArray = []
         tblEventLog.reloadData()
     }
     func getLogs(){
-       /* eventLogsArray = []
-        var event = EventModel()
-        event.eventContent = "Air conditioner started by user"
-        event.eventType = EventModel.EVENT_SOUND_START
-        event.eventTime = "10/22/16, 10:12 AM"
-        eventLogsArray.append(event)
-        event = EventModel()
-        event.eventContent = "Air conditioner stopped by user"
-        event.eventType = EventModel.EVENT_SOUND_STOP
-        event.eventTime = "10/28/16, 10:12 AM"
-        eventLogsArray.append(event)
-        event = EventModel()
-        event.eventContent = "Air conditioner started by user"
-        event.eventType = EventModel.EVENT_SOUND_START
-        event.eventTime = "12/22/16, 10:12 AM"
-        eventLogsArray.append(event)
-        event = EventModel()
-        event.eventContent = "Air conditioner started by user"
-        event.eventType = EventModel.EVENT_SOUND_START
-        event.eventTime = "10/22/16, 10:12 AM"
-        eventLogsArray.append(event)
-        event = EventModel()
-        event.eventContent = "Air conditioner stopped by user"
-        event.eventType = EventModel.EVENT_SOUND_STOP
-        event.eventTime = "10/22/16, 10:12 AM"
-        eventLogsArray.append(event)*/
         eventLogsArray = GetDataFromFMDB.getEvents()
 
     }
