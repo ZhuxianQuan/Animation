@@ -34,14 +34,16 @@ extension Date{
     {
         return Date.fromMillis(millis: Date.toLocalMillis(globalMillis: NSNumber(value: millis)))!
     }
-
+    
 }
 
 
 
 func getGlobalTime() -> Int64
 {
-    return Date().toMillis().int64Value
+    let tz = NSTimeZone.local
+    let differenceSeconds = tz.secondsFromGMT()
+    return Date().toMillis().int64Value - differenceSeconds * 1000
 }
 
 func getTimeFromGMTTimeMillis(time: Int64) -> Date
@@ -49,9 +51,10 @@ func getTimeFromGMTTimeMillis(time: Int64) -> Date
     return Date.getCurrentTimeFromGlobalMillis(millis: time)
 }
 
-func getLocalTimeString(_ time: Date) -> String{
+func getLocalTimeString(_ timeStamp: Int64) -> String{
+    let time = getTimeFromGMTTimeMillis(time: timeStamp)
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "H:mm"
+    dateFormatter.dateFormat = "MM/dd/yy, h/mm a:"
     return dateFormatter.string(from: time)
 }
 

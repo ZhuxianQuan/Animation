@@ -23,6 +23,35 @@
 		0AD7CD8E1E827D0300839CF8 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7CD8D1E827D0300839CF8 /* right.mp3 */; };
 		0AE18AA71E6FEAE500932FB8 /* RattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */; };
 		0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */; };
+		0AF682F81E8A972800BDC343 /* sound_cars.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682DF1E8A972800BDC343 /* sound_cars.wav */; };
+		0AF682F91E8A972800BDC343 /* sound_wind.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E01E8A972800BDC343 /* sound_wind.wav */; };
+		0AF682FA1E8A972800BDC343 /* sound_grandfather_clock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E11E8A972800BDC343 /* sound_grandfather_clock.wav */; };
+		0AF682FB1E8A972800BDC343 /* sound_fan.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E21E8A972800BDC343 /* sound_fan.wav */; };
+		0AF682FC1E8A972800BDC343 /* sound_shower.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E31E8A972800BDC343 /* sound_shower.wav */; };
+		0AF682FD1E8A972800BDC343 /* sound_lorry.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E41E8A972800BDC343 /* sound_lorry.wav */; };
+		0AF682FE1E8A972800BDC343 /* sound_white_noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E51E8A972800BDC343 /* sound_white_noise.wav */; };
+		0AF682FF1E8A972800BDC343 /* sound_vacuum_cleaner.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E61E8A972800BDC343 /* sound_vacuum_cleaner.wav */; };
+		0AF683001E8A972800BDC343 /* sound_washing_machine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E71E8A972800BDC343 /* sound_washing_machine.wav */; };
+		0AF683011E8A972800BDC343 /* sound_mom's_heartbeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E81E8A972800BDC343 /* sound_mom's_heartbeat.wav */; };
+		0AF683021E8A972800BDC343 /* sound_fire.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682E91E8A972800BDC343 /* sound_fire.wav */; };
+		0AF683031E8A972800BDC343 /* sound_cat_purr.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682EA1E8A972800BDC343 /* sound_cat_purr.wav */; };
+		0AF683041E8A972800BDC343 /* sound_forest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682EB1E8A972800BDC343 /* sound_forest.wav */; };
+		0AF683051E8A972800BDC343 /* sound_rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682EC1E8A972800BDC343 /* sound_rain.wav */; };
+		0AF683061E8A972800BDC343 /* sound_stream.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682ED1E8A972800BDC343 /* sound_stream.wav */; };
+		0AF683071E8A972800BDC343 /* 2 sea waves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682EE1E8A972800BDC343 /* 2 sea waves.wav */; };
+		0AF683081E8A972800BDC343 /* sound_waterfall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682EF1E8A972800BDC343 /* sound_waterfall.wav */; };
+		0AF683091E8A972800BDC343 /* sound_flute.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F01E8A972800BDC343 /* sound_flute.wav */; };
+		0AF6830A1E8A972800BDC343 /* sound_piano.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F11E8A972800BDC343 /* sound_piano.wav */; };
+		0AF6830B1E8A972800BDC343 /* sound_guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F21E8A972800BDC343 /* sound_guitar.wav */; };
+		0AF6830C1E8A972800BDC343 /* sound_harp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F31E8A972800BDC343 /* sound_harp.wav */; };
+		0AF6830D1E8A972800BDC343 /* sound_lyre.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F41E8A972800BDC343 /* sound_lyre.wav */; };
+		0AF6830E1E8A972800BDC343 /* sound_jukebox.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F51E8A972800BDC343 /* sound_jukebox.wav */; };
+		0AF6830F1E8A972800BDC343 /* 3 soothing melody.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F61E8A972800BDC343 /* 3 soothing melody.wav */; };
+		0AF683101E8A972800BDC343 /* 3 throat singing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF682F71E8A972800BDC343 /* 3 throat singing.wav */; };
+		0AF683121E8BAC1E00BDC343 /* sound_dolphin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AF683111E8BAC1E00BDC343 /* sound_dolphin.wav */; };
+		0AF683141E8C5E1500BDC343 /* FMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF683131E8C5E1500BDC343 /* FMDBManager.swift */; };
+		0AF683171E8C62B200BDC343 /* FMDBManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF683161E8C62B200BDC343 /* FMDBManager+Data.swift */; };
+		0AF683191E8C71A800BDC343 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF683181E8C71A800BDC343 /* ParseHelper.swift */; };
 		131D1A581CDB58F0007C9F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131D1A561CDB58F0007C9F2A /* Main.storyboard */; };
 		131D1A5D1CDB58F0007C9F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131D1A5B1CDB58F0007C9F2A /* LaunchScreen.storyboard */; };
 		131D1A931CDB5D8D007C9F2A /* MASSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 131D1A911CDB5D88007C9F2A /* MASSDK.framework */; };
@@ -79,6 +108,35 @@
 		0AD7CD8D1E827D0300839CF8 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
 		0AE18AA61E6FEAE500932FB8 /* RattleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleModel.swift; sourceTree = "<group>"; };
 		0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleUtils.swift; sourceTree = "<group>"; };
+		0AF682DF1E8A972800BDC343 /* sound_cars.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_cars.wav; sourceTree = "<group>"; };
+		0AF682E01E8A972800BDC343 /* sound_wind.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_wind.wav; sourceTree = "<group>"; };
+		0AF682E11E8A972800BDC343 /* sound_grandfather_clock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_grandfather_clock.wav; sourceTree = "<group>"; };
+		0AF682E21E8A972800BDC343 /* sound_fan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_fan.wav; sourceTree = "<group>"; };
+		0AF682E31E8A972800BDC343 /* sound_shower.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_shower.wav; sourceTree = "<group>"; };
+		0AF682E41E8A972800BDC343 /* sound_lorry.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_lorry.wav; sourceTree = "<group>"; };
+		0AF682E51E8A972800BDC343 /* sound_white_noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_white_noise.wav; sourceTree = "<group>"; };
+		0AF682E61E8A972800BDC343 /* sound_vacuum_cleaner.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_vacuum_cleaner.wav; sourceTree = "<group>"; };
+		0AF682E71E8A972800BDC343 /* sound_washing_machine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_washing_machine.wav; sourceTree = "<group>"; };
+		0AF682E81E8A972800BDC343 /* sound_mom's_heartbeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "sound_mom's_heartbeat.wav"; sourceTree = "<group>"; };
+		0AF682E91E8A972800BDC343 /* sound_fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_fire.wav; sourceTree = "<group>"; };
+		0AF682EA1E8A972800BDC343 /* sound_cat_purr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_cat_purr.wav; sourceTree = "<group>"; };
+		0AF682EB1E8A972800BDC343 /* sound_forest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_forest.wav; sourceTree = "<group>"; };
+		0AF682EC1E8A972800BDC343 /* sound_rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_rain.wav; sourceTree = "<group>"; };
+		0AF682ED1E8A972800BDC343 /* sound_stream.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_stream.wav; sourceTree = "<group>"; };
+		0AF682EE1E8A972800BDC343 /* 2 sea waves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "2 sea waves.wav"; sourceTree = "<group>"; };
+		0AF682EF1E8A972800BDC343 /* sound_waterfall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_waterfall.wav; sourceTree = "<group>"; };
+		0AF682F01E8A972800BDC343 /* sound_flute.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_flute.wav; sourceTree = "<group>"; };
+		0AF682F11E8A972800BDC343 /* sound_piano.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_piano.wav; sourceTree = "<group>"; };
+		0AF682F21E8A972800BDC343 /* sound_guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_guitar.wav; sourceTree = "<group>"; };
+		0AF682F31E8A972800BDC343 /* sound_harp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_harp.wav; sourceTree = "<group>"; };
+		0AF682F41E8A972800BDC343 /* sound_lyre.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_lyre.wav; sourceTree = "<group>"; };
+		0AF682F51E8A972800BDC343 /* sound_jukebox.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_jukebox.wav; sourceTree = "<group>"; };
+		0AF682F61E8A972800BDC343 /* 3 soothing melody.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "3 soothing melody.wav"; sourceTree = "<group>"; };
+		0AF682F71E8A972800BDC343 /* 3 throat singing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "3 throat singing.wav"; sourceTree = "<group>"; };
+		0AF683111E8BAC1E00BDC343 /* sound_dolphin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_dolphin.wav; sourceTree = "<group>"; };
+		0AF683131E8C5E1500BDC343 /* FMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDBManager.swift; sourceTree = "<group>"; };
+		0AF683161E8C62B200BDC343 /* FMDBManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDBManager+Data.swift"; sourceTree = "<group>"; };
+		0AF683181E8C71A800BDC343 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		131D1A4F1CDB58F0007C9F2A /* MASSDK_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MASSDK_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		131D1A571CDB58F0007C9F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		131D1A5C1CDB58F0007C9F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -154,6 +212,48 @@
 				0A775F751E74A81A000526DC /* RattlesView.swift */,
 			);
 			name = Rattles;
+			sourceTree = "<group>";
+		};
+		0AF682DE1E8A972800BDC343 /* Baby Radio */ = {
+			isa = PBXGroup;
+			children = (
+				0AF682DF1E8A972800BDC343 /* sound_cars.wav */,
+				0AF682E01E8A972800BDC343 /* sound_wind.wav */,
+				0AF682E11E8A972800BDC343 /* sound_grandfather_clock.wav */,
+				0AF682E21E8A972800BDC343 /* sound_fan.wav */,
+				0AF682E31E8A972800BDC343 /* sound_shower.wav */,
+				0AF682E41E8A972800BDC343 /* sound_lorry.wav */,
+				0AF682E51E8A972800BDC343 /* sound_white_noise.wav */,
+				0AF682E61E8A972800BDC343 /* sound_vacuum_cleaner.wav */,
+				0AF682E71E8A972800BDC343 /* sound_washing_machine.wav */,
+				0AF682E81E8A972800BDC343 /* sound_mom's_heartbeat.wav */,
+				0AF682E91E8A972800BDC343 /* sound_fire.wav */,
+				0AF682EA1E8A972800BDC343 /* sound_cat_purr.wav */,
+				0AF682EB1E8A972800BDC343 /* sound_forest.wav */,
+				0AF682EC1E8A972800BDC343 /* sound_rain.wav */,
+				0AF682ED1E8A972800BDC343 /* sound_stream.wav */,
+				0AF682EE1E8A972800BDC343 /* 2 sea waves.wav */,
+				0AF682EF1E8A972800BDC343 /* sound_waterfall.wav */,
+				0AF682F01E8A972800BDC343 /* sound_flute.wav */,
+				0AF682F11E8A972800BDC343 /* sound_piano.wav */,
+				0AF682F21E8A972800BDC343 /* sound_guitar.wav */,
+				0AF682F31E8A972800BDC343 /* sound_harp.wav */,
+				0AF682F41E8A972800BDC343 /* sound_lyre.wav */,
+				0AF682F51E8A972800BDC343 /* sound_jukebox.wav */,
+				0AF682F61E8A972800BDC343 /* 3 soothing melody.wav */,
+				0AF683111E8BAC1E00BDC343 /* sound_dolphin.wav */,
+				0AF682F71E8A972800BDC343 /* 3 throat singing.wav */,
+			);
+			path = "Baby Radio";
+			sourceTree = "<group>";
+		};
+		0AF683151E8C5E1A00BDC343 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				0AF683131E8C5E1500BDC343 /* FMDBManager.swift */,
+				0AF683161E8C62B200BDC343 /* FMDBManager+Data.swift */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 		13184192EE0C2069675ADF8E /* Frameworks */ = {
@@ -237,6 +337,7 @@
 		3AFB52FB1E3F26D700627C8E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0AF682DE1E8A972800BDC343 /* Baby Radio */,
 				0AD7CD8D1E827D0300839CF8 /* right.mp3 */,
 				0A3EEBAB1E79736F0009706B /* Assets.xcassets */,
 				3AFB531E1E3F298100627C8E /* Images.xcassets */,
@@ -247,6 +348,7 @@
 		3AFB52FC1E3F26D700627C8E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0AF683151E8C5E1A00BDC343 /* FMDB */,
 				0A3EEBA61E78D1100009706B /* Data */,
 				3AFB532A1E3F6F9D00627C8E /* UIImageView+Color.swift */,
 				3A9BAEF01E3F7C36000FC640 /* DateExtension.swift */,
@@ -255,6 +357,7 @@
 				0AE18AA81E6FECC400932FB8 /* RattleUtils.swift */,
 				0A775F771E74ACA9000526DC /* CommonUtils.swift */,
 				0AD7CD8B1E8274CB00839CF8 /* UIView+Extensions.swift */,
+				0AF683181E8C71A800BDC343 /* ParseHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -393,6 +496,11 @@
 						DevelopmentTeam = 4WGDATJ3CA;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -419,11 +527,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF683021E8A972800BDC343 /* sound_fire.wav in Resources */,
+				0AF683001E8A972800BDC343 /* sound_washing_machine.wav in Resources */,
 				0AD7CD8E1E827D0300839CF8 /* right.mp3 in Resources */,
+				0AF6830C1E8A972800BDC343 /* sound_harp.wav in Resources */,
+				0AF682F81E8A972800BDC343 /* sound_cars.wav in Resources */,
+				0AF683051E8A972800BDC343 /* sound_rain.wav in Resources */,
+				0AF683101E8A972800BDC343 /* 3 throat singing.wav in Resources */,
+				0AF683081E8A972800BDC343 /* sound_waterfall.wav in Resources */,
+				0AF6830F1E8A972800BDC343 /* 3 soothing melody.wav in Resources */,
+				0AF683011E8A972800BDC343 /* sound_mom's_heartbeat.wav in Resources */,
+				0AF6830E1E8A972800BDC343 /* sound_jukebox.wav in Resources */,
+				0AF682FA1E8A972800BDC343 /* sound_grandfather_clock.wav in Resources */,
+				0AF682F91E8A972800BDC343 /* sound_wind.wav in Resources */,
+				0AF683061E8A972800BDC343 /* sound_stream.wav in Resources */,
 				131D1A5D1CDB58F0007C9F2A /* LaunchScreen.storyboard in Resources */,
 				3AFB531F1E3F298100627C8E /* Images.xcassets in Resources */,
+				0AF683041E8A972800BDC343 /* sound_forest.wav in Resources */,
+				0AF683121E8BAC1E00BDC343 /* sound_dolphin.wav in Resources */,
 				0A3EEBAC1E79736F0009706B /* Assets.xcassets in Resources */,
+				0AF683071E8A972800BDC343 /* 2 sea waves.wav in Resources */,
+				0AF682FC1E8A972800BDC343 /* sound_shower.wav in Resources */,
+				0AF6830D1E8A972800BDC343 /* sound_lyre.wav in Resources */,
 				131D1A581CDB58F0007C9F2A /* Main.storyboard in Resources */,
+				0AF682FD1E8A972800BDC343 /* sound_lorry.wav in Resources */,
+				0AF683091E8A972800BDC343 /* sound_flute.wav in Resources */,
+				0AF682FF1E8A972800BDC343 /* sound_vacuum_cleaner.wav in Resources */,
+				0AF682FB1E8A972800BDC343 /* sound_fan.wav in Resources */,
+				0AF682FE1E8A972800BDC343 /* sound_white_noise.wav in Resources */,
+				0AF6830B1E8A972800BDC343 /* sound_guitar.wav in Resources */,
+				0AF6830A1E8A972800BDC343 /* sound_piano.wav in Resources */,
+				0AF683031E8A972800BDC343 /* sound_cat_purr.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF683141E8C5E1500BDC343 /* FMDBManager.swift in Sources */,
 				3A27F4A21E433A0E008A7F7E /* HomeViewController.swift in Sources */,
 				3A27F49C1E433A0E008A7F7E /* AnimalNoisesViewController.swift in Sources */,
 				0A3EEBA81E793DF60009706B /* AnimalNoises.swift in Sources */,
@@ -489,6 +624,7 @@
 				3A27F4A01E433A0E008A7F7E /* BaseViewController.swift in Sources */,
 				3A27F49E1E433A0E008A7F7E /* BabyRadioViewController.swift in Sources */,
 				3A27F4A11E433A0E008A7F7E /* EventLogViewController.swift in Sources */,
+				0AF683171E8C62B200BDC343 /* FMDBManager+Data.swift in Sources */,
 				0A3AF9C91E4E3D7200D3FBAD /* AnimalsView.swift in Sources */,
 				3AFB52FF1E3F26D700627C8E /* AppDelegate.swift in Sources */,
 				0AE18AA71E6FEAE500932FB8 /* RattleModel.swift in Sources */,
@@ -507,6 +643,7 @@
 				0A775F761E74A81A000526DC /* RattlesView.swift in Sources */,
 				3AFB532B1E3F6F9D00627C8E /* UIImageView+Color.swift in Sources */,
 				0A3EEBAA1E7944190009706B /* AnimalNoiseModel.swift in Sources */,
+				0AF683191E8C71A800BDC343 /* ParseHelper.swift in Sources */,
 				0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */,
 				0AE18AA91E6FECC400932FB8 /* RattleUtils.swift in Sources */,
 				3A27F4A71E433A83008A7F7E /* FloatingImageContentView.swift in Sources */,

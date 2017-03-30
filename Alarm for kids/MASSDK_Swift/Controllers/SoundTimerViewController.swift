@@ -121,7 +121,7 @@ class SoundTimerViewController: BaseViewController {
         }
         
         remainTimeLabel.text = getRemainTimeString(remainTime)
-        targetTimeLabel.text = getLocalTimeString(getTimeFromGMTTimeMillis(time: finishlasttime as! Int64))
+        //targetTimeLabel.text = getLocalTimeString(get)
         
         
     }
@@ -298,7 +298,7 @@ class SoundTimerViewController: BaseViewController {
     {
         remainTimeLabel.text = getRemainTimeString(remainTime)
         targetTime = getGlobalTime() / 1000 + remainTime
-        targetTimeLabel.text = "Sound stop at " + getLocalTimeString(getTimeFromGMTTimeMillis(time: targetTime))
+        //targetTimeLabel.text = "Sound stop at " + getLocalTimeString(getTimeFromGMTTimeMillis(time: targetTime))
     }
 
 

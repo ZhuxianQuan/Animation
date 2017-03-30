@@ -8,14 +8,22 @@
 
 import UIKit
 import MASSDK
-
+import AVFoundation
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    //variables for audio play
+    var player : AVAudioPlayer?
+    
+    var isRepeated = false
+    
+    var currentPlayerTime : TimeInterval!
+    
+    var currentPlayingAudioName = ""
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -61,6 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = navigationController
         self.window!.makeKeyAndVisible()
         //MASManager.sharedInstance.setFront(viewController: UIViewController(), animated: true, completion: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playAudio(_:)), name: NSNotification.Name(rawValue: Constants.ORDER_PLAY_AUDIO), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseAudio), name: NSNotification.Name(rawValue: Constants.ORDER_PAUSE_AUDIO), object: nil)
+        
+        UIApplication.shared.isIdleTimerDisabled = true
 
         return true
     }
@@ -97,8 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SoundTimerViewController") as! SoundTimerViewController
         MASManager.sharedInstance.setFront(viewController: viewController, animated: true, completion: nil)
-
-
+    
     }
     func babyModeTapped(){
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -130,5 +142,94 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+}
+
+extension AppDelegate : AVAudioPlayerDelegate{
+    
+    func playAudio(_ notification: Notification) {
+        
+        guard let filename = notification.userInfo?[Constants.KEY_AUDIO_FILENAME] else {
+            return
+        }
+        
+        if player != nil && (player?.isPlaying)! {
+            if currentPlayingAudioName == filename as! String{
+                return
+            }
+            else
+            {
+                player?.pause()
+            }
+        }
+        if currentPlayingAudioName == filename as! String{
+            player?.play()
+            if !isRepeated {
+                let event = EventModel()
+                event.eventTime = getGlobalTime()
+                event.eventType = EventModel.EVENT_SOUND_START
+                event.eventContent = currentPlayingAudioName + " started by User"
+                
+                SetDataToFMDB.saveEvent(event)
+            }
+            isRepeated = false
+            return
+        }
+        
+        currentPlayingAudioName = filename as! String
+        
+        if !isRepeated {
+            let event = EventModel()
+            event.eventTime = getGlobalTime()
+            event.eventType = EventModel.EVENT_SOUND_START
+            event.eventContent = currentPlayingAudioName + " started by User"
+            
+            SetDataToFMDB.saveEvent(event)
+        }
+        isRepeated = false
+        
+        
+        guard let audioFileUrlString = Bundle.main.path(forResource: currentPlayingAudioName, ofType: nil) else {
+            return
+        }
+        guard let url = URL(string: "sound_" + audioFileUrlString.lowercased().replacingOccurrences(of: " ", with: "_") + ".wav") else {
+            return
+        }
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.delegate = self
+            guard let player = player else { return }
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
+
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    
+    
+    func pauseAudio() {
+        if player != nil {
+            currentPlayerTime = player?.currentTime
+            player?.pause()
+            let event = EventModel()
+            event.eventTime = getGlobalTime()
+            event.eventType = EventModel.EVENT_SOUND_STOP
+            event.eventContent = currentPlayingAudioName + " stopped by User"
+            SetDataToFMDB.saveEvent(event)
+        }
+    }
+    
+    
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        let userInfo = [Constants.KEY_AUDIO_FILENAME : currentPlayingAudioName]
+        isRepeated = true
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.ORDER_PLAY_AUDIO), object: nil, userInfo: userInfo)
+    }
 }
 

@@ -36,6 +36,8 @@ class RattlesView: UIView {
     
     var player : AVAudioPlayer?
     
+    
+    
     var intervalCount : CGFloat = 0
     
     

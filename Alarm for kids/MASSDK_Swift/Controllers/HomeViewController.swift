@@ -356,7 +356,14 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
             viewController.itemStatus = Constants.BABY_RADIO_STAR
         }
         viewController.item = floatingView.floatingItem
+        viewController.floatingItems = floatingItems
+    
+        if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
+            let userInfo = [Constants.KEY_AUDIO_FILENAME : floatingView.floatingItem.item_title]
+            notificationCenter.post(name: NSNotification.Name(rawValue: Constants.ORDER_PLAY_AUDIO), object: nil, userInfo: userInfo)
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
+        
     }
 
     //Mark - Show Menu

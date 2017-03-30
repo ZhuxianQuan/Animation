@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
 
 
     var userDefault = UserDefaults.standard
+    var notificationCenter = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()

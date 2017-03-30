@@ -64,32 +64,33 @@ class EventLogViewController: BaseViewController {
         tblEventLog.reloadData()
     }
     func getLogs(){
-        eventLogsArray = []
+       /* eventLogsArray = []
         var event = EventModel()
         event.eventContent = "Air conditioner started by user"
-        event.eventType = EventModel.EVENT_TYPE_START
+        event.eventType = EventModel.EVENT_SOUND_START
         event.eventTime = "10/22/16, 10:12 AM"
         eventLogsArray.append(event)
         event = EventModel()
         event.eventContent = "Air conditioner stopped by user"
-        event.eventType = EventModel.EVENT_TYPE_STOP
+        event.eventType = EventModel.EVENT_SOUND_STOP
         event.eventTime = "10/28/16, 10:12 AM"
         eventLogsArray.append(event)
         event = EventModel()
         event.eventContent = "Air conditioner started by user"
-        event.eventType = EventModel.EVENT_TYPE_START
+        event.eventType = EventModel.EVENT_SOUND_START
         event.eventTime = "12/22/16, 10:12 AM"
         eventLogsArray.append(event)
         event = EventModel()
         event.eventContent = "Air conditioner started by user"
-        event.eventType = EventModel.EVENT_TYPE_START
+        event.eventType = EventModel.EVENT_SOUND_START
         event.eventTime = "10/22/16, 10:12 AM"
         eventLogsArray.append(event)
         event = EventModel()
         event.eventContent = "Air conditioner stopped by user"
-        event.eventType = EventModel.EVENT_TYPE_STOP
+        event.eventType = EventModel.EVENT_SOUND_STOP
         event.eventTime = "10/22/16, 10:12 AM"
-        eventLogsArray.append(event)
+        eventLogsArray.append(event)*/
+        eventLogsArray = GetDataFromFMDB.getEvents()
 
     }
     
@@ -120,14 +121,14 @@ extension EventLogViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventLogTableViewCell") as! EventLogTableViewCell
         let index = indexPath.row
         let event = eventLogsArray[index]
-        if (event.eventType == EventModel.EVENT_TYPE_START)
+        if (event.eventType == EventModel.EVENT_SOUND_START)
         {
-            cell.imvStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
+            cell.imvStatus.backgroundColor = Constants.COLOR_EVENT_PALY
         }
-        else if(event.eventType == EventModel.EVENT_TYPE_STOP){
-            cell.imvStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
+        else if(event.eventType == EventModel.EVENT_SOUND_STOP){
+            cell.imvStatus.backgroundColor = Constants.COLOR_EVENT_STOP
         }
-        cell.lblEventLog.text = "\(event.eventTime): \(event.eventContent)"
+        cell.lblEventLog.text = "\(getLocalTimeString(event.eventTime)) \(event.eventContent)"
         return cell
     }
 

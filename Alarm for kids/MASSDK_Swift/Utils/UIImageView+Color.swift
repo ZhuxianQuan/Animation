@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 extension UIImageView{
-
-
     func setImageWith(color: UIColor)
     {
 

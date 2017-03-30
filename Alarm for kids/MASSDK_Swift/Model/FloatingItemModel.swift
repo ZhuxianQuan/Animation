@@ -14,8 +14,14 @@ class FloatingItemModel {
     var item_title = ""
     var item_type = 0
     
+    var item_audiosource = 0
+    
     func getImageName() -> String{
         return "image__" + item_title.lowercased().replacingOccurrences(of: " ", with: "_") + "_" + getTypeString(item_type)
+    }
+    
+    func getAudioFileName() -> String {
+        return "sound_" + item_title.lowercased().replacingOccurrences(of: " ", with: "_") + ".wav"
     }
     
     func getTypeString(_ type: Int) -> String
