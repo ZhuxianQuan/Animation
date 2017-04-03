@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set menu title color
         MASManager.sharedInstance.menuCellFontColor = UIColor.darkGray
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
-        MASManager.sharedInstance.hidePromotions = false
+        MASManager.sharedInstance.hidePromoBanner = false
 
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
         
