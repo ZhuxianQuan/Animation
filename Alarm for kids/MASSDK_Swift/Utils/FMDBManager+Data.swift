@@ -12,7 +12,7 @@ import Foundation
 class GetDataFromFMDB {
     static func getEvents() -> [EventModel]{
         var events: [EventModel] = []
-        let eventObjects = fmdbManager.getDataFromFMDB(with: "select * from \(EventModel.localTableName)", tableObject: EventModel.localTableObject)
+        let eventObjects = fmdbManager.getDataFromFMDB(with: "select * from \(EventModel.localTableName) order by \(EventModel.TABLE_COLUMN_TIME) desc", tableObject: EventModel.localTableObject)
         for object in eventObjects {
             let eventObject = object as! [String: AnyObject]
             events.append(ParseHelper.parseEvent(eventObject))

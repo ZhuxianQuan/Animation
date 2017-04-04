@@ -34,6 +34,11 @@ class AnimalNoisesViewController: BaseViewController {
         
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        animalsView.pauseAudio()
+    }
+    
     func moveImages(){
         animalsView.animateView()
     }

@@ -54,7 +54,7 @@ func getTimeFromGMTTimeMillis(time: Int64) -> Date
 func getLocalTimeString(_ timeStamp: Int64) -> String{
     let time = getTimeFromGMTTimeMillis(time: timeStamp)
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MM/dd/yy, h/mm a:"
+    dateFormatter.dateFormat = "MM/dd/yy, hh:mm a:"
     return dateFormatter.string(from: time)
 }
 

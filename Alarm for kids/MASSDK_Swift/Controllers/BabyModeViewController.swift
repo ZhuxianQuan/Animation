@@ -66,6 +66,19 @@ class BabyModeViewController: BaseViewController {
             Settings.baby_mode_status = Constants.BABY_MODE_ON
             btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
             btnBabyModeStatus.setTitle("STOP", for: .normal)
+            
+            UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
+            
+            /*guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                /*UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)") // Prints true
+                })*/
+                UIApplication.shared.openURL(settingsUrl)
+            }*/
 
         }
     }

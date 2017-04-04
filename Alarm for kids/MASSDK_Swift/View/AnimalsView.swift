@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 /*
 public protocol AnimalsViewDelegate {
     func imageTapped(_ index : Int)
@@ -24,7 +25,10 @@ public class AnimalsView: UIView {
     
     var awakedItem : Int = -1
     
-    var awakedItemMoved : CGFloat = 0.0
+    //var awakedItemMoved : CGFloat = 0.0
+    
+    
+    var player : AVAudioPlayer?
     
     //var delegate: AnimalsViewDelegate!
     
@@ -113,11 +117,11 @@ public class AnimalsView: UIView {
                     imagename = animals[(sender.tag - 10) / 10].getAwakeAnimalImageName()
                     animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_AWAKE
                     awakedItem = (sender.tag - 10) / 10
+                    playAudio()
                     
                     imageView1?.image = UIImage(named: imagename)!
                     imageView2?.image = UIImage(named: imagename)!
-                    
-                    awakedItemMoved = 0
+                    //awakedItemMoved = 0
                 }
                 
             }
@@ -125,8 +129,8 @@ public class AnimalsView: UIView {
                 if animals[(sender.tag - 10) / 10].animal_status == Constants.ANIMAL_AWAKE{
                     imagename = animals[(sender.tag - 10) / 10].getSleepingAnimalImageName()
                     animals[(sender.tag - 10) / 10].animal_status = Constants.ANIMAL_SLEEP
+                    pauseAudio()
                     awakedItem = -1
-                    
                     imageView1?.image = UIImage(named: imagename)!
                     imageView2?.image = UIImage(named: imagename)!
                 }
@@ -153,10 +157,10 @@ public class AnimalsView: UIView {
         else{
             view1.frame.origin.x -= 0.5
             view2.frame.origin.x -= 0.5
-            awakedItemMoved += 0.5
-            if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
+            //awakedItemMoved += 0.5
+            /*if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
                 setItemSleep()
-            }
+            }*/
         }
         
     }
@@ -168,10 +172,10 @@ public class AnimalsView: UIView {
         else{
             view1.frame.origin.x -= 4
             view2.frame.origin.x -= 4
-            awakedItemMoved += 4
+            /*awakedItemMoved += 4
             if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
                 setItemSleep()
-            }
+            }*/
         }
         
     }
@@ -198,5 +202,72 @@ public class AnimalsView: UIView {
     
     
 }
+
+
+extension AnimalsView: AVAudioPlayerDelegate{
+    
+    func playAudio() {
+        let animalname = animals[awakedItem].animal_name
+        let event = EventModel()
+        event.eventTime = getGlobalTime()
+        event.eventType = EventModel.EVENT_SOUND_START
+        
+        event.eventContent = animalname + " started by User"
+        SetDataToFMDB.saveEvent(event)
+        
+        guard let audioFileUrlString = Bundle.main.path(forResource: "animal_" + animalname.lowercased().replacingOccurrences(of: " ", with: "_") + ".wav", ofType: nil) else {
+            setItemSleep()
+            return
+        }
+        guard let url = URL(string: audioFileUrlString) else {
+            return
+        }
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.delegate = self
+            guard let player = player else { return }
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.duckOthers)
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    
+    
+    func pauseAudio() {
+        if player != nil {
+            player?.pause()
+            if awakedItem > -1{
+                let animalname = animals[awakedItem].animal_name
+                let event = EventModel()
+                event.eventTime = getGlobalTime()
+                event.eventType = EventModel.EVENT_SOUND_STOP
+                event.eventContent = animalname + " started by User"
+                setItemSleep()
+                SetDataToFMDB.saveEvent(event)
+            }
+        }
+    }
+    
+    public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        
+        player.pause()
+        let animalname = animals[awakedItem].animal_name
+        let event = EventModel()
+        event.eventTime = getGlobalTime()
+        event.eventType = EventModel.EVENT_SOUND_STOP
+        event.eventContent = animalname + " stopped by User"
+        setItemSleep()
+        SetDataToFMDB.saveEvent(event)
+        awakedItem = -1
+    }
+    
+}
+
 
 

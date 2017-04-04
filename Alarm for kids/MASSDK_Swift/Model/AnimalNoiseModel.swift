@@ -20,4 +20,9 @@ class AnimalNoiseModel {
     func getSleepingAnimalImageName() -> String{
         return "image_sleeping" + animal_name.lowercased()
     }
+    
+    func getAudioFileName() -> String {
+        return "animal_" + animal_name.lowercased().replacingOccurrences(of: " ", with: "_") + ".wav"
+    }
+
 }

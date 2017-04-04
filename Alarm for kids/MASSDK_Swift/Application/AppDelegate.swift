@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set menu background color
         MASManager.sharedInstance.menuBackgroundColor = UIColor(colorLiteralRed: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
         //set menu title color
+        MASManager.sharedInstance.menuSectionTitlesShow = true
         MASManager.sharedInstance.menuCellFontColor = UIColor.darkGray
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
         MASManager.sharedInstance.hidePromoBanner = false
@@ -132,12 +133,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func skyLattleTapped(){
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SkyRattleViewController") as! SkyRattleViewController
+        pauseAudio()
         MASManager.sharedInstance.setFront(viewController: viewController, animated: true, completion: nil)
 
     }
     func animalNoisesTapped(){
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "AnimalNoisesViewController") as! AnimalNoisesViewController
+        pauseAudio()
         MASManager.sharedInstance.setFront(viewController: viewController, animated: true, completion: nil)
     }
     

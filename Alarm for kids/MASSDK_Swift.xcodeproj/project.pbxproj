@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A353F231E938FF50009F8CF /* animal_cow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A353F221E938FF50009F8CF /* animal_cow.wav */; };
 		0A3AF9C91E4E3D7200D3FBAD /* AnimalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */; };
 		0A3AF9CB1E4E43AB00D3FBAD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */; };
 		0A3AF9CD1E4E5E2200D3FBAD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */; };
@@ -17,6 +18,23 @@
 		0A775F761E74A81A000526DC /* RattlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F751E74A81A000526DC /* RattlesView.swift */; };
 		0A775F781E74ACA9000526DC /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F771E74ACA9000526DC /* CommonUtils.swift */; };
 		0A775F7A1E74B1D2000526DC /* RattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A775F791E74B1D2000526DC /* RattleView.swift */; };
+		0A9DAFD31E932F1400012B32 /* sound_chimes.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFD21E932F1400012B32 /* sound_chimes.wav */; };
+		0A9DAFD71E932F8A00012B32 /* sound_sax.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFD41E932F8A00012B32 /* sound_sax.wav */; };
+		0A9DAFD81E932F8A00012B32 /* sound_violin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFD51E932F8A00012B32 /* sound_violin.wav */; };
+		0A9DAFD91E932F8A00012B32 /* sound_xylophone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFD61E932F8A00012B32 /* sound_xylophone.wav */; };
+		0A9DAFDB1E93300900012B32 /* sound_air_conditioning.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFDA1E93300900012B32 /* sound_air_conditioning.wav */; };
+		0A9DAFDD1E93302300012B32 /* sound_train.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFDC1E93302300012B32 /* sound_train.wav */; };
+		0A9DAFDF1E93309300012B32 /* sound_dishwasher.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFDE1E93309300012B32 /* sound_dishwasher.wav */; };
+		0A9DAFE41E933C8B00012B32 /* animal_cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFE01E933C8B00012B32 /* animal_cat.wav */; };
+		0A9DAFE51E933C8B00012B32 /* animal_cock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFE11E933C8B00012B32 /* animal_cock.wav */; };
+		0A9DAFE61E933C8B00012B32 /* animal_dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFE21E933C8B00012B32 /* animal_dog.wav */; };
+		0A9DAFE71E933C8B00012B32 /* animal_sheep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFE31E933C8B00012B32 /* animal_sheep.wav */; };
+		0A9DAFE91E938B9C00012B32 /* animal_hen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFE81E938B9C00012B32 /* animal_hen.wav */; };
+		0A9DAFEB1E938C3B00012B32 /* animal_goat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFEA1E938C3B00012B32 /* animal_goat.mp3 */; };
+		0A9DAFED1E938CAC00012B32 /* animal_horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFEC1E938CAC00012B32 /* animal_horse.mp3 */; };
+		0A9DAFEF1E938E1600012B32 /* animal_goat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFEE1E938E1600012B32 /* animal_goat.wav */; };
+		0A9DAFF11E938E2D00012B32 /* animal_pig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFF01E938E2D00012B32 /* animal_pig.wav */; };
+		0A9DAFF31E938E4200012B32 /* animal_horse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A9DAFF21E938E4200012B32 /* animal_horse.wav */; };
 		0ACB08FA1E782BE700D257D6 /* FloatingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACB08F91E782BE700D257D6 /* FloatingItemModel.swift */; };
 		0AD0BFF01E6D5CDE0000C1D3 /* BabyTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */; };
 		0AD7CD8C1E8274CB00839CF8 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7CD8B1E8274CB00839CF8 /* UIView+Extensions.swift */; };
@@ -92,6 +110,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A353F221E938FF50009F8CF /* animal_cow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_cow.wav; sourceTree = "<group>"; };
 		0A3AF9C81E4E3D7200D3FBAD /* AnimalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsView.swift; sourceTree = "<group>"; };
 		0A3AF9CA1E4E43AB00D3FBAD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0A3AF9CC1E4E5E2200D3FBAD /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -102,6 +121,23 @@
 		0A775F751E74A81A000526DC /* RattlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattlesView.swift; sourceTree = "<group>"; };
 		0A775F771E74ACA9000526DC /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		0A775F791E74B1D2000526DC /* RattleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RattleView.swift; sourceTree = "<group>"; };
+		0A9DAFD21E932F1400012B32 /* sound_chimes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_chimes.wav; sourceTree = "<group>"; };
+		0A9DAFD41E932F8A00012B32 /* sound_sax.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_sax.wav; sourceTree = "<group>"; };
+		0A9DAFD51E932F8A00012B32 /* sound_violin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_violin.wav; sourceTree = "<group>"; };
+		0A9DAFD61E932F8A00012B32 /* sound_xylophone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_xylophone.wav; sourceTree = "<group>"; };
+		0A9DAFDA1E93300900012B32 /* sound_air_conditioning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_air_conditioning.wav; sourceTree = "<group>"; };
+		0A9DAFDC1E93302300012B32 /* sound_train.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_train.wav; sourceTree = "<group>"; };
+		0A9DAFDE1E93309300012B32 /* sound_dishwasher.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_dishwasher.wav; sourceTree = "<group>"; };
+		0A9DAFE01E933C8B00012B32 /* animal_cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_cat.wav; sourceTree = "<group>"; };
+		0A9DAFE11E933C8B00012B32 /* animal_cock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_cock.wav; sourceTree = "<group>"; };
+		0A9DAFE21E933C8B00012B32 /* animal_dog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_dog.wav; sourceTree = "<group>"; };
+		0A9DAFE31E933C8B00012B32 /* animal_sheep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_sheep.wav; sourceTree = "<group>"; };
+		0A9DAFE81E938B9C00012B32 /* animal_hen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_hen.wav; sourceTree = "<group>"; };
+		0A9DAFEA1E938C3B00012B32 /* animal_goat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_goat.mp3; sourceTree = "<group>"; };
+		0A9DAFEC1E938CAC00012B32 /* animal_horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = animal_horse.mp3; sourceTree = "<group>"; };
+		0A9DAFEE1E938E1600012B32 /* animal_goat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_goat.wav; sourceTree = "<group>"; };
+		0A9DAFF01E938E2D00012B32 /* animal_pig.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_pig.wav; sourceTree = "<group>"; };
+		0A9DAFF21E938E4200012B32 /* animal_horse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = animal_horse.wav; sourceTree = "<group>"; };
 		0ACB08F91E782BE700D257D6 /* FloatingItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingItemModel.swift; sourceTree = "<group>"; };
 		0AD0BFEF1E6D5CDE0000C1D3 /* BabyTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyTips.swift; path = ../Model/BabyTips.swift; sourceTree = "<group>"; };
 		0AD7CD8B1E8274CB00839CF8 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -217,9 +253,16 @@
 		0AF682DE1E8A972800BDC343 /* Baby Radio */ = {
 			isa = PBXGroup;
 			children = (
+				0A9DAFEE1E938E1600012B32 /* animal_goat.wav */,
+				0A9DAFF21E938E4200012B32 /* animal_horse.wav */,
+				0A353F221E938FF50009F8CF /* animal_cow.wav */,
+				0A9DAFF01E938E2D00012B32 /* animal_pig.wav */,
 				0AF682DF1E8A972800BDC343 /* sound_cars.wav */,
+				0A9DAFEC1E938CAC00012B32 /* animal_horse.mp3 */,
 				0AF682E01E8A972800BDC343 /* sound_wind.wav */,
+				0A9DAFEA1E938C3B00012B32 /* animal_goat.mp3 */,
 				0AF682E11E8A972800BDC343 /* sound_grandfather_clock.wav */,
+				0A9DAFE81E938B9C00012B32 /* animal_hen.wav */,
 				0AF682E21E8A972800BDC343 /* sound_fan.wav */,
 				0AF682E31E8A972800BDC343 /* sound_shower.wav */,
 				0AF682E41E8A972800BDC343 /* sound_lorry.wav */,
@@ -228,14 +271,21 @@
 				0AF682E71E8A972800BDC343 /* sound_washing_machine.wav */,
 				0AF682E81E8A972800BDC343 /* sound_mom's_heartbeat.wav */,
 				0AF682E91E8A972800BDC343 /* sound_fire.wav */,
+				0A9DAFDA1E93300900012B32 /* sound_air_conditioning.wav */,
 				0AF682EA1E8A972800BDC343 /* sound_cat_purr.wav */,
 				0AF682EB1E8A972800BDC343 /* sound_forest.wav */,
+				0A9DAFDE1E93309300012B32 /* sound_dishwasher.wav */,
 				0AF682EC1E8A972800BDC343 /* sound_rain.wav */,
+				0A9DAFDC1E93302300012B32 /* sound_train.wav */,
 				0AF682ED1E8A972800BDC343 /* sound_stream.wav */,
 				0AF682EE1E8A972800BDC343 /* 2 sea waves.wav */,
+				0A9DAFD41E932F8A00012B32 /* sound_sax.wav */,
+				0A9DAFD51E932F8A00012B32 /* sound_violin.wav */,
+				0A9DAFD61E932F8A00012B32 /* sound_xylophone.wav */,
 				0AF682EF1E8A972800BDC343 /* sound_waterfall.wav */,
 				0AF682F01E8A972800BDC343 /* sound_flute.wav */,
 				0AF682F11E8A972800BDC343 /* sound_piano.wav */,
+				0A9DAFD21E932F1400012B32 /* sound_chimes.wav */,
 				0AF682F21E8A972800BDC343 /* sound_guitar.wav */,
 				0AF682F31E8A972800BDC343 /* sound_harp.wav */,
 				0AF682F41E8A972800BDC343 /* sound_lyre.wav */,
@@ -243,6 +293,10 @@
 				0AF682F61E8A972800BDC343 /* 3 soothing melody.wav */,
 				0AF683111E8BAC1E00BDC343 /* sound_dolphin.wav */,
 				0AF682F71E8A972800BDC343 /* 3 throat singing.wav */,
+				0A9DAFE01E933C8B00012B32 /* animal_cat.wav */,
+				0A9DAFE11E933C8B00012B32 /* animal_cock.wav */,
+				0A9DAFE21E933C8B00012B32 /* animal_dog.wav */,
+				0A9DAFE31E933C8B00012B32 /* animal_sheep.wav */,
 			);
 			path = "Baby Radio";
 			sourceTree = "<group>";
@@ -528,33 +582,51 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF683021E8A972800BDC343 /* sound_fire.wav in Resources */,
+				0A9DAFD81E932F8A00012B32 /* sound_violin.wav in Resources */,
 				0AF683001E8A972800BDC343 /* sound_washing_machine.wav in Resources */,
 				0AD7CD8E1E827D0300839CF8 /* right.mp3 in Resources */,
+				0A353F231E938FF50009F8CF /* animal_cow.wav in Resources */,
 				0AF6830C1E8A972800BDC343 /* sound_harp.wav in Resources */,
 				0AF682F81E8A972800BDC343 /* sound_cars.wav in Resources */,
 				0AF683051E8A972800BDC343 /* sound_rain.wav in Resources */,
+				0A9DAFD91E932F8A00012B32 /* sound_xylophone.wav in Resources */,
 				0AF683101E8A972800BDC343 /* 3 throat singing.wav in Resources */,
+				0A9DAFEF1E938E1600012B32 /* animal_goat.wav in Resources */,
 				0AF683081E8A972800BDC343 /* sound_waterfall.wav in Resources */,
 				0AF6830F1E8A972800BDC343 /* 3 soothing melody.wav in Resources */,
 				0AF683011E8A972800BDC343 /* sound_mom's_heartbeat.wav in Resources */,
 				0AF6830E1E8A972800BDC343 /* sound_jukebox.wav in Resources */,
+				0A9DAFF31E938E4200012B32 /* animal_horse.wav in Resources */,
 				0AF682FA1E8A972800BDC343 /* sound_grandfather_clock.wav in Resources */,
+				0A9DAFE71E933C8B00012B32 /* animal_sheep.wav in Resources */,
+				0A9DAFDD1E93302300012B32 /* sound_train.wav in Resources */,
+				0A9DAFED1E938CAC00012B32 /* animal_horse.mp3 in Resources */,
 				0AF682F91E8A972800BDC343 /* sound_wind.wav in Resources */,
+				0A9DAFD31E932F1400012B32 /* sound_chimes.wav in Resources */,
+				0A9DAFE91E938B9C00012B32 /* animal_hen.wav in Resources */,
 				0AF683061E8A972800BDC343 /* sound_stream.wav in Resources */,
 				131D1A5D1CDB58F0007C9F2A /* LaunchScreen.storyboard in Resources */,
 				3AFB531F1E3F298100627C8E /* Images.xcassets in Resources */,
 				0AF683041E8A972800BDC343 /* sound_forest.wav in Resources */,
 				0AF683121E8BAC1E00BDC343 /* sound_dolphin.wav in Resources */,
+				0A9DAFD71E932F8A00012B32 /* sound_sax.wav in Resources */,
+				0A9DAFE41E933C8B00012B32 /* animal_cat.wav in Resources */,
 				0A3EEBAC1E79736F0009706B /* Assets.xcassets in Resources */,
 				0AF683071E8A972800BDC343 /* 2 sea waves.wav in Resources */,
 				0AF682FC1E8A972800BDC343 /* sound_shower.wav in Resources */,
 				0AF6830D1E8A972800BDC343 /* sound_lyre.wav in Resources */,
+				0A9DAFDB1E93300900012B32 /* sound_air_conditioning.wav in Resources */,
+				0A9DAFDF1E93309300012B32 /* sound_dishwasher.wav in Resources */,
 				131D1A581CDB58F0007C9F2A /* Main.storyboard in Resources */,
+				0A9DAFEB1E938C3B00012B32 /* animal_goat.mp3 in Resources */,
+				0A9DAFF11E938E2D00012B32 /* animal_pig.wav in Resources */,
 				0AF682FD1E8A972800BDC343 /* sound_lorry.wav in Resources */,
 				0AF683091E8A972800BDC343 /* sound_flute.wav in Resources */,
 				0AF682FF1E8A972800BDC343 /* sound_vacuum_cleaner.wav in Resources */,
+				0A9DAFE61E933C8B00012B32 /* animal_dog.wav in Resources */,
 				0AF682FB1E8A972800BDC343 /* sound_fan.wav in Resources */,
 				0AF682FE1E8A972800BDC343 /* sound_white_noise.wav in Resources */,
+				0A9DAFE51E933C8B00012B32 /* animal_cock.wav in Resources */,
 				0AF6830B1E8A972800BDC343 /* sound_guitar.wav in Resources */,
 				0AF6830A1E8A972800BDC343 /* sound_piano.wav in Resources */,
 				0AF683031E8A972800BDC343 /* sound_cat_purr.wav in Resources */,

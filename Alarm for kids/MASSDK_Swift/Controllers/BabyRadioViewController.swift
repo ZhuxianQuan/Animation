@@ -41,16 +41,11 @@ class BabyRadioViewController: BaseViewController{
         selectedIndex = CommonUtils.getIndex(item:  item, from: floatingItems)
   
         //volumeSlider.alpha = 0.00001
-        if selectedIndex == 0{
-            btnPrev.isHidden = true
-        }
-        else if selectedIndex == floatingItems.count - 1 {
-            btnNext.isHidden = true
-        }
+        
         setTitle(item)
         let myVolumeView = MPVolumeView(frame: volumeParentView.bounds)
         volumeParentView.addSubview(myVolumeView)
-        slidernoiseLevel.value = myVolumeView.volumeSlider.value
+        slidernoiseLevel.value = myVolumeView.volumeSlider.value * 1000
         myVolumeView.volumeSlider.addTarget(self, action: #selector(changeVolumeOutSide), for: .valueChanged)
 
         
@@ -152,7 +147,7 @@ class BabyRadioViewController: BaseViewController{
     }
     
     func playSound(_ item: FloatingItemModel) {
-        if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
+        if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{ 
             let userInfo = [Constants.KEY_AUDIO_FILENAME : item.item_title]
             notificationCenter.post(name: NSNotification.Name(rawValue: Constants.ORDER_PLAY_AUDIO), object: nil, userInfo: userInfo)
             
@@ -185,38 +180,45 @@ class BabyRadioViewController: BaseViewController{
         itemTitle.text = item.item_title
     }
     @IBAction func prevButtonTapped(_ sender: Any) {
+        if selectedIndex == 0{
+            selectedIndex = floatingItems.count - 1
+        }
+        else {
+            selectedIndex -= 1
+        }
         btnNext.isHidden = false
-        selectedIndex -= 1
+        Settings.baby_sound_isplaying = Constants.BABY_SOUND_PLAYING
         item = floatingItems[selectedIndex]
         setTitle(item)
         playSound(item)
-        if selectedIndex == 0{
-            btnPrev.isHidden = true
-        }
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        
+        if selectedIndex == floatingItems.count - 1 {
+            //btnNext.isHidden = true
+            selectedIndex = 0
+        }
+        else{
+            selectedIndex += 1
+        }
         btnPrev.isHidden = false
+        Settings.baby_sound_isplaying = Constants.BABY_SOUND_PLAYING
         
-        selectedIndex += 1
         item = floatingItems[selectedIndex]
         setTitle(item)
         playSound(item)
         
-        if selectedIndex == floatingItems.count - 1 {
-            btnNext.isHidden = true
-        }
+        
     }
     
     @IBAction func volumeChanged(_ sender: UISlider) {
         
-        (volumeParentView.subviews[0] as! MPVolumeView).volumeSlider.setValue(sender.value, animated: false)
+        (volumeParentView.subviews[0] as! MPVolumeView).volumeSlider.setValue(sender.value / 1000, animated: false)
     
     }
     
     func changeVolumeOutSide(_ sender: UISlider) {
-        slidernoiseLevel.value = sender.value
+        slidernoiseLevel.value = sender.value * 1000
     }
     
 }

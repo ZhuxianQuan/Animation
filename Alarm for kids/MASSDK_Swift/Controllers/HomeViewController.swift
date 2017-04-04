@@ -348,7 +348,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
     func imageTapped(_ floatingView: FloatingImageContentView) {
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "BabyRadioViewController") as! BabyRadioViewController
-        
+        Settings.baby_sound_isplaying = Constants.BABY_SOUND_PLAYING
         if floatingView.isCloud == Constants.BABY_RADIO_CLOUD{
             viewController.itemStatus = Constants.BABY_RADIO_CLOUD
         }
