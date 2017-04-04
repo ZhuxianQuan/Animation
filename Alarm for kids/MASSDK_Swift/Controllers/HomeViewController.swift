@@ -82,36 +82,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
                 
                 index += 1
             }
-        /*
-            for page in 1...5{
-                for index in 1...6{
-                    NSLog("\(page) - \(index)")
-                    let tagValue = page * 10 + index
-                    let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
-                    floatingView.leftCoValue = getLeftCoValue(page , index)
-                    floatingView.initWith(image: UIImage(named: "image_\(tagValue)")!)
-                    floatingView.delegate = self
-                    if (index == 3 || index == 4) && page == 1{
-                        floatingView.isCloud = Constants.BABY_RADIO_STAR
-                    }
-                    else if  (index == 3 || index == 6) && page == 2{
-                        floatingView.isCloud = Constants.BABY_RADIO_STAR
-                    }
-                    else if (index == 1 || index == 4) && page == 3{
-                        floatingView.isCloud = Constants.BABY_RADIO_STAR
-                    }
-                    else if (index == 1 || index == 2) && page == 4{
-                        floatingView.isCloud = Constants.BABY_RADIO_STAR
-                    }
-                    else if (index == 3 || index == 4) && page == 5{
-                        floatingView.isCloud = Constants.BABY_RADIO_STAR
-                    }
-                    else{
-                        floatingView.isCloud = Constants.BABY_RADIO_CLOUD
-                    }
-                }
-            }
- */
+            
         }
         else if index == Constants.BABY_RADIO_MUSIC{
             floatingItems = BabyRadioItems.getMusic()

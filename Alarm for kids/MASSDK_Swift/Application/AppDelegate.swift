@@ -18,29 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //variables for audio play
     var player : AVAudioPlayer?
-    
     var isRepeated = false
-    
     var currentPlayerTime : TimeInterval!
-    
     var currentPlayingAudioName = ""
+    
+    var soundTimer = Timer()
+    static var remainTime = 0
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setMASSDK()
+        addObservers()
+        //set sleep mode
+        UIApplication.shared.isIdleTimerDisabled = true
 
-
+        return true
+    }
+    
+    func setMASSDK() {
         //MASManager.sharedInstance.menu
         let menu_babyRadio = MASMenuItem(name: "Baby Radio", iconImage: UIImage(named: "icon_baby_radio")!, target: self, 	selector: "babyRadioTapped")
-
+        
         let menu_soundTimer = MASMenuItem(name: "Sound Timer", iconImage: UIImage(named: "icon_sound_timer")!, target: self, 	selector: "soundTimerTapped")
         let menu_babyMode = MASMenuItem(name: "Baby Mode", iconImage: UIImage(named: "icon_baby_mode")!, target: self, 	selector: "babyModeTapped")
         let menu_eventLog = MASMenuItem(name: "Event Log", iconImage: UIImage(named: "icon_event_log")!, target: self, 	selector: "eventLogTapped")
         let menu_babyTips = MASMenuItem(name: "Baby Tips", iconImage: UIImage(named: "icon_baby_tips")!, target: self, 	selector: "babyTipsTapped")
         let menu_skyRattle = MASMenuItem(name: "Sky Rattle", iconImage: UIImage(named: "icon_sky_rattle")!, target: self, 	selector: "skyLattleTapped")
         let menu_animalNoise = MASMenuItem(name: "Animal Noises", iconImage: UIImage(named: "icon_animal_noise")!, target: self, selector: "animalNoisesTapped")
-
+        
         let menuItems = [menu_babyRadio, menu_soundTimer, menu_babyMode,menu_eventLog,menu_babyTips,menu_skyRattle, menu_animalNoise]
         //let menuGameItems = [menu_skyRattle, menu_animalNoise]
-
+        
         //set menu background color
         MASManager.sharedInstance.menuBackgroundColor = UIColor(colorLiteralRed: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
         //set menu title color
@@ -48,10 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MASManager.sharedInstance.menuCellFontColor = UIColor.darkGray
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
         MASManager.sharedInstance.hidePromoBanner = false
-
+        
         MASManager.sharedInstance.menuHeaderCellFontColor = UIColor.darkGray
         
-    
+        
         MASManager.sharedInstance.menuCellBackgroundColor = UIColor(colorLiteralRed: 233.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1)//UIColor(colorLiteralRed: 178.0/255.0, green: 204.0/255.0, blue: 229.0/255.0, alpha: 1)
         //MASManager.sharedInstance.menuba
         MASManager.sharedInstance.showMenuHeader = true
@@ -60,23 +69,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MASManager.setup("AppHashYouReceived", appId: "AppIdFromItunesConnect", trackingIdentifier: "ProvidedTrackingIdentifier", menuItems: menuItems, releaseServer: true)
         MASManager.setup("AppHashYouReceived", appId: "AppIdFromItunesConnect", trackingIdentifier: "ProvidedTrackingIdentifier", menuItems: menuItems, releaseServer: true)
         
-
+        
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         let navigationController = MASNavigationController(rootViewController: viewController)
         navigationController.navigationBar.barTintColor = UIColor(colorLiteralRed: 233.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1)
-
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = navigationController
         self.window!.makeKeyAndVisible()
         //MASManager.sharedInstance.setFront(viewController: UIViewController(), animated: true, completion: nil)
         
+    }
+    
+    func addObservers() {
+        //add play observers
+        
         NotificationCenter.default.addObserver(self, selector: #selector(playAudio(_:)), name: NSNotification.Name(rawValue: Constants.ORDER_PLAY_AUDIO), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(pauseAudio), name: NSNotification.Name(rawValue: Constants.ORDER_PAUSE_AUDIO), object: nil)
         
-        UIApplication.shared.isIdleTimerDisabled = true
-
-        return true
+        //add timer observers
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(startTimer), name: NSNotification.Name(rawValue: Constants.ORDER_TIMER_START), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: NSNotification.Name(rawValue: Constants.ORDER_TIMER_STOP), object: nil)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -87,10 +101,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        if soundTimer.isValid{
+            soundTimer.invalidate()
+            if AppDelegate.remainTime == 0 {
+                pauseAudio()
+            }
+            else {
+                activateTimer()
+            }
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        if soundTimer.isValid{
+            soundTimer.invalidate()
+            if AppDelegate.remainTime == 0 {
+                pauseAudio()
+            }
+            else {
+                activateTimer()
+            }
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -107,6 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MASManager.sharedInstance.setFront(viewController: viewController, animated: true, completion: nil)
 
     }
+    
     func soundTimerTapped(){
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SoundTimerViewController") as! SoundTimerViewController
@@ -239,5 +273,42 @@ extension AppDelegate : AVAudioPlayerDelegate{
         isRepeated = true
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.ORDER_PLAY_AUDIO), object: nil, userInfo: userInfo)
     }
+}
+
+
+extension AppDelegate {
+    
+    func startTimer(){
+        //if soundTimer
+        if soundTimer.isValid {
+            soundTimer.invalidate()
+        }
+        activateTimer()
+    }
+    
+    func activateTimer() {
+        
+        soundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdated), userInfo: nil, repeats: true)
+    }
+    
+    func timerUpdated() {
+        AppDelegate.remainTime -= 1
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.ORDER_REMAINTIME_CHANGED), object: nil)
+        if AppDelegate.remainTime == 0{
+            stopTimer()
+        }
+    }
+    
+    
+    func stopTimer(){
+        AppDelegate.remainTime = 0
+        soundTimer.invalidate()
+        Settings.baby_sound_isplaying = Constants.BABY_SOUND_UNPLAYING
+        pauseAudio()
+    }
+    
+    
+    
+    
 }
 

@@ -62,4 +62,9 @@ class Constants {
     
     static let DB_NAME                      = "MAS_DB"
     
+    static let ORDER_TIMER_START            = "timer start"
+    static let ORDER_TIMER_STOP             = "timer stop"
+    static let ORDER_REMAINTIME_CHANGED     = "remain time changed"
+    
+    
 }
