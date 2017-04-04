@@ -167,13 +167,13 @@ class SoundTimerViewController: BaseViewController {
         if selected == 0
         {
             clockView.isHidden = true
-            imvBack.isHidden = true
+            //imvBack.isHidden = true
             //btnBack.isHidden = true
             //self.navigationController?.isNavigationBarHidden = false
         }
         else{
             clockView.isHidden = false
-            imvBack.isHidden = false
+            //imvBack.isHidden = false
             //btnBack.isHidden = false
             //self.navigationController?.isNavigationBarHidden = true
             
@@ -189,7 +189,7 @@ class SoundTimerViewController: BaseViewController {
     
     func setTargetTime(_ remainTime: Int){
         let targetTime = getTargetTime(remainTime)
-        targetTimeLabel.text = String.localizedStringWithFormat("Sound stop at %d:%d", targetTime.hour, targetTime.minute)
+        targetTimeLabel.text = String.localizedStringWithFormat("Sound stop at %02d:%02d", targetTime.hour, targetTime.minute)
         
     }
    

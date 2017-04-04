@@ -74,11 +74,11 @@ func getCurrentTime() -> MyTime {
 
 func getRemainTimeTo(_ till: MyTime) -> Int{
     let currentTime = getCurrentTime()
-    if till.hour * 3600 + till.minute * 60 + till.second > currentTime.hour * 3600 + till.minute * 60 + till.second {
-        return till.hour * 3600 + till.minute * 60 + till.second - currentTime.hour * 3600 + till.minute * 60 + till.second
+    if till.hour * 3600 + till.minute * 60 + till.second > currentTime.hour * 3600 + currentTime.minute * 60 + currentTime.second {
+        return till.hour * 3600 + till.minute * 60 + till.second - (currentTime.hour * 3600 + currentTime.minute * 60 + currentTime.second)
     }
     else {
-        return till.hour * 3600 + till.minute * 60 + till.second + 86400 - currentTime.hour * 3600 + till.minute * 60 + till.second
+        return till.hour * 3600 + till.minute * 60 + till.second + 86400 - (currentTime.hour * 3600 + currentTime.minute * 60 + currentTime.second)
     }
 }
 
