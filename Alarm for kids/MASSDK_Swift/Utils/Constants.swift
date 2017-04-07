@@ -13,6 +13,7 @@ class Constants {
     
     static let ORDER_PLAY_AUDIO             = "play audio"
     static let ORDER_PAUSE_AUDIO            = "pause audio"
+    static let ORDER_PAUSE_AUDIO_BYTIMER    = "pause audio by timer"
     
     static let KEY_AUDIO_FILENAME           = "audio file name"
     

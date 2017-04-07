@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setMASSDK() {
+        
         //MASManager.sharedInstance.menu
         let menu_babyRadio = MASMenuItem(name: "Baby Radio", iconImage: UIImage(named: "icon_baby_radio")!, target: self, 	selector: "babyRadioTapped")
         
@@ -66,9 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MASManager.sharedInstance.showMenuHeader = true
         //MASManager.sharedInstance.menuBackgroundColor = UIColor.groupTableViewBackground
         
-        MASManager.setup("AppHashYouReceived", appId: "AppIdFromItunesConnect", trackingIdentifier: "ProvidedTrackingIdentifier", menuItems: menuItems, releaseServer: true)
-        MASManager.setup("AppHashYouReceived", appId: "AppIdFromItunesConnect", trackingIdentifier: "ProvidedTrackingIdentifier", menuItems: menuItems, releaseServer: true)
-        
+        MASManager.setup("AppHashYouReceived", appId: "AppIdFromItunesConnect", trackingIdentifier: "3uy4brshqnmzptwdk27jev559gdcbax6", menuItems: menuItems, releaseServer: true)
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
@@ -178,6 +177,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MASManager.sharedInstance.setFront(viewController: viewController, animated: true, completion: nil)
     }
     
+   
+    
     
 }
 
@@ -263,6 +264,7 @@ extension AppDelegate : AVAudioPlayerDelegate{
             event.eventType = EventModel.EVENT_SOUND_STOP
             event.eventContent = currentPlayingAudioName + " stopped by User"
             SetDataToFMDB.saveEvent(event)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.ORDER_PAUSE_AUDIO_BYTIMER), object: nil)
         }
     }
     
@@ -287,8 +289,9 @@ extension AppDelegate {
     }
     
     func activateTimer() {
-        
-        soundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdated), userInfo: nil, repeats: true)
+        if AppDelegate.remainTime > 0{
+            soundTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdated), userInfo: nil, repeats: true)
+        }
     }
     
     func timerUpdated() {
@@ -296,6 +299,8 @@ extension AppDelegate {
         NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.ORDER_REMAINTIME_CHANGED), object: nil)
         if AppDelegate.remainTime == 0{
             stopTimer()
+            Settings.baby_sound_isplaying = Constants.BABY_SOUND_UNPLAYING
+            pauseAudio()
         }
     }
     
@@ -303,8 +308,8 @@ extension AppDelegate {
     func stopTimer(){
         AppDelegate.remainTime = 0
         soundTimer.invalidate()
-        Settings.baby_sound_isplaying = Constants.BABY_SOUND_UNPLAYING
-        pauseAudio()
+        //Settings.baby_sound_isplaying = Constants.BABY_SOUND_UNPLAYING
+        //pauseAudio()
     }
     
     

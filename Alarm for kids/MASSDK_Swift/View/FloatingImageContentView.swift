@@ -150,43 +150,77 @@ public class FloatingImageContentView: UIView {
 
     }
 
-    func animateAccelateView(){
-        if isCloud == Constants.BABY_RADIO_CLOUD{
-            if (button1.frame.origin.x < -1 * (maxSizeOfWidth)){
-                setInitFrame()
+    func animateAccelateView(_ direction: Bool){
+        if direction{
+            if isCloud == Constants.BABY_RADIO_CLOUD{
+                if (button1.frame.origin.x < -1 * (maxSizeOfWidth)){
+                    setInitFrame()
+                }
+                else{
+                    button1.frame.origin.x -= 5
+                    button2.frame.origin.x -= 5
+                }
+            }
+            else if isCloud == Constants.BABY_RADIO_STAR{
+                if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue){
+                    setInitFrame()
+                }
+                else{
+                    button1.center.x -= 5
+                    button2.center.x -= 5
+                }
             }
             else{
-                button1.frame.origin.x -= 5
-                button2.frame.origin.x -= 5
+                
+                if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue)
+                {
+                    setInitFrame()
+                }
+                else {
+                    button1.center.x -= 0.5
+                    button2.center.x -= 0.5
+                }
+                
+                
             }
-        }
-        else if isCloud == Constants.BABY_RADIO_STAR{
-            if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue){
-                setInitFrame()
-            }
-            else{
-                button1.center.x -= 5
-                button2.center.x -= 5
-            }
-        }
+        }/*
         else{
-            
-            if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue)
-            {
-                setInitFrame()
+            if isCloud == Constants.BABY_RADIO_CLOUD{
+                if (button1.frame.origin.x > -1.5){
+                    setInitFrame()
+                }
+                else{
+                    button1.frame.origin.x += 5
+                    button2.frame.origin.x += 5
+                }
             }
-            else {
-                button1.center.x -= 0.5
-                button2.center.x -= 0.5
+            else if isCloud == Constants.BABY_RADIO_STAR{
+                if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue){
+                    setInitFrame()
+                }
+                else{
+                    button1.center.x += 5
+                    button2.center.x += 5
+                }
             }
-            
-            
-        }
-        
+            else{
+                
+                if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue)
+                {
+                    setInitFrame()
+                }
+                else {
+                    button1.center.x += 0.5
+                    button2.center.x += 0.5
+                }
+                
+                
+            }
+        }*/
 
 
     }
-
+    
     func setInitFrame() {
         rotateAngle = 0
         button1.transform = CGAffineTransform(rotationAngle: 0)
@@ -194,6 +228,14 @@ public class FloatingImageContentView: UIView {
         button1.frame = CGRect(x: leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
         button2.frame = CGRect(x: maxSizeOfWidth - 2 + leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
     }
+    /*
+    func setRightInitFrame() {
+        rotateAngle = 0
+        button1.transform = CGAffineTransform(rotationAngle: 0)
+        button2.transform = CGAffineTransform(rotationAngle: 0)
+        button1.frame = CGRect(x: maxSizeOfWidth - screenSize.width, y: 0, width: imageSize.width, height: imageSize.height)
+        button2.frame = CGRect(x: maxSizeOfWidth - 2 + leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
+    }*/
 
     @IBInspectable var treshold: CGFloat = 1.0 {
         didSet {

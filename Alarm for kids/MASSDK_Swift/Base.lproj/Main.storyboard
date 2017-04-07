@@ -583,7 +583,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xki-4c-J0R">
                                 <rect key="frame" x="26" y="593" width="323" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJ7-2Z-ijw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJ7-2Z-ijw">
                                         <rect key="frame" x="-10" y="0.0" width="166.5" height="44"/>
                                         <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -689,11 +689,17 @@
                                     <constraint firstAttribute="height" constant="40" id="Rlo-Qx-o3p"/>
                                     <constraint firstAttribute="width" constant="40" id="jwQ-1L-axV"/>
                                 </constraints>
-                                <state key="normal" image="play_pause"/>
                                 <connections>
                                     <action selector="playButtonTapped:" destination="f0m-KR-Iev" eventType="touchUpInside" id="TBw-ED-ghT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_pause" translatesAutoresizingMaskIntoConstraints="NO" id="y7c-0d-bUC">
+                                <rect key="frame" x="23.5" y="525.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="U8M-1c-QoI"/>
+                                    <constraint firstAttribute="width" secondItem="y7c-0d-bUC" secondAttribute="height" id="yhB-Au-2Tr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.69803921570000005" green="0.80000000000000004" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -710,9 +716,11 @@
                             <constraint firstItem="5R2-zp-Ppc" firstAttribute="top" secondItem="gLD-uq-7SS" secondAttribute="top" constant="20" id="OK2-g1-0k9"/>
                             <constraint firstItem="hXb-nl-dlZ" firstAttribute="leading" secondItem="gLD-uq-7SS" secondAttribute="leadingMargin" constant="40" id="UrH-cR-7wu"/>
                             <constraint firstItem="5R2-zp-Ppc" firstAttribute="leading" secondItem="gLD-uq-7SS" secondAttribute="leading" id="ZMc-Ji-UwQ"/>
+                            <constraint firstItem="GCw-0a-MbD" firstAttribute="centerX" secondItem="y7c-0d-bUC" secondAttribute="centerX" id="ZNO-Qk-VdH"/>
                             <constraint firstItem="dlh-NY-pI8" firstAttribute="width" secondItem="9o0-oR-ibp" secondAttribute="width" multiplier="5" id="dka-kT-mEb"/>
                             <constraint firstItem="wdT-17-E6x" firstAttribute="top" secondItem="Xki-4c-J0R" secondAttribute="bottom" constant="30" id="eig-xm-ITl"/>
                             <constraint firstAttribute="trailing" secondItem="5R2-zp-Ppc" secondAttribute="trailing" id="f7h-2U-bv6"/>
+                            <constraint firstItem="GCw-0a-MbD" firstAttribute="centerY" secondItem="y7c-0d-bUC" secondAttribute="centerY" id="g4v-JH-Esh"/>
                             <constraint firstItem="Xki-4c-J0R" firstAttribute="top" secondItem="hXb-nl-dlZ" secondAttribute="bottom" constant="40" id="l7L-Nb-VQB"/>
                             <constraint firstItem="dlh-NY-pI8" firstAttribute="centerY" secondItem="9o0-oR-ibp" secondAttribute="centerY" id="nGE-NO-zDf"/>
                             <constraint firstItem="hXb-nl-dlZ" firstAttribute="trailing" secondItem="gLD-uq-7SS" secondAttribute="trailingMargin" id="ubl-zY-28m"/>
@@ -727,6 +735,7 @@
                         <outlet property="btnTimer" destination="eJ7-2Z-ijw" id="tNq-NX-LBH"/>
                         <outlet property="imvBaby" destination="Iuz-ya-wrA" id="ZRK-yk-eJe"/>
                         <outlet property="itemTitle" destination="xWp-a3-7QW" id="WrN-Kt-ifK"/>
+                        <outlet property="playStatusImageView" destination="y7c-0d-bUC" id="d08-1v-wBi"/>
                         <outlet property="slidernoiseLevel" destination="hXb-nl-dlZ" id="xbp-pd-3hG"/>
                         <outlet property="volumeParentView" destination="9o0-oR-ibp" id="xL4-ut-MY2"/>
                     </connections>
@@ -874,13 +883,13 @@
                                             <constraint firstItem="zvQ-s0-3RD" firstAttribute="leading" secondItem="N0u-id-v67" secondAttribute="leading" id="okD-Wa-IDE"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby monitor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-gV-xF7">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby monitor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-gV-xF7">
                                         <rect key="frame" x="40" y="350" width="102" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7vT-Z3-Ur5">
+                                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7vT-Z3-Ur5">
                                         <rect key="frame" x="286" y="345" width="51" height="31"/>
                                         <color key="onTintColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -908,7 +917,7 @@
                                             <action selector="stopButtonTapped:" destination="Iwp-w7-vtp" eventType="touchUpInside" id="5XF-1b-Gbb"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-gN-hDO">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-gN-hDO">
                                         <rect key="frame" x="20" y="416" width="335" height="30"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slider" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-mb-7gz">
@@ -1569,7 +1578,7 @@ If you press the start button, you will be redirected to the System Settings</st
         <image name="icon_menu" width="42" height="30"/>
         <image name="icon_pointer" width="15" height="32"/>
         <image name="icon_slider" width="629" height="121"/>
-        <image name="play_pause" width="10" height="15"/>
+        <image name="play_pause" width="22" height="32"/>
         <image name="play_speeddown" width="20" height="16"/>
         <image name="play_speedup" width="20" height="16"/>
     </resources>

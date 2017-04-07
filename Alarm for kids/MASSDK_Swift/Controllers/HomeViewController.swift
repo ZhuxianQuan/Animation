@@ -24,6 +24,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
     
     var mainTimer = Timer()
     var currentAcceleration: CGFloat = 0.0
+    var currentDirection = true
     
     var loaded = false
     
@@ -310,7 +311,7 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
             for index in 1...6{
                 let tagValue = page * 10 + index
                 let floatingView = self.view.viewWithTag(tagValue) as! FloatingImageContentView
-                floatingView.animateAccelateView()
+                floatingView.animateAccelateView(currentDirection)
                 
             }
         }
@@ -370,12 +371,16 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
             }
             NSLog("\(threshold) == \(p.x)")
             if (p.x < threshold){
+                currentDirection = true
                 currentAcceleration = threshold - p.x
                 threshold = p.x
                 startAccelerator()
             }
             else{
-                timer.invalidate()
+                currentDirection = false
+                currentAcceleration = p.x - threshold
+                threshold = p.x
+                startAccelerator()
             }
 
         case .ended:

@@ -132,25 +132,29 @@ class SoundTimerViewController: BaseViewController {
     }
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
-
+    
         if segmentItem.selectedSegmentIndex == 0{
             AppDelegate.remainTime = currentHour * 3600 + 60 * currentMinute
-            changeStatus(1)
-            let time = getCurrentTime()
-            NSLog("current time === \(time.hour): \(time.minute) : \(time.second)")
-            notificationCenter.post(name: Notification.Name(rawValue: Constants.ORDER_TIMER_START), object: nil)
-            setTimeStrings()
-            setTargetTime(AppDelegate.remainTime)
+            if AppDelegate.remainTime > 0 {
+                changeStatus(1)
+                let time = getCurrentTime()
+                NSLog("current time === \(time.hour): \(time.minute) : \(time.second)")
+                
+                notificationCenter.post(name: Notification.Name(rawValue: Constants.ORDER_TIMER_START), object: nil)
+                setTimeStrings()
+            }
         }
         else {
             AppDelegate.remainTime = getRemainTimeTo(getMyTimeFrom(hour: targetHour, minute: targetMin, second: 0, m: targetM))
-            changeStatus(1)
-            let time = getCurrentTime()
-            NSLog("current time === \(time.hour): \(time.minute) : \(time.second)")
-            notificationCenter.post(name: Notification.Name(rawValue: Constants.ORDER_TIMER_START), object: nil)
-            setTimeStrings()
-            setTargetTime(AppDelegate.remainTime)
+            if AppDelegate.remainTime > 0 {
+                changeStatus(1)
+                let time = getCurrentTime()
+                NSLog("current time === \(time.hour): \(time.minute) : \(time.second)")
+                notificationCenter.post(name: Notification.Name(rawValue: Constants.ORDER_TIMER_START), object: nil)
+                setTimeStrings()
+            }
         }
+        
     }
 
     @IBAction func stopButtonTapped(_ sender: UIButton) {
@@ -180,22 +184,11 @@ class SoundTimerViewController: BaseViewController {
         }
     }
 
-    func getRemainTimeString(_ remainTime: Int) -> String{
-        let hours = Int(remainTime / 3600)
-        let minutes = Int((remainTime - 3600 * hours) / 60)
-        let seconds = remainTime % 60
-        return String.localizedStringWithFormat("%d:%02d:%02d", hours, minutes, seconds)
-    }
-    
-    func setTargetTime(_ remainTime: Int){
-        let targetTime = getTargetTime(remainTime)
-        targetTimeLabel.text = String.localizedStringWithFormat("Sound stop at %02d:%02d", targetTime.hour, targetTime.minute)
-        
-    }
    
     func setTimeStrings()
     {
         remainTimeLabel.text = getRemainTimeString(AppDelegate.remainTime)
+        targetTimeLabel.text = setTargetTime(AppDelegate.remainTime)
     }
 
 

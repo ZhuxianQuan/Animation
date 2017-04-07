@@ -112,3 +112,17 @@ func getMyTimeFrom(hour: Int, minute: Int, second: Int, m: Int) -> MyTime{
 }
 
 
+func getRemainTimeString(_ remainTime: Int) -> String{
+    let hours = Int(remainTime / 3600)
+    let minutes = Int((remainTime - 3600 * hours) / 60)
+    let seconds = remainTime % 60
+    return String.localizedStringWithFormat("%d:%02d:%02d", hours, minutes, seconds)
+}
+
+func setTargetTime(_ remainTime: Int) -> String{
+    let targetTime = getTargetTime(remainTime)
+    return String.localizedStringWithFormat("Sound stop at %02d:%02d", targetTime.hour, targetTime.minute)
+    
+}
+
+

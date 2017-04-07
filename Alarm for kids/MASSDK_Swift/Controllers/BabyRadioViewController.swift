@@ -30,6 +30,7 @@ class BabyRadioViewController: BaseViewController{
     
     @IBOutlet weak var volumeParentView: UIView!
     
+    @IBOutlet weak var playStatusImageView: UIImageView!
     var selectedIndex = 0
     var item: FloatingItemModel!
     //let volumeView = MPVolumeView()
@@ -47,10 +48,32 @@ class BabyRadioViewController: BaseViewController{
         volumeParentView.addSubview(myVolumeView)
         slidernoiseLevel.value = myVolumeView.volumeSlider.value * 1000
         myVolumeView.volumeSlider.addTarget(self, action: #selector(changeVolumeOutSide), for: .valueChanged)
-
+        
+        notificationCenter.addObserver(self, selector: #selector(setTimeStrings), name: Notification.Name(rawValue: Constants.ORDER_REMAINTIME_CHANGED), object: nil)
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseAudio), name: NSNotification.Name(rawValue: Constants.ORDER_PAUSE_AUDIO_BYTIMER), object: nil)
+        
+        setTimeStrings()
         
     }
     
+    
+    func setTimeStrings()
+    {
+        if AppDelegate.remainTime > 0{
+            btnTimer.setTitle("SOUND TIMER: " + getRemainTimeString(AppDelegate.remainTime), for: .normal)
+        }
+        else{
+            btnTimer.setTitle("SOUND TIMER: OFF", for: .normal)
+        }
+    }
+    
+    func pauseAudio() {
+        playStatusImageView.image = UIImage(named: "icon_play")
+        setChildStatus()
+        setTimerButtonStatus()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,39 +97,9 @@ class BabyRadioViewController: BaseViewController{
     */
     
     func initView(){
-        if itemStatus == Constants.BABY_RADIO_CLOUD{
-            if Settings.baby_crying_status == Constants.BABY_CRYING_SLEEPING{
-                imvBaby.image = UIImage(named: "child_sleeping")
-            }
-            else if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING{
-                imvBaby.image = UIImage(named: "child_crying")
-            }
-            else if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING{
-                imvBaby.image = UIImage(named: "child_morecrying")
-            }
-            
-        }
-        else{
-            if Settings.baby_crying_status == Constants.BABY_CRYING_SLEEPING{
-                imvBaby.image = UIImage(named: "child_sleeping_star")
-            }
-            else if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING{
-                imvBaby.image = UIImage(named: "child_crying_star")
-            }
-            else if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING{
-                imvBaby.image = UIImage(named: "child_morecrying_star")
-            }
-            
-        }
         
-        if (Settings.baby_monitor)
-        {
-            btnTimer.backgroundColor = Constants.COLOR_BUTTON_SELECTED
-        }
-        else{
-            btnTimer.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
-            
-        }
+        setChildStatus()
+        setTimerButtonStatus()
         if (Settings.baby_mode_status == Constants.BABY_MODE_ON){
             
             btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_SELECTED
@@ -125,25 +118,83 @@ class BabyRadioViewController: BaseViewController{
         }
         
         if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
-            btnPlay.setImage(UIImage(named: "play_pause"), for: .normal)
+            playStatusImageView.image = UIImage(named: "play_pause")
         }
         else{
-            btnPlay.setImage(UIImage(named: "icon_play"), for: .normal)
+            
+            playStatusImageView.image = UIImage(named: "icon_play")
         }
         
         
     }
+    
+    func setChildStatus() {
+        if itemStatus == Constants.BABY_RADIO_CLOUD{
+            /*if Settings.baby_crying_status == Constants.BABY_CRYING_SLEEPING {
+             imvBaby.image = UIImage(named: "child_sleeping")
+             }
+             else if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING {
+             imvBaby.image = UIImage(named: "child_crying")
+             }
+             else if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING {
+             imvBaby.image = UIImage(named: "child_morecrying")
+             }*/
+            
+            if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
+                imvBaby.image = UIImage(named: "child_sleeping")
+            }
+            else {
+                imvBaby.image = UIImage(named: "child_morecrying")
+            }
+            
+        }
+        else{
+            /*if Settings.baby_crying_status == Constants.BABY_CRYING_SLEEPING{
+             imvBaby.image = UIImage(named: "child_sleeping_star")
+             }
+             else if Settings.baby_crying_status == Constants.BABY_CRYING_CRYING{
+             imvBaby.image = UIImage(named: "child_crying_star")
+             }
+             else if Settings.baby_crying_status == Constants.BABY_CRYING_MORECRYING{
+             imvBaby.image = UIImage(named: "child_morecrying_star")
+             }*/
+            if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
+                imvBaby.image = UIImage(named: "child_sleeping_star")
+            }
+            else {
+                imvBaby.image = UIImage(named: "child_morecrying_star")
+            }
+            
+        }
+    }
+    
+    func setTimerButtonStatus() {
+        
+        if (AppDelegate.remainTime > 0)
+        {
+            btnTimer.backgroundColor = Constants.COLOR_BUTTON_SELECTED
+        }
+        else{
+            btnTimer.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
+            
+        }
+
+    }
+    
     @IBAction func playButtonTapped(_ sender: UIButton) {
         if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
             Settings.baby_sound_isplaying = Constants.BABY_SOUND_UNPLAYING
-            sender.setImage(UIImage(named: "icon_play"), for: .normal)
+            //.setImage(UIImage(named: "icon_play"), for: .normal)
+            playStatusImageView.image = UIImage(named: "icon_play")
         }
         else{
             
             Settings.baby_sound_isplaying = Constants.BABY_SOUND_PLAYING
-            sender.setImage(UIImage(named: "play_pause"), for: .normal)
+            //sender.setImage(UIImage(named: "play_pause"), for: .normal)
+            playStatusImageView.image = UIImage(named: "play_pause")
         }
         playSound(item)
+        setChildStatus()
     }
     
     func playSound(_ item: FloatingItemModel) {
@@ -191,6 +242,7 @@ class BabyRadioViewController: BaseViewController{
         item = floatingItems[selectedIndex]
         setTitle(item)
         playSound(item)
+        setChildStatus()
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
@@ -207,6 +259,7 @@ class BabyRadioViewController: BaseViewController{
         item = floatingItems[selectedIndex]
         setTitle(item)
         playSound(item)
+        setChildStatus()
         
         
     }
@@ -218,7 +271,9 @@ class BabyRadioViewController: BaseViewController{
     }
     
     func changeVolumeOutSide(_ sender: UISlider) {
-        slidernoiseLevel.value = sender.value * 1000
+        if !slidernoiseLevel.isTracking {
+            slidernoiseLevel.value = sender.value * 1000
+        }
     }
     
 }
@@ -228,8 +283,7 @@ class BabyRadioViewController: BaseViewController{
 extension MPVolumeView {
     var volumeSlider:UISlider {
         /*self.showsRouteButton = false
-        self.showsVolumeSlider = false*/
-        //self.alpha = 0.0001
+        self.showsVolumeSlider = false*/        //self.alpha = 0.0001
         var slider = UISlider()
         for subview in self.subviews {
             if subview.isKind(of: UISlider.self){

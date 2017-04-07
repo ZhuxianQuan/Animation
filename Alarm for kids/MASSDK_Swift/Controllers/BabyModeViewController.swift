@@ -69,17 +69,6 @@ class BabyModeViewController: BaseViewController {
             
             UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
             
-            /*guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
-                return
-            }
-            
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                /*UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                    print("Settings opened: \(success)") // Prints true
-                })*/
-                UIApplication.shared.openURL(settingsUrl)
-            }*/
-
         }
     }
 
