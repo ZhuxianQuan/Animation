@@ -18,6 +18,7 @@ public class AnimalsView: UIView {
     
     var view1 = UIView()
     var view2 = UIView()
+    var view0 = UIView()
     
     var viewSize = CGSize()
     
@@ -44,6 +45,8 @@ public class AnimalsView: UIView {
         viewSize = CGSize(width: screenSize.width * CGFloat(Int(animals.count + 1)) / 2 , height: screenSize.height - 81)
         
         for animal in animals{
+            
+            //set view1
             var imageView = UIImageView()
             var imageSize = CGSize()
             let image = UIImage(named: animal.getSleepingAnimalImageName())!
@@ -53,6 +56,7 @@ public class AnimalsView: UIView {
             else{
                 imageSize = image.size
             }
+            
             if index % 2 == 0{
                 imageView.frame = CGRect(x: 0 + screenSize.width * CGFloat(Int(index / 2)), y: 75, width: imageSize.width, height: imageSize.height)
             }
@@ -65,41 +69,71 @@ public class AnimalsView: UIView {
             imageView.contentMode = .scaleAspectFit
             NSLog("\(imageView.frame)")
             view1.addSubview(imageView)
+            
+            
             var button = UIButton(frame: imageView.frame)
             view1.addSubview(button)
             button.tag = index * 10 + 10
             imageView.tag = index * 10 + 11
             button.addTarget(self, action: #selector(selectAnimal(_:)), for: .touchUpInside)
             
+            
+            //set view2
+            
             imageView = UIImageView()
             
             if index % 2 == 0{
-                imageView.frame = CGRect(x: screenSize.width * CGFloat(index / 2) + screenSize.width * CGFloat(Int(index / 2)), y: 75, width: imageSize.width, height: imageSize.height)
+                imageView.frame = CGRect(x: /*screenSize.width * CGFloat(index / 2) + */screenSize.width * CGFloat(Int(index / 2)), y: 75, width: imageSize.width, height: imageSize.height)
             }
             else
             {
-                imageView.frame = CGRect(x: screenSize.width * CGFloat(index / 2) + screenSize.width - 0 - imageSize.width + screenSize.width * CGFloat(Int(index / 2)), y: screenSize.height - imageSize.height - 121, width: imageSize.width, height: imageSize.height)
+                imageView.frame = CGRect(x: /*screenSize.width * CGFloat(index / 2) + */screenSize.width - 0 - imageSize.width + screenSize.width * CGFloat(Int(index / 2)), y: screenSize.height - imageSize.height - 121, width: imageSize.width, height: imageSize.height)
             }
             
             imageView.image = image
             imageView.contentMode = .scaleAspectFit
             NSLog("\(imageView.frame)")
-
+            
             view2.addSubview(imageView)
             button = UIButton(frame: imageView.frame)
             view2.addSubview(button)
             button.tag = index * 10 + 10
             imageView.tag = index * 10 + 11 + 1000
             button.addTarget(self, action: #selector(selectAnimal(_:)), for: .touchUpInside)
+           
+            //set view0
+            
+            imageView = UIImageView()
+            
+            if index % 2 == 0{
+                imageView.frame = CGRect(x:  screenSize.width * CGFloat(Int(index / 2)), y: 75, width: imageSize.width, height: imageSize.height)
+            }
+            else
+            {
+                imageView.frame = CGRect(x:  screenSize.width - 0 - imageSize.width + screenSize.width * CGFloat(Int(index / 2)), y: screenSize.height - imageSize.height - 121, width: imageSize.width, height: imageSize.height)
+            }
+            
+            imageView.image = image
+            imageView.contentMode = .scaleAspectFit
+            NSLog("\(imageView.frame)")
+            view0.addSubview(imageView)
+            button = UIButton(frame: imageView.frame)
+            view0.addSubview(button)
+            button.tag = index * 10 + 10
+            imageView.tag = index * 10 + 11 + 2000
+            button.addTarget(self, action: #selector(selectAnimal(_:)), for: .touchUpInside)
+            
             index += 1
             
         }
         
         self.frame.size = CGSize(width: viewSize.width * 2 , height: viewSize.height)
-        setInitFrame()
-        addSubview(view1)
         
+        setInitFrame()
+        
+        addSubview(view1)
         addSubview(view2)
+        addSubview(view0)
         NSLog("\(view1.frame)")
         NSLog("\(view2.frame)")        
         
@@ -110,6 +144,7 @@ public class AnimalsView: UIView {
         
         let imageView1 = self.viewWithTag(sender.tag + 1) as? UIImageView
         let imageView2 = self.viewWithTag(sender.tag + 1001) as? UIImageView
+        let imageView0 = self.viewWithTag(sender.tag + 2001) as? UIImageView
         if imageView1 != nil && imageView2 != nil{
             var imagename = ""
             if awakedItem == -1{
@@ -121,6 +156,7 @@ public class AnimalsView: UIView {
                     
                     imageView1?.image = UIImage(named: imagename)!
                     imageView2?.image = UIImage(named: imagename)!
+                    imageView0?.image = UIImage(named: imagename)!
                     //awakedItemMoved = 0
                 }
                 
@@ -133,6 +169,7 @@ public class AnimalsView: UIView {
                     awakedItem = -1
                     imageView1?.image = UIImage(named: imagename)!
                     imageView2?.image = UIImage(named: imagename)!
+                    imageView0?.image = UIImage(named: imagename)!
                 }
                 
             }
@@ -143,9 +180,11 @@ public class AnimalsView: UIView {
         animals[awakedItem].animal_status = Constants.ANIMAL_SLEEP
         let imageView1 = self.viewWithTag(awakedItem * 10 + 11) as? UIImageView
         let imageView2 = self.viewWithTag(awakedItem * 10 + 1011) as? UIImageView
+        let imageView0 = self.viewWithTag(awakedItem * 10 + 2011) as? UIImageView
         let imagename = animals[awakedItem].getSleepingAnimalImageName()
         imageView1?.image = UIImage(named: imagename)!
         imageView2?.image = UIImage(named: imagename)!
+        imageView0?.image = UIImage(named: imagename)!
         awakedItem = -1
     }
     
@@ -157,6 +196,7 @@ public class AnimalsView: UIView {
         else{
             view1.frame.origin.x -= 0.5
             view2.frame.origin.x -= 0.5
+            view0.frame.origin.x -= 0.5
             //awakedItemMoved += 0.5
             /*if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
                 setItemSleep()
@@ -165,17 +205,34 @@ public class AnimalsView: UIView {
         
     }
     
-    func animateAccelateView(){
-        if (view1.frame.origin.x < -1 * (viewSize.width)){
-            setInitFrame()
+    func animateAccelateView(_ direction: Bool){
+        if direction {
+            if (view1.frame.origin.x < -1 * (viewSize.width)){
+                setInitFrame()
+            }
+            else{
+                view1.frame.origin.x -= 4
+                view2.frame.origin.x -= 4
+                view0.frame.origin.x -= 4
+                /*awakedItemMoved += 4
+                if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
+                    setItemSleep()
+                }*/
+            }
         }
         else{
-            view1.frame.origin.x -= 4
-            view2.frame.origin.x -= 4
-            /*awakedItemMoved += 4
-            if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
-                setItemSleep()
-            }*/
+            if (view0.frame.origin.x > -2){
+                setInitFrame()
+            }
+            else{
+                view1.frame.origin.x += 4
+                view2.frame.origin.x += 4
+                view0.frame.origin.x += 4
+                /*awakedItemMoved += 4
+                 if awakedItemMoved > view1.frame.size.width - screenSize.width && awakedItem > -1{
+                 setItemSleep()
+                 }*/
+            }
         }
         
     }
@@ -183,6 +240,7 @@ public class AnimalsView: UIView {
     func setInitFrame() {
         view1.frame = CGRect(x: 0, y: 0, width: viewSize.width, height: viewSize.height)
         view2.frame = CGRect(x: viewSize.width - 2, y: 0, width: viewSize.width, height: viewSize.height)
+        view0.frame = CGRect(x: -viewSize.width + 2, y: 0, width: viewSize.width, height: viewSize.height)
     }
     
     @IBInspectable var treshold: CGFloat = 1.0 {

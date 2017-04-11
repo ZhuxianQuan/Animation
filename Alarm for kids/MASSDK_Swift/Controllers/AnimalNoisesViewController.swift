@@ -21,6 +21,7 @@ class AnimalNoisesViewController: BaseViewController {
     var snapX : CGFloat = 1
     var timer = Timer()
     var currentAcceleration: CGFloat = 0.0
+    var currentDirection = true
 
 
     override func viewDidLoad() {
@@ -44,7 +45,7 @@ class AnimalNoisesViewController: BaseViewController {
     }
     
     func moveAccelerateImages(){
-        animalsView.animateAccelateView()
+        animalsView.animateAccelateView(currentDirection)
     }
     
     
@@ -87,10 +88,14 @@ class AnimalNoisesViewController: BaseViewController {
             if (p.x < threshold){
                 currentAcceleration = threshold - p.x
                 threshold = p.x
+                self.currentDirection = true
                 startAccelerator()
             }
             else{
-                timer.invalidate()
+                currentAcceleration = -threshold + p.x
+                self.currentDirection = false
+                threshold = p.x
+                startAccelerator()
             }
             
         case .ended:

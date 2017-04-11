@@ -24,6 +24,7 @@ public class FloatingImageContentView: UIView {
     //let MaximumProgressValue: CGFloat = 100
     var button1 = UIButton()
     var button2 = UIButton()
+    var button0 = UIButton()
     var imageSize = CGSize()
     
     var isCloud = 0
@@ -50,11 +51,14 @@ public class FloatingImageContentView: UIView {
         self.frame.size = CGSize(width: maxSizeOfWidth * 2 , height: imageSize.height)
         button1.setImage(image, for: .normal)
         button2.setImage(image, for: .normal)
+        button0.setImage(image, for: .normal)
+        button0.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button1.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button2.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         setInitFrame()
         addSubview(button1)
         addSubview(button2)
+        addSubview(button0)
         if getGlobalTime() % 2 == 0{
             isMovingUp = true
         }
@@ -71,12 +75,13 @@ public class FloatingImageContentView: UIView {
             else{
                 button1.frame.origin.x -= 0.5
                 button2.frame.origin.x -= 0.5
+                button0.frame.origin.x -= 0.5
                 
                 if isMovingUp{
                     if button1.frame.origin.y < maxMovingAmountForCloud{
-                    
-                    button1.frame.origin.y += 0.1
+                        button1.frame.origin.y += 0.1
                         button2.frame.origin.y += 0.1
+                        button0.frame.origin.y += 0.1
                     }
                     else{
                         isMovingUp = false
@@ -88,6 +93,7 @@ public class FloatingImageContentView: UIView {
                         
                         button1.frame.origin.y -= 0.1
                         button2.frame.origin.y -= 0.1
+                        button0.frame.origin.y -= 0.1
                     }
                         
                     else{
@@ -104,10 +110,12 @@ public class FloatingImageContentView: UIView {
             else {
                 button1.center.x -= 0.5
                 button2.center.x -= 0.5
+                button0.center.x -= 0.5
                 if isMovingUp{
                     if maxRotatingAmountForStar > rotateAngle{
                         button1.transform = CGAffineTransform(rotationAngle: rotateAngle)
                         button2.transform = CGAffineTransform(rotationAngle: rotateAngle)
+                        button0.transform = CGAffineTransform(rotationAngle: rotateAngle)
                         rotateAngle += 0.003
                     }
                     else{
@@ -119,10 +127,12 @@ public class FloatingImageContentView: UIView {
                         if rotateAngle < 0{
                             button1.transform = CGAffineTransform(rotationAngle: 6.28 + rotateAngle)
                             button2.transform = CGAffineTransform(rotationAngle: 6.28 + rotateAngle)
+                            button0.transform = CGAffineTransform(rotationAngle: 6.28 + rotateAngle)
                         }
                         else{
                             button1.transform = CGAffineTransform(rotationAngle: rotateAngle)
                             button2.transform = CGAffineTransform(rotationAngle: rotateAngle)
+                            button0.transform = CGAffineTransform(rotationAngle: rotateAngle)
                         }
                         rotateAngle -= 0.003
                         
@@ -143,6 +153,7 @@ public class FloatingImageContentView: UIView {
             else {
                 button1.center.x -= 0.5
                 button2.center.x -= 0.5
+                button0.center.x -= 0.5
             }
             
             
@@ -153,12 +164,13 @@ public class FloatingImageContentView: UIView {
     func animateAccelateView(_ direction: Bool){
         if direction{
             if isCloud == Constants.BABY_RADIO_CLOUD{
-                if (button1.frame.origin.x < -1 * (maxSizeOfWidth)){
+                if (button1.frame.origin.x < -1 * (maxSizeOfWidth) + leftCoValue){
                     setInitFrame()
                 }
                 else{
                     button1.frame.origin.x -= 5
                     button2.frame.origin.x -= 5
+                    button0.frame.origin.x -= 5
                 }
             }
             else if isCloud == Constants.BABY_RADIO_STAR{
@@ -168,6 +180,7 @@ public class FloatingImageContentView: UIView {
                 else{
                     button1.center.x -= 5
                     button2.center.x -= 5
+                    button0.center.x -= 5
                 }
             }
             else{
@@ -179,44 +192,48 @@ public class FloatingImageContentView: UIView {
                 else {
                     button1.center.x -= 0.5
                     button2.center.x -= 0.5
+                    button0.center.x -= 0.5
                 }
                 
                 
             }
-        }/*
+        }
         else{
             if isCloud == Constants.BABY_RADIO_CLOUD{
-                if (button1.frame.origin.x > -1.5){
+                if (button0.frame.origin.x > -2 + leftCoValue){
                     setInitFrame()
                 }
                 else{
                     button1.frame.origin.x += 5
                     button2.frame.origin.x += 5
+                    button0.frame.origin.x += 5
                 }
             }
             else if isCloud == Constants.BABY_RADIO_STAR{
-                if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue){
+                if (button0.center.x - imageSize.width / 2 > -2 + leftCoValue){
                     setInitFrame()
                 }
                 else{
                     button1.center.x += 5
                     button2.center.x += 5
+                    button0.center.x += 5
                 }
             }
             else{
                 
-                if (button1.center.x - 1.5 - imageSize.width / 2 <  -1 * (maxSizeOfWidth) + leftCoValue)
+                if (button0.center.x - imageSize.width / 2 >  -2 + leftCoValue)
                 {
                     setInitFrame()
                 }
                 else {
                     button1.center.x += 0.5
                     button2.center.x += 0.5
+                    button0.center.x += 0.5
                 }
                 
                 
             }
-        }*/
+        }
 
 
     }
@@ -225,17 +242,13 @@ public class FloatingImageContentView: UIView {
         rotateAngle = 0
         button1.transform = CGAffineTransform(rotationAngle: 0)
         button2.transform = CGAffineTransform(rotationAngle: 0)
+        button0.transform = CGAffineTransform(rotationAngle: 0)
         button1.frame = CGRect(x: leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
         button2.frame = CGRect(x: maxSizeOfWidth - 2 + leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
+        button0.frame = CGRect(x:-maxSizeOfWidth + 2 + leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
     }
-    /*
-    func setRightInitFrame() {
-        rotateAngle = 0
-        button1.transform = CGAffineTransform(rotationAngle: 0)
-        button2.transform = CGAffineTransform(rotationAngle: 0)
-        button1.frame = CGRect(x: maxSizeOfWidth - screenSize.width, y: 0, width: imageSize.width, height: imageSize.height)
-        button2.frame = CGRect(x: maxSizeOfWidth - 2 + leftCoValue, y: 0, width: imageSize.width, height: imageSize.height)
-    }*/
+    
+    
 
     @IBInspectable var treshold: CGFloat = 1.0 {
         didSet {
