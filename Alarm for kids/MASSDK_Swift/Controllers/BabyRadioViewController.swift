@@ -54,8 +54,6 @@ class BabyRadioViewController: BaseViewController{
         
         NotificationCenter.default.addObserver(self, selector: #selector(pauseAudio), name: NSNotification.Name(rawValue: Constants.ORDER_PAUSE_AUDIO_BYTIMER), object: nil)
         
-        setTimeStrings()
-        
     }
     
     
@@ -100,13 +98,9 @@ class BabyRadioViewController: BaseViewController{
         
         setChildStatus()
         setTimerButtonStatus()
-        if (Settings.baby_mode_status == Constants.BABY_MODE_ON){
-            
-            btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_SELECTED
-        }
-        else{
-            
-            btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
+        
+        setButtonStatus()
+        
             if itemStatus == Constants.BABY_RADIO_CLOUD{
                 imvBaby.image = UIImage(named: "child_sleeping")
             }
@@ -115,7 +109,7 @@ class BabyRadioViewController: BaseViewController{
 
             }
 
-        }
+        //}
         
         if Settings.baby_sound_isplaying == Constants.BABY_SOUND_PLAYING{
             playStatusImageView.image = UIImage(named: "play_pause")
@@ -126,6 +120,18 @@ class BabyRadioViewController: BaseViewController{
         }
         
         
+    }
+    
+    func setButtonStatus() {
+        if (Settings.getAirplaneStatus()){
+            
+            btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_SELECTED
+            btnBabyMode.setTitle("BABY MODE: ON", for: .normal)
+        }
+        else{
+            btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
+            btnBabyMode.setTitle("BABY MODE: OFF", for: .normal)
+        }
     }
     
     func setChildStatus() {
@@ -168,6 +174,10 @@ class BabyRadioViewController: BaseViewController{
         }
     }
     
+    override func appDidEnterForeground() {
+        setButtonStatus()
+    }
+    
     func setTimerButtonStatus() {
         
         if (AppDelegate.remainTime > 0)
@@ -176,8 +186,8 @@ class BabyRadioViewController: BaseViewController{
         }
         else{
             btnTimer.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
-            
         }
+        setTimeStrings()
 
     }
     

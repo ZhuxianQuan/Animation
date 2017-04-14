@@ -20,15 +20,9 @@ class BabyModeViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        if (Settings.baby_mode_status == Constants.BABY_MODE_ON){
-            btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("STOP", for: .normal)
-        }
-        else{
-            btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("START", for: .normal)
-        }
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,6 +42,12 @@ class BabyModeViewController: BaseViewController {
             imvBack.isHidden = false
             imvBack.setImageWith(color: UIColor.white)
         }
+        setButtonStatus()
+        
+    }
+    
+    override func appDidEnterForeground() {
+        setButtonStatus()
     }
     
 
@@ -57,18 +57,31 @@ class BabyModeViewController: BaseViewController {
     }
 
     @IBAction func babyModeStatusButtonTapped(_ sender: Any) {
-        if Settings.baby_mode_status == Constants.BABY_MODE_ON{
-            Settings.baby_mode_status = Constants.BABY_MODE_OFF
-            btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("START", for: .normal)
+        UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
+        /*
+        if Settings.getAirplaneStatus(){
+            
+            /*btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
+            btnBabyModeStatus.setTitle("START", for: .normal)*/
         }
         else{
-            Settings.baby_mode_status = Constants.BABY_MODE_ON
-            btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("STOP", for: .normal)
+            //Settings.baby_mode_status = Constants.BABY_MODE_ON
+            /*btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
+            btnBabyModeStatus.setTitle("STOP", for: .normal)*/
             
             UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
             
+        }*/
+    }
+    
+    func setButtonStatus() {
+        if (Settings.getAirplaneStatus()){
+            btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
+            btnBabyModeStatus.setTitle("STOP", for: .normal)
+        }
+        else{
+            btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
+            btnBabyModeStatus.setTitle("START", for: .normal)
         }
     }
 

@@ -155,7 +155,7 @@ class BabyRadioItems{
         result.append(item)
         
         item = FloatingItemModel()
-        item.item_title = "Cars"
+        item.item_title = "Wipers"
         item.item_type = Constants.BABY_RADIO_SOUND
         item.item_audiosource = Constants.AUDIO_SOURCE_ASSET
         

@@ -67,5 +67,7 @@ class Constants {
     static let ORDER_TIMER_STOP             = "timer stop"
     static let ORDER_REMAINTIME_CHANGED     = "remain time changed"
     
+    static let APP_DID_ENTER_FOREGROUND     = "app did enter foreground"
+    
     
 }

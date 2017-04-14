@@ -632,15 +632,18 @@
                                 </constraints>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-nl-dlZ">
-                                <rect key="frame" x="54" y="523" width="307" height="31"/>
+                                <rect key="frame" x="54" y="513" width="307" height="41"/>
                                 <color key="tintColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Kyd-tP-mqg"/>
+                                </constraints>
                                 <color key="thumbTintColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="volumeChanged:" destination="f0m-KR-Iev" eventType="valueChanged" id="4nG-GC-Hph"/>
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqz-uK-6wA">
-                                <rect key="frame" x="47.5" y="463" width="280" height="30"/>
+                                <rect key="frame" x="47.5" y="453" width="280" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWp-a3-7QW">
                                         <rect key="frame" x="103" y="6" width="73" height="18"/>
@@ -684,7 +687,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCw-0a-MbD">
-                                <rect key="frame" x="16" y="518" width="40" height="40"/>
+                                <rect key="frame" x="16" y="513" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Rlo-Qx-o3p"/>
                                     <constraint firstAttribute="width" constant="40" id="jwQ-1L-axV"/>
@@ -694,7 +697,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_pause" translatesAutoresizingMaskIntoConstraints="NO" id="y7c-0d-bUC">
-                                <rect key="frame" x="23.5" y="525.5" width="25" height="25"/>
+                                <rect key="frame" x="23.5" y="520.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="U8M-1c-QoI"/>
                                     <constraint firstAttribute="width" secondItem="y7c-0d-bUC" secondAttribute="height" id="yhB-Au-2Tr"/>

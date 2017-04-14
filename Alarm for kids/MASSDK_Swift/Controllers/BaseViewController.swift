@@ -22,6 +22,7 @@ class BaseViewController: UIViewController {
         let navigationBar = self.navigationController?.navigationBar
         navigationBar?.setBackgroundImage(UIImage(), for: .default)
         navigationBar?.shadowImage = UIImage()
+        notificationCenter.addObserver(self, selector: #selector(appDidEnterForeground), name: Notification.Name(Constants.APP_DID_ENTER_FOREGROUND), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +43,10 @@ class BaseViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    func appDidEnterForeground(){
+        
     }
 
 }

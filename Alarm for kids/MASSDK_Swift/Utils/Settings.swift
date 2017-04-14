@@ -17,6 +17,16 @@ class Settings{
     static var baby_crying_status           = 1
     static var baby_noise_value: CGFloat     = 0.0
     static var baby_monitor                 = true
+    static var airplane_status              = false
     
+    static func getAirplaneStatus() -> Bool {
+        let reachStatus = Reachability(hostname : "http://www.bing.com/")
+        if reachStatus?.currentReachabilityStatus() == .NotReachable {
+            return true
+        }
+        else {
+            return false
+        }
+    }
     
 }

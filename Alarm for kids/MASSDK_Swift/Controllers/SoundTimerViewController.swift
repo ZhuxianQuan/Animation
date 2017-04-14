@@ -93,7 +93,6 @@ class SoundTimerViewController: BaseViewController {
         else {
             changeStatus(0)
         }
-        setTargetTime(AppDelegate.remainTime)
         setTimeStrings()
         
     }
@@ -189,6 +188,9 @@ class SoundTimerViewController: BaseViewController {
     {
         remainTimeLabel.text = getRemainTimeString(AppDelegate.remainTime)
         targetTimeLabel.text = setTargetTime(AppDelegate.remainTime)
+        if AppDelegate.remainTime == 0{
+            changeStatus(0)
+        }
     }
 
 

@@ -24,7 +24,7 @@ class CommonUtils {
             index += 1
         }
         return -1
-    }    
+    }
     
 
 }
