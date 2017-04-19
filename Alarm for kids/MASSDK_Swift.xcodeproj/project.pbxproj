@@ -559,6 +559,12 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
 						};
 					};
 				};
@@ -861,12 +867,12 @@
 					"$(PROJECT_DIR)/MASSDK_Swift",
 				);
 				INFOPLIST_FILE = MASSDK_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e7e88dc3-8203-4226-a028-5d039e612af3";
-				PROVISIONING_PROFILE_SPECIFIER = Alarm_ADhoc;
+				PROVISIONING_PROFILE = "6be76d00-16ce-4d42-a8a1-0b964d1068c0";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -890,12 +896,12 @@
 					"$(PROJECT_DIR)/MASSDK_Swift",
 				);
 				INFOPLIST_FILE = MASSDK_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e7e88dc3-8203-4226-a028-5d039e612af3";
-				PROVISIONING_PROFILE_SPECIFIER = Alarm_ADhoc;
+				PROVISIONING_PROFILE = "6be76d00-16ce-4d42-a8a1-0b964d1068c0";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
