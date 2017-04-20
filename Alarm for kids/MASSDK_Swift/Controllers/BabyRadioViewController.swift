@@ -31,6 +31,9 @@ class BabyRadioViewController: BaseViewController{
     @IBOutlet weak var volumeParentView: UIView!
     
     @IBOutlet weak var playStatusImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var selectedIndex = 0
     var item: FloatingItemModel!
     //let volumeView = MPVolumeView()
@@ -42,7 +45,7 @@ class BabyRadioViewController: BaseViewController{
         selectedIndex = CommonUtils.getIndex(item:  item, from: floatingItems)
   
         //volumeSlider.alpha = 0.00001
-        
+        titleLabel.text = NSLocalizedString("Baby Radio", comment: "")
         setTitle(item)
         let myVolumeView = MPVolumeView(frame: volumeParentView.bounds)
         volumeParentView.addSubview(myVolumeView)
@@ -50,7 +53,6 @@ class BabyRadioViewController: BaseViewController{
         myVolumeView.volumeSlider.addTarget(self, action: #selector(changeVolumeOutSide), for: .valueChanged)
         
         notificationCenter.addObserver(self, selector: #selector(setTimeStrings), name: Notification.Name(rawValue: Constants.ORDER_REMAINTIME_CHANGED), object: nil)
-        
         
         NotificationCenter.default.addObserver(self, selector: #selector(pauseAudio), name: NSNotification.Name(rawValue: Constants.ORDER_PAUSE_AUDIO_BYTIMER), object: nil)
         
@@ -60,10 +62,10 @@ class BabyRadioViewController: BaseViewController{
     func setTimeStrings()
     {
         if AppDelegate.remainTime > 0{
-            btnTimer.setTitle("SOUND TIMER: " + getRemainTimeString(AppDelegate.remainTime), for: .normal)
+            btnTimer.setTitle(NSLocalizedString("SOUND TIMER", comment: "") + ": " + getRemainTimeString(AppDelegate.remainTime), for: .normal)
         }
         else{
-            btnTimer.setTitle("SOUND TIMER: OFF", for: .normal)
+            btnTimer.setTitle(NSLocalizedString("SOUND TIMER", comment: "") + ": " + NSLocalizedString("OFF", comment: ""), for: .normal)
         }
     }
     
@@ -126,11 +128,11 @@ class BabyRadioViewController: BaseViewController{
         if (Settings.getAirplaneStatus()){
             
             btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_SELECTED
-            btnBabyMode.setTitle("BABY MODE: ON", for: .normal)
+            btnBabyMode.setTitle(NSLocalizedString("BABY MODE", comment: "") + ": " + NSLocalizedString("ON", comment: ""), for: .normal)
         }
         else{
             btnBabyMode.backgroundColor = Constants.COLOR_BUTTON_UNSELECTED
-            btnBabyMode.setTitle("BABY MODE: OFF", for: .normal)
+            btnBabyMode.setTitle(NSLocalizedString("BABY MODE", comment: "") + ": " + NSLocalizedString("OFF", comment: ""), for: .normal)
         }
     }
     
@@ -238,7 +240,7 @@ class BabyRadioViewController: BaseViewController{
     }
     
     func setTitle(_ item : FloatingItemModel) {
-        itemTitle.text = item.item_title
+        itemTitle.text = NSLocalizedString(item.item_title, comment: "")
     }
     @IBAction func prevButtonTapped(_ sender: Any) {
         if selectedIndex == 0{

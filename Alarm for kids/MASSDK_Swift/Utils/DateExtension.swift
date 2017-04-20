@@ -9,6 +9,7 @@
 import Foundation
 
 typealias MyTime = (hour: Int, minute: Int, second: Int)
+
 extension Date{
 
     func toMillis() -> NSNumber {
@@ -121,7 +122,7 @@ func getRemainTimeString(_ remainTime: Int) -> String{
 
 func setTargetTime(_ remainTime: Int) -> String{
     let targetTime = getTargetTime(remainTime)
-    return String.localizedStringWithFormat("Sound stop at %02d:%02d", targetTime.hour, targetTime.minute)
+    return String.localizedStringWithFormat("%@ %02d:%02d",NSLocalizedString("Sound stop at", comment: ""), targetTime.hour, targetTime.minute)
     
 }
 

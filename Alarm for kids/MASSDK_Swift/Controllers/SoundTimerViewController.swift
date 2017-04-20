@@ -13,6 +13,7 @@ class SoundTimerViewController: BaseViewController {
     @IBOutlet weak var clockView: UIView!
     @IBOutlet weak var remainTimeLabel: UILabel!
     @IBOutlet weak var targetTimeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var segmentItem: UISegmentedControl!
     @IBOutlet weak var switchMonitor: UISwitch!
@@ -27,6 +28,7 @@ class SoundTimerViewController: BaseViewController {
     @IBOutlet weak var imvPointerPositionConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var babyMonitorLabel: UILabel!
     var currentHour = 0
     var currentMinute = 0
     
@@ -59,6 +61,13 @@ class SoundTimerViewController: BaseViewController {
         super.viewDidLoad()
         imvBack.isHidden = false
         notificationCenter.addObserver(self, selector: #selector(setTimeStrings), name: Notification.Name(rawValue: Constants.ORDER_REMAINTIME_CHANGED), object: nil)
+        titleLabel.text = NSLocalizedString("Sound Timer" , comment: "")
+        babyMonitorLabel.text = NSLocalizedString("Baby monitor" , comment: "")
+        
+        startButton.setTitle(NSLocalizedString("START", comment: ""), for: .normal)
+        stopButton.setTitle(NSLocalizedString("STOP", comment: ""), for: .normal)
+        segmentItem.setTitle(NSLocalizedString("Stopwatch", comment: ""), forSegmentAt: 0)
+        segmentItem.setTitle(NSLocalizedString("Clock", comment: ""), forSegmentAt: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -136,9 +145,6 @@ class SoundTimerViewController: BaseViewController {
             AppDelegate.remainTime = currentHour * 3600 + 60 * currentMinute
             if AppDelegate.remainTime > 0 {
                 changeStatus(1)
-                let time = getCurrentTime()
-                NSLog("current time === \(time.hour): \(time.minute) : \(time.second)")
-                
                 notificationCenter.post(name: Notification.Name(rawValue: Constants.ORDER_TIMER_START), object: nil)
                 setTimeStrings()
             }
@@ -147,8 +153,6 @@ class SoundTimerViewController: BaseViewController {
             AppDelegate.remainTime = getRemainTimeTo(getMyTimeFrom(hour: targetHour, minute: targetMin, second: 0, m: targetM))
             if AppDelegate.remainTime > 0 {
                 changeStatus(1)
-                let time = getCurrentTime()
-                NSLog("current time === \(time.hour): \(time.minute) : \(time.second)")
                 notificationCenter.post(name: Notification.Name(rawValue: Constants.ORDER_TIMER_START), object: nil)
                 setTimeStrings()
             }
@@ -170,15 +174,9 @@ class SoundTimerViewController: BaseViewController {
         if selected == 0
         {
             clockView.isHidden = true
-            //imvBack.isHidden = true
-            //btnBack.isHidden = true
-            //self.navigationController?.isNavigationBarHidden = false
         }
         else{
             clockView.isHidden = false
-            //imvBack.isHidden = false
-            //btnBack.isHidden = false
-            //self.navigationController?.isNavigationBarHidden = true
             
         }
     }
@@ -238,10 +236,10 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         var result = ""
         if segmentItem.selectedSegmentIndex == 0 {
             if component == 1{
-                result = "hours"
+                result = NSLocalizedString("hours", comment: "")
             }
             else if component == 3{
-                result = "min"
+                result = NSLocalizedString("min", comment: "")
             }
             else if component == 0{
                 result = "\(pickerViewStopwatchHours[row % pickerViewStopwatchHours.count])"
@@ -259,10 +257,10 @@ extension SoundTimerViewController : UIPickerViewDelegate, UIPickerViewDataSourc
             }
             else{
                 if row == 0{
-                    result = "AM"
+                    result = NSLocalizedString("AM", comment: "")
                 }
                 else{
-                    result = "PM"
+                    result = NSLocalizedString("PM", comment: "")
                 }
             }
         }

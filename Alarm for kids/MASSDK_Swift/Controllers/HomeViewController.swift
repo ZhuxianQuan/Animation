@@ -15,7 +15,12 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
     @IBOutlet weak var starsView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var titleLabel: UILabel!
 
+    @IBOutlet weak var allLabel: UILabel!
+    @IBOutlet weak var musicLabel: UILabel!
+    @IBOutlet weak var soundsLabel: UILabel!
+    
     //Acceleration setting variables 
     var threshold:CGFloat = 0.0
     var shouldDragX = true
@@ -32,6 +37,10 @@ class HomeViewController: BaseViewController , FloatingImageContentViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = NSLocalizedString("Baby Radio", comment: "")
+        allLabel.text = NSLocalizedString("All", comment: "")
+        musicLabel.text = NSLocalizedString("Music", comment: "")
+        soundsLabel.text = NSLocalizedString("Sounds", comment: "")
         loaded = true
     }
 

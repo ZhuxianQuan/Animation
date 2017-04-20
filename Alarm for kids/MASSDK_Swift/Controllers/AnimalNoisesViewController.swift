@@ -12,6 +12,7 @@ class AnimalNoisesViewController: BaseViewController {
     
     @IBOutlet weak var animalsView: AnimalsView!
     var animalImages: [AnimalNoiseModel] = []
+    @IBOutlet weak var titleLabel: UILabel!
     
     var noiseStatus = 1
     
@@ -32,6 +33,7 @@ class AnimalNoisesViewController: BaseViewController {
         animalsView.initWith(animals: animalImages)
         setupGustures()
         _ = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveImages), userInfo: nil, repeats: true)
+        titleLabel.text = NSLocalizedString("Animal Noises", comment: "")
         
     }
     

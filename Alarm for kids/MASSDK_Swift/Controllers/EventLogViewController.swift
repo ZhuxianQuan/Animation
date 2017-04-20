@@ -15,6 +15,7 @@ class EventLogViewController: BaseViewController {
     
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var imvBack: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
 
     
     override func viewDidLoad() {
@@ -28,9 +29,10 @@ class EventLogViewController: BaseViewController {
         
         clearButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             
-        clearButton.setTitle("Clear", for: .normal)
+        clearButton.setTitle(NSLocalizedString("Clear", comment: ""), for: .normal)
         clearButton.addTarget(self, action: #selector(clearButtonTapped), for: .touchUpInside)
         self.navigationController?.navigationBar.addSubview(clearButton)
+        titleLabel.text = NSLocalizedString("Event Log", comment: "")
     }
     
     

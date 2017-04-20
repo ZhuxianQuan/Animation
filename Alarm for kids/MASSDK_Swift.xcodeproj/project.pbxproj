@@ -90,6 +90,7 @@
 		3AFB531F1E3F298100627C8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB531E1E3F298100627C8E /* Images.xcassets */; };
 		3AFB532B1E3F6F9D00627C8E /* UIImageView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB532A1E3F6F9D00627C8E /* UIImageView+Color.swift */; };
 		BE39897EED516E52B2BF7B14 /* Pods_MASSDK_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B746C121D4E0A09DEA96CDF /* Pods_MASSDK_Swift.framework */; };
+		E198DBB51EA79BC200CB54F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E198DBB71EA79BC200CB54F2 /* Localizable.strings */; };
 		E1D4B4C51E9DDB9300A86C36 /* sound_wind.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1D4B4C21E9DDB9300A86C36 /* sound_wind.wav */; };
 		E1D4B4C61E9DDB9300A86C36 /* sound_guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1D4B4C31E9DDB9300A86C36 /* sound_guitar.wav */; };
 		E1D4B4C71E9DDB9300A86C36 /* sound_grandfather_clock.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1D4B4C41E9DDB9300A86C36 /* sound_grandfather_clock.wav */; };
@@ -172,8 +173,6 @@
 		0AF683161E8C62B200BDC343 /* FMDBManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FMDBManager+Data.swift"; sourceTree = "<group>"; };
 		0AF683181E8C71A800BDC343 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		131D1A4F1CDB58F0007C9F2A /* MASSDK_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MASSDK_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		131D1A571CDB58F0007C9F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		131D1A5C1CDB58F0007C9F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		131D1A5E1CDB58F0007C9F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		131D1A911CDB5D88007C9F2A /* MASSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MASSDK.framework; sourceTree = "<group>"; };
 		3A27F48D1E4339D8008A7F7E /* SOXShapedTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOXShapedTapView.swift; sourceTree = "<group>"; };
@@ -198,6 +197,9 @@
 		5B746C121D4E0A09DEA96CDF /* Pods_MASSDK_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MASSDK_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D525EED754EA1F5B7FB9D13 /* Pods-MASSDK_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MASSDK_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MASSDK_Swift/Pods-MASSDK_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		97BC616A5AD9BEAC7086DA22 /* Pods-MASSDK_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MASSDK_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MASSDK_Swift/Pods-MASSDK_Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		E198DBB11EA797C900CB54F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E198DBB21EA797C900CB54F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E198DBB61EA79BC200CB54F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E1D4B4C21E9DDB9300A86C36 /* sound_wind.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_wind.wav; sourceTree = "<group>"; };
 		E1D4B4C31E9DDB9300A86C36 /* sound_guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_guitar.wav; sourceTree = "<group>"; };
 		E1D4B4C41E9DDB9300A86C36 /* sound_grandfather_clock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_grandfather_clock.wav; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 			children = (
 				131D1A561CDB58F0007C9F2A /* Main.storyboard */,
 				131D1A5B1CDB58F0007C9F2A /* LaunchScreen.storyboard */,
+				E198DBB71EA79BC200CB54F2 /* Localizable.strings */,
 			);
 			name = Base.lproj;
 			sourceTree = "<group>";
@@ -554,7 +557,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4WGDATJ3CA;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -575,7 +578,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 131D1A461CDB58F0007C9F2A;
 			productRefGroup = 131D1A501CDB58F0007C9F2A /* Products */;
@@ -627,6 +629,7 @@
 				0AF683071E8A972800BDC343 /* 2 sea waves.wav in Resources */,
 				0AF682FC1E8A972800BDC343 /* sound_shower.wav in Resources */,
 				0AF6830D1E8A972800BDC343 /* sound_lyre.wav in Resources */,
+				E198DBB51EA79BC200CB54F2 /* Localizable.strings in Resources */,
 				0A9DAFDB1E93300900012B32 /* sound_air_conditioning.wav in Resources */,
 				0A9DAFDF1E93309300012B32 /* sound_dishwasher.wav in Resources */,
 				131D1A581CDB58F0007C9F2A /* Main.storyboard in Resources */,
@@ -743,7 +746,7 @@
 		131D1A561CDB58F0007C9F2A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				131D1A571CDB58F0007C9F2A /* Base */,
+				E198DBB11EA797C900CB54F2 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -751,9 +754,17 @@
 		131D1A5B1CDB58F0007C9F2A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				131D1A5C1CDB58F0007C9F2A /* Base */,
+				E198DBB21EA797C900CB54F2 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E198DBB71EA79BC200CB54F2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E198DBB61EA79BC200CB54F2 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -763,6 +774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -812,6 +824,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -859,8 +872,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chuck  Luther (4WGDATJ3CA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 4WGDATJ3CA;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -871,8 +884,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6be76d00-16ce-4d42-a8a1-0b964d1068c0";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -888,8 +901,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chuck  Luther (4WGDATJ3CA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 4WGDATJ3CA;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -900,8 +913,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.master.MASSDK-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6be76d00-16ce-4d42-a8a1-0b964d1068c0";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: cz.master.MASSDK-Swift";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MASSDK_Swift/Vendor/MASSDK_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

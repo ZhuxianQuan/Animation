@@ -15,12 +15,17 @@ class BabyModeViewController: BaseViewController {
     @IBOutlet weak var btnBabyModeStatus: UIButton!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var imvBack: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var suggestionLabel: UILabel!
+    @IBOutlet weak var suggestionDetailLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        titleLabel.text = NSLocalizedString("Baby Mode", comment: "")
+        suggestionLabel.text = NSLocalizedString("Suggestion", comment: "")
+        suggestionDetailLabel.text = NSLocalizedString("To reduce the possibility of interruption, it is recommended to enable Airplane Mode.\n\nIf you press the start button, you will be redirected to the System Settings", comment: "")
     }
     
 
@@ -58,30 +63,17 @@ class BabyModeViewController: BaseViewController {
 
     @IBAction func babyModeStatusButtonTapped(_ sender: Any) {
         UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
-        /*
-        if Settings.getAirplaneStatus(){
-            
-            /*btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("START", for: .normal)*/
-        }
-        else{
-            //Settings.baby_mode_status = Constants.BABY_MODE_ON
-            /*btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("STOP", for: .normal)*/
-            
-            UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
-            
-        }*/
+        
     }
     
     func setButtonStatus() {
         if (Settings.getAirplaneStatus()){
             btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 173.0 / 255.0, green: 37.0 / 255.0 , blue: 36.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("STOP", for: .normal)
+            btnBabyModeStatus.setTitle(NSLocalizedString("STOP", comment: ""), for: .normal)
         }
         else{
             btnBabyModeStatus.backgroundColor = UIColor(colorLiteralRed: 72.0 / 255.0, green: 142.0 / 255.0 , blue: 42.0 / 255.0, alpha: 1)
-            btnBabyModeStatus.setTitle("START", for: .normal)
+            btnBabyModeStatus.setTitle(NSLocalizedString("START", comment: ""), for: .normal)
         }
     }
 

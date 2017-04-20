@@ -47,14 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setMASSDK() {
         
         //MASManager.sharedInstance.menu
-        let menu_babyRadio = MASMenuItem(name: "Baby Radio", iconImage: UIImage(named: "icon_baby_radio")!, target: self, 	selector: "babyRadioTapped")
         
-        let menu_soundTimer = MASMenuItem(name: "Sound Timer", iconImage: UIImage(named: "icon_sound_timer")!, target: self, 	selector: "soundTimerTapped")
-        let menu_babyMode = MASMenuItem(name: "Baby Mode", iconImage: UIImage(named: "icon_baby_mode")!, target: self, 	selector: "babyModeTapped")
-        let menu_eventLog = MASMenuItem(name: "Event Log", iconImage: UIImage(named: "icon_event_log")!, target: self, 	selector: "eventLogTapped")
-        let menu_babyTips = MASMenuItem(name: "Baby Tips", iconImage: UIImage(named: "icon_baby_tips")!, target: self, 	selector: "babyTipsTapped")
-        let menu_skyRattle = MASMenuItem(name: "Sky Rattle", iconImage: UIImage(named: "icon_sky_rattle")!, target: self, 	selector: "skyLattleTapped")
-        let menu_animalNoise = MASMenuItem(name: "Animal Noises", iconImage: UIImage(named: "icon_animal_noise")!, target: self, selector: "animalNoisesTapped")
+        let menu_babyRadio = MASMenuItem(name: NSLocalizedString("Baby Radio", comment: ""), iconImage: UIImage(named: "icon_baby_radio")!, target: self, 	selector: "babyRadioTapped")
+        
+        let menu_soundTimer = MASMenuItem(name: NSLocalizedString("Sound Timer", comment: ""), iconImage: UIImage(named: "icon_sound_timer")!, target: self, 	selector: "soundTimerTapped")
+        let menu_babyMode = MASMenuItem(name: NSLocalizedString("Baby Mode", comment: ""), iconImage: UIImage(named: "icon_baby_mode")!, target: self, 	selector: "babyModeTapped")
+        let menu_eventLog = MASMenuItem(name: NSLocalizedString("Event Log", comment: ""), iconImage: UIImage(named: "icon_event_log")!, target: self, 	selector: "eventLogTapped")
+        let menu_babyTips = MASMenuItem(name: NSLocalizedString("Baby Tips", comment: ""), iconImage: UIImage(named: "icon_baby_tips")!, target: self, 	selector: "babyTipsTapped")
+        let menu_skyRattle = MASMenuItem(name: NSLocalizedString("Sky Rattle", comment: ""), iconImage: UIImage(named: "icon_sky_rattle")!, target: self, 	selector: "skyLattleTapped")
+        let menu_animalNoise = MASMenuItem(name: NSLocalizedString("Animal Noises", comment: ""), iconImage: UIImage(named: "icon_animal_noise")!, target: self, selector: "animalNoisesTapped")
         
         let menuItems = [menu_babyRadio, menu_soundTimer, menu_babyMode,menu_eventLog,menu_babyTips,menu_skyRattle, menu_animalNoise]
         //let menuGameItems = [menu_skyRattle, menu_animalNoise]
@@ -206,7 +207,7 @@ extension AppDelegate : AVAudioPlayerDelegate{
                 let event = EventModel()
                 event.eventTime = getGlobalTime()
                 event.eventType = EventModel.EVENT_SOUND_STOP
-                event.eventContent = currentPlayingAudioName + " stopped by User"
+                event.eventContent = NSLocalizedString(currentPlayingAudioName, comment: "") + NSLocalizedString(" stopped by User", comment: "")
                 SetDataToFMDB.saveEvent(event)
             }
         }
@@ -216,7 +217,7 @@ extension AppDelegate : AVAudioPlayerDelegate{
                 let event = EventModel()
                 event.eventTime = getGlobalTime()
                 event.eventType = EventModel.EVENT_SOUND_START
-                event.eventContent = currentPlayingAudioName + " started by User"
+                event.eventContent = NSLocalizedString(currentPlayingAudioName, comment: "") + NSLocalizedString(" started by User", comment: "")
                 
                 SetDataToFMDB.saveEvent(event)
             }
@@ -230,7 +231,7 @@ extension AppDelegate : AVAudioPlayerDelegate{
             let event = EventModel()
             event.eventTime = getGlobalTime()
             event.eventType = EventModel.EVENT_SOUND_START
-            event.eventContent = currentPlayingAudioName + " started by User"
+            event.eventContent = NSLocalizedString(currentPlayingAudioName, comment: "") + NSLocalizedString(" started by User", comment: "")
             
             SetDataToFMDB.saveEvent(event)
         }

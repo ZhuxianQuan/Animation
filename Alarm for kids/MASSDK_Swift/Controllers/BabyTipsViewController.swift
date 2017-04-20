@@ -22,6 +22,7 @@ class BabyTipsViewController: BaseViewController {
     @IBOutlet weak var tipTitle: UILabel!
     @IBOutlet weak var tipContent: UITextView!
     
+    @IBOutlet weak var titleLabel: UILabel!
     
     var safetySelected = 0
     var sleepingSelected = 0
@@ -35,6 +36,9 @@ class BabyTipsViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         setText(selected: 0, status: 0)
+        titleLabel.text = NSLocalizedString("Baby Tops", comment: "")
+        statusSegmentedControl.setTitle(NSLocalizedString("Sleeping", comment: ""), forSegmentAt: 0)
+        statusSegmentedControl.setTitle(NSLocalizedString("Safety", comment: ""), forSegmentAt: 0)
     }
     
         

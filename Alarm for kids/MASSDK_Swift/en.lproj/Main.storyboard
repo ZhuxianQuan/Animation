@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -516,8 +515,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="byU-kr-sh0"/>
                     <connections>
+                        <outlet property="allLabel" destination="Hzu-Cp-FIg" id="raw-ns-a2t"/>
+                        <outlet property="musicLabel" destination="bEB-A5-MIo" id="8Rn-2O-uln"/>
                         <outlet property="segmentedControl" destination="LXB-Er-Dwh" id="hI2-i4-WV0"/>
+                        <outlet property="soundsLabel" destination="6Ch-ML-cUE" id="7bP-hE-xi2"/>
                         <outlet property="starsView" destination="v8F-JG-OKK" id="Pbh-pe-nn6"/>
+                        <outlet property="titleLabel" destination="8gK-T2-wlm" id="SwT-oc-3qO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -740,6 +743,7 @@
                         <outlet property="itemTitle" destination="xWp-a3-7QW" id="WrN-Kt-ifK"/>
                         <outlet property="playStatusImageView" destination="y7c-0d-bUC" id="d08-1v-wBi"/>
                         <outlet property="slidernoiseLevel" destination="hXb-nl-dlZ" id="xbp-pd-3hG"/>
+                        <outlet property="titleLabel" destination="pC2-xd-PLC" id="BW3-et-kfF"/>
                         <outlet property="volumeParentView" destination="9o0-oR-ibp" id="xL4-ut-MY2"/>
                     </connections>
                 </viewController>
@@ -992,6 +996,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="babyMonitorLabel" destination="VCl-gV-xF7" id="y2l-tv-FIB"/>
                         <outlet property="btnBack" destination="3L4-bj-hcT" id="uH1-vK-Ke9"/>
                         <outlet property="clockView" destination="MID-6F-M2w" id="iMh-Se-gJj"/>
                         <outlet property="imvBack" destination="2Qr-yY-BSU" id="YCb-bh-iPL"/>
@@ -1000,11 +1005,12 @@
                         <outlet property="remainTimeLabel" destination="aLV-1L-QgO" id="Blg-bU-rVe"/>
                         <outlet property="segmentItem" destination="rf7-tZ-83V" id="qYv-Do-jAP"/>
                         <outlet property="sliderView" destination="wx9-gN-hDO" id="6fl-PQ-h1K"/>
-                        <outlet property="startButton" destination="GcM-A9-Z6v" id="6LR-cu-xBq"/>
-                        <outlet property="stopButton" destination="s92-c9-MCk" id="Fv9-F6-IAW"/>
+                        <outlet property="startButton" destination="GcM-A9-Z6v" id="4q4-pK-ABr"/>
+                        <outlet property="stopButton" destination="s92-c9-MCk" id="WLk-bk-U1K"/>
                         <outlet property="switchMonitor" destination="7vT-Z3-Ur5" id="1gs-7g-a4W"/>
                         <outlet property="targetTimeLabel" destination="zvQ-s0-3RD" id="Kr8-cN-8BI"/>
                         <outlet property="timePickerView" destination="8Zq-08-mdV" id="yTd-q9-QQB"/>
+                        <outlet property="titleLabel" destination="1h7-O0-TXT" id="RtI-Wf-AHp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZV-b7-tGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1039,20 +1045,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygS-0i-1Tv">
-                                        <rect key="frame" x="328" y="27" width="32" height="30"/>
-                                        <state key="normal" title="Hide">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Yd6-6I-F16" firstAttribute="centerX" secondItem="CXr-dg-r68" secondAttribute="centerX" id="f16-EM-qcP"/>
                                     <constraint firstItem="Yd6-6I-F16" firstAttribute="top" secondItem="CXr-dg-r68" secondAttribute="top" constant="30" id="h2c-DH-CIZ"/>
-                                    <constraint firstItem="ygS-0i-1Tv" firstAttribute="centerY" secondItem="Yd6-6I-F16" secondAttribute="centerY" id="nsz-Y2-EHv"/>
                                     <constraint firstAttribute="height" constant="64" id="vgH-zh-4vb"/>
-                                    <constraint firstAttribute="trailing" secondItem="ygS-0i-1Tv" secondAttribute="trailing" constant="15" id="yoT-jn-qJ3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-vC-XuJ" customClass="AnimalsView" customModule="MASSDK_Swift" customModuleProvider="target">
@@ -1080,6 +1078,7 @@
                     </view>
                     <connections>
                         <outlet property="animalsView" destination="R3M-vC-XuJ" id="7gl-Ja-8kK"/>
+                        <outlet property="titleLabel" destination="Yd6-6I-F16" id="GXN-3W-PKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ba-pe-xYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1150,6 +1149,7 @@
                     </view>
                     <connections>
                         <outlet property="rattlesView" destination="gnf-lZ-UgB" id="PTE-V8-ZeY"/>
+                        <outlet property="titleLabel" destination="28n-FB-a7c" id="j5y-kO-Uu9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfb-wt-0Zk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1271,6 +1271,9 @@ If you press the start button, you will be redirected to the System Settings</st
                         <outlet property="btnBabyModeStatus" destination="exC-pG-y5q" id="C1L-eX-wtR"/>
                         <outlet property="btnBack" destination="wAx-YQ-gq9" id="cBH-Yb-YK5"/>
                         <outlet property="imvBack" destination="QU4-P3-6ov" id="Uiw-G0-lWP"/>
+                        <outlet property="suggestionDetailLabel" destination="vC2-nf-Bjo" id="iVE-WZ-goQ"/>
+                        <outlet property="suggestionLabel" destination="4z4-bn-Ubk" id="ABF-yK-NMX"/>
+                        <outlet property="titleLabel" destination="9yx-bi-qCK" id="HNp-bF-XLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYB-k1-F7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1407,6 +1410,7 @@ If you press the start button, you will be redirected to the System Settings</st
                         <outlet property="btnBack" destination="xUm-58-tQg" id="SLq-Lm-iBI"/>
                         <outlet property="imvBack" destination="6Kd-WJ-Smw" id="ACS-7a-Y3c"/>
                         <outlet property="tblEventLog" destination="ER9-nJ-ivJ" id="hdK-MG-FFd"/>
+                        <outlet property="titleLabel" destination="OHA-Nq-wtr" id="HLf-rt-hLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5O-b1-DHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1560,6 +1564,7 @@ If you press the start button, you will be redirected to the System Settings</st
                         <outlet property="statusSegmentedControl" destination="eZU-TZ-RhP" id="IU9-Bv-8Bp"/>
                         <outlet property="tipContent" destination="5cS-6z-LWu" id="dFJ-VR-0nJ"/>
                         <outlet property="tipTitle" destination="kSa-Ed-qCO" id="zRu-oe-sj4"/>
+                        <outlet property="titleLabel" destination="zOs-ot-dsv" id="fnn-mk-0QU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byV-a7-5BT" userLabel="First Responder" sceneMemberID="firstResponder"/>

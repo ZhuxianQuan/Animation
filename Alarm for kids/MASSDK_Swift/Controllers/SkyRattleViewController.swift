@@ -12,6 +12,7 @@ import UIKit
 class SkyRattleViewController: BaseViewController {
 
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rattlesView: RattlesView!
     var noiseStatus = 1
     
@@ -27,7 +28,7 @@ class SkyRattleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setRattlesView()
-        // Do any additional setup after loading the view.
+        titleLabel.text = NSLocalizedString("Sky Rattle", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {

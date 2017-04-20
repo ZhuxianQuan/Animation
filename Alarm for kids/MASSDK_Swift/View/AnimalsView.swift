@@ -305,7 +305,7 @@ extension AnimalsView: AVAudioPlayerDelegate{
                 let event = EventModel()
                 event.eventTime = getGlobalTime()
                 event.eventType = EventModel.EVENT_SOUND_STOP
-                event.eventContent = animalname + " started by User"
+                event.eventContent = NSLocalizedString(animalname, comment: "") + NSLocalizedString(" started by User", comment: "")
                 setItemSleep()
                 SetDataToFMDB.saveEvent(event)
             }
@@ -319,7 +319,7 @@ extension AnimalsView: AVAudioPlayerDelegate{
         let event = EventModel()
         event.eventTime = getGlobalTime()
         event.eventType = EventModel.EVENT_SOUND_STOP
-        event.eventContent = animalname + " stopped by User"
+        event.eventContent = NSLocalizedString(animalname, comment: "") + NSLocalizedString(" stopped by User", comment: "")
         setItemSleep()
         SetDataToFMDB.saveEvent(event)
         awakedItem = -1
